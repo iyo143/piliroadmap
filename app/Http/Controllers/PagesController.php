@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\LocationTag;
 use App\Models\Article;
+use App\Models\User;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 class PagesController extends Controller
 {
 
@@ -17,6 +20,10 @@ class PagesController extends Controller
     }
     public function mainArticle()
     {
+      
+        $role = Role::findById(1);
+        $user = User::findorfail(2);
+        $user->assignRole($role);
         $articles = Article::get();
         return view('main-article',compact('articles'));
     }

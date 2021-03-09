@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class ArticleController extends Controller
 {
@@ -14,7 +16,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -41,7 +43,10 @@ class ArticleController extends Controller
             'body'=>'required',
             'excerpt'=>'required'
         ]);
-            
+        $role = Role::findById(1);
+        $permission = Permission::findById(1);
+
+        $role->givePermissionTo($permission);
         Article::create($validatedArticles);
         return redirect(route('home.articles'))->with('message', 'successfully Published Articles');
     }

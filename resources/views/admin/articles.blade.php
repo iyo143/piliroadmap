@@ -10,10 +10,12 @@
                         Location Tag successfully added
                     </div>
                 @endif
+       
                 <div class="panel">
                     <div class="panel-heading">
                         <h3 class="panel-title">Add Location Tags</h3>
                     </div>
+                   
                     <form action="{{route('articles.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                     <div class="panel-body">
@@ -44,6 +46,7 @@
                     </div>
                     </form>
                 </div>
+           
                 
             </div>
             <div class="col-md-6">

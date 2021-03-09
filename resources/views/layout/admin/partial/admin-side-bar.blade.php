@@ -3,8 +3,12 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						@role('admin')
 						<li><a href="{{route('home.mapping')}}" class=""><i class="fas fa-map-marked-alt"></i> <span>Mapping</span></a></li>
+						@endrole
+						@role('storeOwner')
 						<li><a href="{{route('home.articles')}}" class=""><i class="far fa-newspaper"></i><span>Articles</span></a></li>
+						@endrole
 						<li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
 						<li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>Notifications</span></a></li>
 						<li>
