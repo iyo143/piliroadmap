@@ -17,9 +17,9 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->string('author');
             $table->string('title');
-            $table->string('excerpt');
+            $table->longText('excerpt');
             $table->longText('body');
-            $table->string('cover-image');
+            $table->string('cover_image');
             $table->timestamps();
         });
     }

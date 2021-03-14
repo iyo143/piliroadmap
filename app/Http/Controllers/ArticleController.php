@@ -41,13 +41,33 @@ class ArticleController extends Controller
             'author'=>'required',
             'title'=>'required',
             'body'=>'required',
-            'excerpt'=>'required'
+            'excerpt'=>'required',
+            'cover_image'=>'required|image'
         ]);
-        $role = Role::findById(1);
-        $permission = Permission::findById(1);
 
-        $role->givePermissionTo($permission);
-        Article::create($validatedArticles);
+        if($request->hasFile('cover_image'))
+        {
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+
+            $path = $request->file('cover_image')->storeAs('public/article_images',$fileNameToStore);
+
+        }
+        else
+        {
+            $fileNameToStore = 'noimage.jpg';
+        }
+
+        Article::create([
+            'author'=>$validatedArticles['author'],
+            'title'=>$validatedArticles['title'],
+            'body'=>$validatedArticles['body'],
+            'excerpt'=>$validatedArticles['excerpt'],
+            'cover_image'=>$fileNameToStore
+        ]);
         return redirect(route('home.articles'))->with('message', 'successfully Published Articles');
     }
 
@@ -57,9 +77,12 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show(Article $article)
+    public function show($id)
     {
-        //
+        $article = Article::findorfail($id);
+        $articles = Article::get();
+
+        return view('article',compact('article','articles'));
     }
 
     /**
@@ -93,6 +116,6 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        
     }
 }

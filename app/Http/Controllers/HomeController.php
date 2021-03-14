@@ -38,5 +38,26 @@ class HomeController extends Controller
         $articles = Article::get();
         return view ('admin.articles',compact('articles'));
     }
+    public function about()
+    {
+       
+        return view ('admin.about');
+    }
+    public function archives()
+    {
+       
+        return view ('admin.archives');
+    }
+    public function gallery()
+    {
+    
+        return view ('admin.gallery');
+    }
+    public function contact()
+    {
+   
+        return view ('admin.contact-us');
+    }
+
   
 }

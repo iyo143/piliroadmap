@@ -4,7 +4,7 @@
 <div class="main">
     <div class="main-content">
         <div class="row ">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 @if(session('message'))
                     <div class="alert alert-success alert-dismissible">
                         Location Tag successfully added
@@ -14,7 +14,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Add Location Tags</h3>
                     </div>
-                    <form action="{{route('map.store')}}" method="post">
+                    <form action="{{route('map.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                     <div class="panel-body">
                         <div class="input-group">
@@ -28,25 +28,28 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-tree"></i></span>
                                     <input class="form-control" placeholder="No. of Trees" type="text" name="trees">
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-users"></i></span>
-                                    <input class="form-control" placeholder="No. ofFarmers" type="text" name="farmers">
+                                    <input class="form-control" placeholder="No. of Farmers" type="text" name="farmers">
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                        </div>
+                        <br>
+                        <div class="row">
+                        <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-users"></i></span>
                                     <input class="form-control" placeholder="No. of Retailers" type="text" name="retailers">
                                 </div>
                             </div>
-                            <div class="col-md-3">                        
+                            <div class="col-md-6">                        
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-cogs"></i></span>
                                     <input class="form-control" placeholder="No. of Processors" type="text" name="processors">
@@ -64,13 +67,18 @@
                             <input class="form-control" placeholder="Longitude" type="text" name="longitude">
                         </div>
                         <br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="far fa-images"></i></span>
+                            <input class="form-control" placeholder="Excerpt" type="file" name="pili_image">
+                        </div>
+                        <br>
                         <button class="btn btn-primary btn-block" type="submit">Submit</button>              
                     </div>
                     </form>
                 </div>
                 
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <!-- TABLE HOVER -->
                 <div class="panel">
                     <div class="panel-heading">

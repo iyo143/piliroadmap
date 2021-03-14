@@ -4,7 +4,7 @@
 <div class="main">
     <div class="main-content">
         <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
                 @if(session('message'))
                     <div class="alert alert-success alert-dismissible">
                         Location Tag successfully added
@@ -13,7 +13,7 @@
        
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Add Location Tags</h3>
+                        <h3 class="panel-title">Publish Article</h3>
                     </div>
                    
                     <form action="{{route('articles.store')}}" method="post" enctype="multipart/form-data">
@@ -34,12 +34,11 @@
                             <input class="form-control" placeholder="Excerpt" type="text" name="excerpt">
                         </div>
                         <br>
-                        
                         <textarea name="body" id="" cols="30" rows="10"></textarea>
                         <br>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="far fa-images"></i></span>
-                            <input class="form-control" placeholder="Excerpt" type="file" name="excerpt">
+                            <input class="form-control" placeholder="Excerpt" type="file" name="cover_image">
                         </div>
                         <br>
                         <button class="btn btn-primary btn-block" type="submit">Submit</button>              
@@ -49,11 +48,11 @@
            
                 
             </div>
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <!-- TABLE HOVER -->
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">List of Location Tags</h3>
+                        <h3 class="panel-title">List of Published Articles</h3>
                     </div>
                     <div class="panel-body">
                         <table class="table table-hover">
@@ -63,7 +62,7 @@
                                     <th>Author</th>
                                     <th>Title</th>
                                     <th>Excerpt</th>
-                                    <th>Body</th>
+                             
                                     
                                     <th>Action</th>
                                 </tr>
@@ -75,7 +74,6 @@
                                     <td>{{$data->author}}</td>
                                     <td>{{$data->title}}</td>
                                     <td>{{$data->excerpt}}</td>
-                                    <td>{!!$data->body!!}</td>
                                     <td>
                                         <a href="" class="btn btn-primary"><i class="far fa-eye"></i></a>
                                         <a href="" class="btn btn-success"><i class="far fa-edit"></i></a>

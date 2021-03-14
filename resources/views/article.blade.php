@@ -1,12 +1,7 @@
 @extends('layout.layout')
-@section('links')
-
 <link rel="stylesheet" href="{{asset('assets/css/mobster.css')}}">
-@endsection
 @section('content')
-
-
-  <div class="page-section">
+<div class="page-section">
     <div class="container">
     <div class="section-header wow fadeInUp pt-100">
           <h3>Articles</h3>
@@ -14,35 +9,16 @@
         </div>
       <div class="row">
       
-        <div class="col-lg-8 py-3">
-        @foreach($articles as $data)
-          <article class="blog-entry wow fadeInUp">
-            <div class="entry-header">
-              <div class="post-thumbnail wow fadeInUp">
-                <img src="/storage/article_images/{{$data->cover_image}}" alt="">
-              </div>
-              <div class="post-date wow fadeInUp">
-                <h3>20</h3>
-                <span>Feb</span>
-              </div>
+        <div class="col-lg-8 py-3 ">
+            <h2 class="font-weight-normal font-italic py-4">{{$article->title}}</h2>
+            <div class="row px-4 border-top pt-4">
+                <p><i class="far fa-clock"></i> February 6, 2020 | Posted by: {{$article->author}}</p>
             </div>
-            <div class="post-title"><a href="blog-details.html">{{$data->title}}</a></div>
-            <div class="entry-meta mb-2">
-              <div class="meta-item entry-author">
-                <div class="icon">
-                  <span class="mai-person"></span>  
-                </div>
-                by <a href="#">{{$data->author}}</a>
-              </div>
-              
+            <div class="" >
+                  <img style="width:100%;" src="/storage/article_images/{{$article->cover_image}}" alt="">
             </div>
-            <div class="entry-content">
-              <p>{{$data->excerpt}}</p>
-            </div>
-            <a href="{{route('subArticle',$data->id)}}" class="btn btn-success">Continue Reading</a>
-          </article>
-        @endforeach
-        
+            <div class="border-bottom"></div>
+            <p>{!!$article->body!!}</p>
         </div>
         <!-- Sidebar -->
         <div class="col-lg-4 py-3">
@@ -77,26 +53,20 @@
          
 
           <div class="widget-wrap wow fadeInUp">
-            <h3 class="widget-title wow fadeInUp">Tag Cloud</h3>
+            <h3 class="widget-title wow fadeInUp">Authors</h3>
             <div class="tag-clouds">
-              <a href="#" class="tag-cloud-link">dish</a>
-              <a href="#" class="tag-cloud-link">menu</a>
-              <a href="#" class="tag-cloud-link">food</a>
-              <a href="#" class="tag-cloud-link">sweet</a>
-              <a href="#" class="tag-cloud-link">tasty</a>
-              <a href="#" class="tag-cloud-link">delicious</a>
-              <a href="#" class="tag-cloud-link">desserts</a>
-              <a href="#" class="tag-cloud-link">drinks</a>
+            @foreach($articles as $data)
+              <a href="#" class="tag-cloud-link">{{$data->author}}</a>
+            @endforeach 
             </div>
           </div>
           <div class="widget-wrap wow fadeInUp">
-            <h3 class="widget-title wow fadeInUp">Paragraph</h3>
+            <h3 class="widget-title wow fadeInUp">About us</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
           </div>
         </div> <!-- end sidebar -->
       </div>
     </div>
   </div>
-
 
 @endsection

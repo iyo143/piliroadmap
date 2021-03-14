@@ -15,16 +15,31 @@ class PagesController extends Controller
     public function homePage()
     {
         $location = LocationTag::get();
+        $trees = LocationTag::sum('trees');
+        $processors = LocationTag::sum('processors');
+        $retailers = LocationTag::sum('retailers');
+        $farmers = LocationTag::sum('farmers');
 
-        return view('index',compact('location'));
+        return view('index',compact('location','trees','processors','retailers','farmers'));
     }
     public function mainArticle()
     {
-      
-        $role = Role::findById(1);
-        $user = User::findorfail(2);
-        $user->assignRole($role);
         $articles = Article::get();
+        return view('main-article',compact('articles'));
+    }
+    public function mainAbout()
+    {
+       
+        return view('main-article',compact('articles'));
+    }
+    public function mainArchive()
+    {
+       
+        return view('main-article',compact('articles'));
+    }
+    public function mainGallery()
+    {
+       
         return view('main-article',compact('articles'));
     }
    

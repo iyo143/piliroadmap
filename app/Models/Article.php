@@ -13,6 +13,7 @@ class Article extends Model
         'author',
         'title',
         'excerpt',
+        'cover_image',
         'body'
     ];
 }

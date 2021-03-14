@@ -23,6 +23,7 @@ class CreateLocationTagsTable extends Migration
             $table->bigInteger('trees');
             $table->string('latitude');
             $table->string('longitude');
+            $table->string('pili_image');
             $table->timestamps();
         });
     }

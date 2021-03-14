@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
   <script src="https://kit.fontawesome.com/226fb0657d.js" crossorigin="anonymous"></script>
@@ -46,8 +46,7 @@
     @include('layout.partials.footer')
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <!-- Uncomment below i you want to use a preloader -->
-  <!-- <div id="preloader"></div> -->
+
 
   <!-- JavaScript Libraries -->
   <script src="{{asset('lib/jquery/jquery.min.js')}}"></script>
@@ -66,10 +65,10 @@
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   
   <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
+  <script src="{{asset('contactform/contactform.js')}}"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
+  <script src="{{asset('js/main.js')}}"></script>
     @yield('scripts')
 </body>
 </html>
