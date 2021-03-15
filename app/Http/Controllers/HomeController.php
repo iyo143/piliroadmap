@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\LocationTag;
 use App\Models\Article;
+use App\Models\Gallery;
 class HomeController extends Controller
 {
     /**
@@ -50,7 +51,7 @@ class HomeController extends Controller
     }
     public function gallery()
     {
-    
+        
         return view ('admin.gallery');
     }
     public function contact()

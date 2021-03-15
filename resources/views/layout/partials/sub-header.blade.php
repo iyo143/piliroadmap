@@ -13,9 +13,9 @@
             <div class="carousel-background"><img src="img/intro-carousel/1.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>We are professional</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                <h2>Morphological Analysis of Pili of Pili</h2>
+                <p>This study focused on morphological and morphometric analysis of  Pili fruits and leaves, respectively to identify superior physical  characters exhibited by the Pili accessions within the province of  Sorsogon.</p>
+                <a href="#featured-services" class="btn-get-started scrollto">Read More</a>
               </div>
             </div>
           </div>
@@ -24,9 +24,9 @@
             <div class="carousel-background"><img src="img/intro-carousel/2.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>At vero eos et accusamus</h2>
-                <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
-                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                <h2>Establishing the Baseline Data of Pili</h2>
+                <p>The baseline research has been conducted to gauge the current position of Pili and the industry within the province of Sorsogon, which is identified as its top producer in the country. </p>
+                <a href="#featured-services" class="btn-get-started scrollto">Read More</a>
               </div>
             </div>
           </div>
@@ -35,35 +35,12 @@
             <div class="carousel-background"><img src="img/intro-carousel/3.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Temporibus autem quibusdam</h2>
-                <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
-                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                <h2>Soil Characterization of Top Producing Pili</h2>
+                <p>Relief of the land, moisture content, soil color, soil pH, level of Nitrogen, Phosphorus and Potassium were investigated through various procedures such as ocular inspection, gravimetric method, and utilization of Munsell Color Chart and Soil Test Kit.</p>
+                <a href="#featured-services" class="btn-get-started scrollto">Read More</a>
               </div>
             </div>
           </div>
-
-          <div class="carousel-item">
-            <div class="carousel-background"><img src="img/intro-carousel/4.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2>Nam libero tempore</h2>
-                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum.</p>
-                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="carousel-background"><img src="img/intro-carousel/5.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2>Magnam aliquam quaerat</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
-              </div>
-            </div>
-          </div>
-
         </div>
 
         <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
