@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\LocationTag;
 use App\Models\Article;
+use App\Models\User;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 class PagesController extends Controller
 {
 
@@ -12,12 +15,31 @@ class PagesController extends Controller
     public function homePage()
     {
         $location = LocationTag::get();
+        $trees = LocationTag::sum('trees');
+        $processors = LocationTag::sum('processors');
+        $retailers = LocationTag::sum('retailers');
+        $farmers = LocationTag::sum('farmers');
 
-        return view('index',compact('location'));
+        return view('index',compact('location','trees','processors','retailers','farmers'));
     }
     public function mainArticle()
     {
         $articles = Article::get();
+        return view('main-article',compact('articles'));
+    }
+    public function mainAbout()
+    {
+       
+        return view('main-article',compact('articles'));
+    }
+    public function mainArchive()
+    {
+       
+        return view('main-article',compact('articles'));
+    }
+    public function mainGallery()
+    {
+       
         return view('main-article',compact('articles'));
     }
    

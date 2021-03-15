@@ -45,8 +45,34 @@ class LocationTagController extends Controller
             'processors'=>'required',
             'latitude'=>'required',
             'longitude'=>'required',
+            'pili_image'=>'required|image'
+            
         ]);
-        LocationTag::create($validatedTags);
+        if($request->hasFile('pili_image'))
+        {
+            $fileNameWithExt = $request->file('pili_image')->getClientOriginalName();
+            $filename=pathinfo($fileNameWithExt,PATHINFO_FILENAME);
+
+            $extension = $request->file('pili_image')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+
+            $path = $request->file('pili_image')->storeAs('public/location_images',$fileNameToStore);
+
+        }
+        else{
+            $fileNameToStore = 'noimage.jpeg';
+        }
+        LocationTag::create([
+            'brgy'=>$validatedTags['brgy'],
+            'municipality'=>$validatedTags['municipality'],
+            'trees'=>$validatedTags['trees'],
+            'farmers'=>$validatedTags['farmers'],
+            'retailers'=>$validatedTags['retailers'],
+            'processors'=>$validatedTags['processors'],
+            'latitude'=>$validatedTags['latitude'],
+            'longitude'=>$validatedTags['longitude'],
+            'pili_image'=>$fileNameToStore 
+        ]);
         return redirect(route('home.mapping'))->with('message','successfully added Location Tag');
     }
 

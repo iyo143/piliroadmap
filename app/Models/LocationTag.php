@@ -17,7 +17,8 @@ class LocationTag extends Model
         'retailers',
         'processors',
         'latitude',
-        'longitude'
+        'longitude',
+        'pili_image'
     ];
   
 }
