@@ -18,7 +18,7 @@
           <div class="col-md-4 wow fadeInUp">
             <div class="about-col">
               <div class="img">
-                <img src="img/about-mission.jpg" alt="" class="img-fluid">
+                <img src="img/intro-carousel/10.jpg" alt="" class="img-fluid">
                 <div class="icon"><i class="ion-ios-eye-outline"></i></div>
               </div>
               <h2 class="title"><a href="#">Sorsogon Pili Development Board</a></h2>
@@ -31,7 +31,7 @@
           <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
             <div class="about-col">
               <div class="img">
-                <img src="img/about-plan.jpg" alt="" class="img-fluid">
+                <img src="img/intro-carousel/12.jpg" alt="" class="img-fluid">
                 <div class="icon"><i class="ion-ios-eye-outline"></i></div>
               </div>
               <h2 class="title"><a href="#">Technical Working Group </a></h2>
@@ -44,12 +44,13 @@
           <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
             <div class="about-col">
               <div class="img">
-                <img src="img/about-vision.jpg" alt="" class="img-fluid">
+                <img src="img/intro-carousel/14.jpg" alt="" class="img-fluid">
                 <div class="icon"><i class="ion-ios-eye-outline"></i></div>
               </div>
               <h2 class="title"><a href="#">Sorsogon Pili Roadmap Program</a></h2>
               <p>
-                Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+              The Pili Roadmap program is a strategic scheme created through the partnership of the Sorsogon State College and the Provincial Government of Sorsogon in collaboration with the Department of Agriculture (DA), Department of Science and Technology (DOST), Department of Environment and Natural Resources (DENR), Department of Trade and Industry (DTI), Local Government Units (LGU), Pili Processors and Producers Cooperative (PPPC), and other stakeholders to contribute to the efforts to strengthen the pili industry within the province and ultimately, establish Sorsogon Province as the “Pili Capital of the World”.
+
               </p>
             </div>
           </div>
@@ -188,7 +189,7 @@
             <div class="contact-address">
               <i class="ion-ios-location-outline"></i>
               <h3>Address</h3>
-              <address>A108 Adam Street, NY 535022, USA</address>
+              <address>Sorsogon State College, Sorsogon City, Philippines</address>
             </div>
           </div>
 
@@ -196,7 +197,7 @@
             <div class="contact-phone">
               <i class="ion-ios-telephone-outline"></i>
               <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+              <p><a href="tel:+155895548855">+639196626252</a></p>
             </div>
           </div>
 
@@ -204,7 +205,7 @@
             <div class="contact-email">
               <i class="ion-ios-email-outline"></i>
               <h3>Email</h3>
-              <p><a href="mailto:info@example.com">info@example.com</a></p>
+              <p><a href="mailto:info@example.com">prm-ssc@example.com</a></p>
             </div>
           </div>
 
@@ -226,7 +227,7 @@
             </div>
             <div class="form-ro">
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Department" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                 <div class="validation"></div>
               </div>
               <div class="form-group">
