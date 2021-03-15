@@ -7,8 +7,8 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>BizPage</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+            <h3>PiliRoadMap</h3>
+            <p>“This Pili Roadmap is hereby dedicated to the People of Sorsogon in the promotion of its cultural and social heritages through its industrious, committed, and dedicated pili growers and stakeholders”</p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
@@ -25,11 +25,11 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br>
+              Sorsogon State College<br>
+              Sorsogon City<br>
+              Philippines<br>
               <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              <strong>Email:</strong> PRM@example.com<br>
             </p>
 
             <div class="social-links">

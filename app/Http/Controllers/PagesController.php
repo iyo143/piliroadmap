@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\LocationTag;
 use App\Models\Article;
 use App\Models\User;
+use App\Models\Gallery;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 class PagesController extends Controller
@@ -19,8 +20,8 @@ class PagesController extends Controller
         $processors = LocationTag::sum('processors');
         $retailers = LocationTag::sum('retailers');
         $farmers = LocationTag::sum('farmers');
-
-        return view('index',compact('location','trees','processors','retailers','farmers'));
+        $gallery = Gallery::get();
+        return view('index',compact('location','trees','processors','retailers','farmers','gallery'));
     }
     public function mainArticle()
     {

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\LocationTagController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\GalleryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,7 @@ use App\Http\Controllers\ArticleController;
 |
 */
 
-Route::get('/',[PagesController::class, 'homePage']);
+Route::get('/',[PagesController::class, 'homePage'])->name('homePage');
 Route::get('/main-articles', [PagesController::class, 'mainArticle'])->name('mainArticle');
 Route::get('/about', [PagesController::class, 'mainAbout'])->name('mainAbout');
 Route::get('/main-articles/article/{id}', [ArticleController::class, 'show'])->name('subArticle');
@@ -31,3 +32,4 @@ Route::get('/home/contact', [App\Http\Controllers\HomeController::class, 'contac
 
 Route::POST('/home/mapping/store-tag',[App\Http\Controllers\LocationTagController::class, 'store'])->name('map.store');
 Route::POST('/home/articles/store',[App\Http\Controllers\ArticleController::class, 'store'])->name('articles.store');
+Route::POST('/home/gallery/store',[App\Http\Controllers\GalleryController::class, 'store'])->name('gallery.store');
