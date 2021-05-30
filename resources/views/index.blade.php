@@ -103,7 +103,7 @@
           <img src="img/facts-img.png" alt="" class="img-fluid">
         </div> -->
         <div class="facts-img">
-          <div id="map" class="map" style="height: 500px;"></div>
+          <div id="map" class="map" style="height: 550px;"></div>
         </div>
       </div>
     </section><!-- #facts -->
@@ -255,15 +255,32 @@
     }).addTo(map);
     @foreach($location as $data)
     var marker = L.marker([{{$data->latitude}}, {{$data->longitude}}]).addTo(map);
-    marker.bindPopup("<h5 style='text-align: center'>{{$data->brgy}}</h5>" +
-        "<h6 style='text-align:center'>{{$data->municipality}}</h6>"+
-        "<div style='width:150px; height:auto;'><img src='/storage/location_images/{{$data->pili_image}}'  style='margin: 0 50px; width:100%;'></div>"+
-        "<table class='table-success table-bordered' style='margin: 20px 55px'><tr><th>No. of Trees: </th><td>{{$data->trees}}</td></tr>"+
-                "<tr><th>No. of Retailers: </th><td>{{$data->retailers}}</td></tr>"+      
-                "<tr><th>No. of Processors: </th><td>{{$data->processors}}</td></tr>"+ 
-                "<tr><th>No. of Farmers: </th><td>{{$data->farmers}}</td></tr>"+ 
-        "</tabel>"
+    marker.bindPopup("<img src='/storage/location_images/{{$data->pili_image}}' width='300'>"+
+        "<hr>"+
+        "<table class='table table-dark'>" +
+        "<div class='section-header'>"+
+            "<h3>{{$data->municipality}}</h3>"+
+            "<h5 class='text-center'>{{$data->brgy}}</h5>"+
+       " </div"+
+            "<tr>" +
+                "<th>Processors</th>"+
+                "<td>{{$data->processors}}"+
+            "</tr>"+
+            "<tr>" +
+                "<th>Trees</th>"+
+                "<td>{{$data->trees}}"+
+            "</tr>"+
+            "<tr>" +
+                "<th>Retailers</th>"+
+                "<td>{{$data->retailers}}"+
+            "</tr>"+
+            "<tr>" +
+                "<th>farmers</th>"+
+                "<td>{{$data->farmers}}"+
 
+            "</tr>"+
+
+        "</table>"
        );
     @endforeach
   </script>

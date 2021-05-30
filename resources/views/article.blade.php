@@ -5,7 +5,7 @@
     <div class="container">
     <div class="section-header wow fadeInUp pt-100">
           <h3>Articles</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          
         </div>
       <div class="row">
       

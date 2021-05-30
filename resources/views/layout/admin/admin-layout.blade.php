@@ -20,6 +20,8 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
 	<link rel="icon" type="image/png" sizes="96x96" href="{{asset('assets/img/favicon-2.png')}}">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
 </head>
 
 <body>
@@ -32,19 +34,12 @@
 		@include('layout.admin.partial.admin-side-bar')
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
-
 			@yield('content')
-
 		<!-- END MAIN -->
-		<div class="clearfix"></div>
-		<footer>
-			<div class="container-fluid">
-				<p class="copyright">&copy; 2017 <a href="https://www.themeineed.com" target="_blank">Theme I Need</a>. All Rights Reserved.</p>
-			</div>
-		</footer>
-	</div>
+		@yield('scripts')
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
+	
     <script src="https://kit.fontawesome.com/226fb0657d.js" crossorigin="anonymous"></script>
 	<script src="{{asset('assets/vendor/jquery/jquery.min.js')}}"></script>
 	<script src="{{asset('assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -53,6 +48,9 @@
 	<script src="{{asset('assets/vendor/chartist/js/chartist.min.js')}}"></script>
 	<script src="{{asset('assets/scripts/klorofil-common.js')}}"></script>
 	<script src="https://cdn.tiny.cloud/1/81bc6n8rcaz3f3xs4gvle285nvuqhuo0bim6nsy7mj2dom2t/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+	<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+	<script src="https://f001.backblazeb2.com/file/buonzz-assets/jquery.ph-locations-v1.0.0.js"></script>
 	<script>
 	$(function() {
 		var data, options;

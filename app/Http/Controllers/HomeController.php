@@ -25,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.admin');
+        $location = LocationTag::get();
+        return view('admin.admin',compact('location'));
     }
 
     public function mapping()
@@ -39,20 +40,20 @@ class HomeController extends Controller
         $articles = Article::get();
         return view ('admin.articles',compact('articles'));
     }
+
     public function about()
     {
-       
         return view ('admin.about');
     }
+    
     public function archives()
     {
-       
         return view ('admin.archives');
     }
     public function gallery()
     {
-        
-        return view ('admin.gallery');
+        $gallery = Gallery::get();
+        return view ('admin.gallery', compact('gallery'));
     }
     public function contact()
     {

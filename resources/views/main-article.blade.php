@@ -10,7 +10,6 @@
     <div class="container">
     <div class="section-header wow fadeInUp pt-100">
           <h3>Articles</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
       <div class="row">
       
@@ -77,16 +76,11 @@
          
 
           <div class="widget-wrap wow fadeInUp">
-            <h3 class="widget-title wow fadeInUp">Tag Cloud</h3>
+            <h3 class="widget-title wow fadeInUp">Authors</h3>
             <div class="tag-clouds">
-              <a href="#" class="tag-cloud-link">dish</a>
-              <a href="#" class="tag-cloud-link">menu</a>
-              <a href="#" class="tag-cloud-link">food</a>
-              <a href="#" class="tag-cloud-link">sweet</a>
-              <a href="#" class="tag-cloud-link">tasty</a>
-              <a href="#" class="tag-cloud-link">delicious</a>
-              <a href="#" class="tag-cloud-link">desserts</a>
-              <a href="#" class="tag-cloud-link">drinks</a>
+              @foreach($articles as $data)
+              <a href="#" class="tag-cloud-link">{{$data->author}}</a>
+            @endforeach 
             </div>
           </div>
           <div class="widget-wrap wow fadeInUp">

@@ -31,5 +31,6 @@ Route::get('/home/about', [App\Http\Controllers\HomeController::class, 'about'])
 Route::get('/home/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('home.contact');
 
 Route::POST('/home/mapping/store-tag',[App\Http\Controllers\LocationTagController::class, 'store'])->name('map.store');
+Route::DELETE('/home/mapping/delete/{id}',[App\Http\Controllers\LocationTagController::class, 'destroy'])->name('map.destroy');
 Route::POST('/home/articles/store',[App\Http\Controllers\ArticleController::class, 'store'])->name('articles.store');
 Route::POST('/home/gallery/store',[App\Http\Controllers\GalleryController::class, 'store'])->name('gallery.store');

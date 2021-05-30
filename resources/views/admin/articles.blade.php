@@ -4,10 +4,10 @@
 <div class="main">
     <div class="main-content">
         <div class="row">
-        <div class="col-md-5">
+            <div class="col-md-12">
                 @if(session('message'))
                     <div class="alert alert-success alert-dismissible">
-                        Location Tag successfully added
+                        Article Successfully added!
                     </div>
                 @endif
        
@@ -45,10 +45,10 @@
                     </div>
                     </form>
                 </div>
-           
-                
             </div>
-            <div class="col-md-7">
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <!-- TABLE HOVER -->
                 <div class="panel">
                     <div class="panel-heading">

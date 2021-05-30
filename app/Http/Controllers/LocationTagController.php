@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LocationTagRequest;
 use App\Models\LocationTag;
 use Illuminate\Http\Request;
 
@@ -34,20 +35,9 @@ class LocationTagController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LocationTagRequest $request)
     {
-        $validatedTags = request()->validate([
-            'brgy'=>'required',
-            'municipality'=>'required',
-            'trees'=>'required',
-            'farmers'=>'required',
-            'retailers'=>'required',
-            'processors'=>'required',
-            'latitude'=>'required',
-            'longitude'=>'required',
-            'pili_image'=>'required|image'
-            
-        ]);
+        $validatedTags = $request->validated();
         if($request->hasFile('pili_image'))
         {
             $fileNameWithExt = $request->file('pili_image')->getClientOriginalName();
@@ -71,7 +61,7 @@ class LocationTagController extends Controller
             'processors'=>$validatedTags['processors'],
             'latitude'=>$validatedTags['latitude'],
             'longitude'=>$validatedTags['longitude'],
-            'pili_image'=>$fileNameToStore 
+            'pili_image'=>$fileNameToStore
         ]);
         return redirect(route('home.mapping'))->with('message','successfully added Location Tag');
     }
@@ -116,8 +106,10 @@ class LocationTagController extends Controller
      * @param  \App\Models\LocationTag  $locationTag
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LocationTag $locationTag)
+    public function destroy(Request $request)
     {
-        //
+        $location = LocationTag::findorfail($request->id);
+        $location->delete();
+        return redirect()->back()->with('delete','successfuly deleted');
     }
 }
