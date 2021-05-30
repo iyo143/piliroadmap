@@ -24,8 +24,11 @@
   <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
   <link href="{{asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://f001.backblazeb2.com/file/buonzz-assets/jquery.ph-locations-v1.0.0.js"></script>
+  <link href="dist/jquery.geocomplete.css" rel="stylesheet">
 
-  <!-- Main Stylesheet File -->
+
+    <!-- Main Stylesheet File -->
   <link href="{{asset('css/style.css')}}" rel="stylesheet">
   @yield('links')
 
@@ -50,6 +53,7 @@
 
   <!-- JavaScript Libraries -->
   <script src="{{asset('lib/jquery/jquery.min.js')}}"></script>
+  <script src="dist/jquery.geocomplete.js"></script>
   <script src="{{asset('lib/jquery/jquery-migrate.min.js')}}"></script>
   <script src="{{asset('lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{asset('lib/easing/easing.min.js')}}"></script>
@@ -63,7 +67,7 @@
   <script src="{{asset('lib/lightbox/js/lightbox.min.js')}}"></script>
   <script src="{{asset('lib/touchSwipe/jquery.touchSwipe.min.js')}}"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  
+
   <!-- Contact Form JavaScript File -->
   <script src="{{asset('contactform/contactform.js')}}"></script>
 

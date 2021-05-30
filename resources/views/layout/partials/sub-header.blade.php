@@ -10,7 +10,7 @@
         <div class="carousel-inner" role="listbox">
 
           <div class="carousel-item active">
-            <div class="carousel-background"><img src="img/intro-carousel/1.jpg" alt=""></div>
+            <div class="carousel-background"><img src="img/intro-carousel/15.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Morphological Analysis of Pili of Pili</h2>
@@ -21,7 +21,7 @@
           </div>
 
           <div class="carousel-item">
-            <div class="carousel-background"><img src="img/intro-carousel/2.jpg" alt=""></div>
+            <div class="carousel-background"><img src="img/intro-carousel/12.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Establishing the Baseline Data of Pili</h2>

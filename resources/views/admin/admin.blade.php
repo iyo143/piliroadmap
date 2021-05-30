@@ -8,65 +8,51 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Weekly Overview</h3>
-							<p class="panel-subtitle">Period: Oct 14, 2016 - Oct 21, 2016</p>
+							<h3 class="panel-title">Location Tags Overview</h3>
+							
 						</div>
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-3">
 									<div class="metric">
-										<span class="icon"><i class="fa fa-download"></i></span>
+										<span class="icon"><i class="fas fa-tree"></i></span>
 										<p>
 											<span class="number">1,252</span>
-											<span class="title">Downloads</span>
+											<span class="title">Trees</span>
 										</p>
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="metric">
-										<span class="icon"><i class="fa fa-shopping-bag"></i></span>
+										<span class="icon"><i class="fas fa-users-cog"></i></span>
 										<p>
 											<span class="number">203</span>
-											<span class="title">Sales</span>
+											<span class="title">Processors</span>
 										</p>
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="metric">
-										<span class="icon"><i class="fa fa-eye"></i></span>
+										<span class="icon"><i class="fas fa-store"></i></span>
 										<p>
 											<span class="number">274,678</span>
-											<span class="title">Visits</span>
+											<span class="title">Retailers</span>
 										</p>
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="metric">
-										<span class="icon"><i class="fa fa-bar-chart"></i></span>
+										<span class="icon"><i class="fas fa-users"></i></span>
 										<p>
-											<span class="number">35%</span>
-											<span class="title">Conversions</span>
+											<span class="number">35</span>
+											<span class="title">Farmers</span>
 										</p>
 									</div>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-9">
-									<div id="headline-chart" class="ct-chart"></div>
-								</div>
-								<div class="col-md-3">
-									<div class="weekly-summary text-right">
-										<span class="number">2,315</span> <span class="percentage"><i class="fa fa-caret-up text-success"></i> 12%</span>
-										<span class="info-label">Total Sales</span>
-									</div>
-									<div class="weekly-summary text-right">
-										<span class="number">$5,758</span> <span class="percentage"><i class="fa fa-caret-up text-success"></i> 23%</span>
-										<span class="info-label">Monthly Income</span>
-									</div>
-									<div class="weekly-summary text-right">
-										<span class="number">$65,938</span> <span class="percentage"><i class="fa fa-caret-down text-danger"></i> 8%</span>
-										<span class="info-label">Total Income</span>
-									</div>
+								<div class="col-md-12">
+									<div id="map" class="map" style="height: 500px; position: relative;"></div>
 								</div>
 							</div>
 						</div>
@@ -359,4 +345,43 @@
 				</div>
 			</div>
 			<!-- END MAIN CONTENT -->
+@endsection
+@section('scripts')
+<script type="text/javascript">
+    var map = L.map('map').setView([12.978312,124.011375], 10);
+    L.tileLayer( 'https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=CxC7aDuJcG77pDH5yjGS', {
+        maxZoom: 18,
+        attribution:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+    }).addTo(map);
+    @foreach($location as $data)
+    var marker = L.marker([{{$data->latitude}}, {{$data->longitude}}]).addTo(map);
+    marker.bindPopup("<img src='/storage/location_images/{{$data->pili_image}}' width='300'>"+
+        "<hr>"+
+        "<table class='table table-dark'>" +
+        "<div class='section-header'>"+
+            "<h3>{{$data->municipality}}</h3>"+
+            "<h5 class='text-center'>{{$data->brgy}}</h5>"+
+       " </div"+
+            "<tr>" +
+                "<th>Processors</th>"+
+                "<td>{{$data->processors}}"+
+            "</tr>"+
+            "<tr>" +
+                "<th>Trees</th>"+
+                "<td>{{$data->trees}}"+
+            "</tr>"+
+            "<tr>" +
+                "<th>Retailers</th>"+
+                "<td>{{$data->retailers}}"+
+            "</tr>"+
+            "<tr>" +
+                "<th>farmers</th>"+
+                "<td>{{$data->farmers}}"+
+
+            "</tr>"+
+
+        "</table>"
+       );
+    @endforeach
+  </script>
 @endsection

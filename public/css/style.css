@@ -124,7 +124,7 @@ h6 {
 }
 
 #header.header-scrolled {
-  background: rgba(0, 0, 0, 0.9);
+  background:rgba(0, 0, 0, 0.9);
   padding: 20px 0;
   height: 72px;
   transition: all 0.5s;
@@ -148,7 +148,7 @@ h6 {
 #header #logo h1 a:hover {
   color: #fff;
   padding-left: 10px;
-  border-left: 4px solid #18d26e;
+  border-left: 4px solid #14B25D;
 }
 
 #header #logo img {
