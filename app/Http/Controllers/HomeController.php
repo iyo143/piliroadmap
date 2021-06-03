@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\LocationTag;
 use App\Models\Article;
+use App\Models\ArticleCategory;
 use App\Models\Gallery;
+use App\Models\GalleryCategory;
+
 class HomeController extends Controller
 {
     /**
@@ -17,7 +20,6 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
     /**
      * Show the application dashboard.
      *
@@ -28,24 +30,25 @@ class HomeController extends Controller
         $location = LocationTag::get();
         return view('admin.admin',compact('location'));
     }
-
     public function mapping()
     {
         $location = LocationTag::get();
         return view('admin.mapping',compact('location'));
     }
-
     public function articles()
     {
-        $articles = Article::get();
-        return view ('admin.articles',compact('articles'));
-    }
+        $category = ArticleCategory::find(3);
+        $articles = $category->articles()->get();
 
+        dd($articles);
+        $articles = Article::get();
+        $articleCategories = ArticleCategory::get();
+        return view ('admin.articles',compact('articles', 'articleCategories'));
+    }
     public function about()
     {
         return view ('admin.about');
     }
-    
     public function archives()
     {
         return view ('admin.archives');
@@ -53,7 +56,8 @@ class HomeController extends Controller
     public function gallery()
     {
         $gallery = Gallery::get();
-        return view ('admin.gallery', compact('gallery'));
+        $galleryCategories = GalleryCategory::get();
+        return view ('admin.gallery', compact('gallery','galleryCategories'));
     }
     public function contact()
     {

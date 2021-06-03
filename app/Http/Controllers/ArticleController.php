@@ -41,6 +41,7 @@ class ArticleController extends Controller
        
         $validatedArticles = $request->validated();
         
+        
         if($request->hasFile('cover_image'))
         {
             $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
@@ -57,13 +58,16 @@ class ArticleController extends Controller
             $fileNameToStore = 'noimage.jpg';
         }
 
-        Article::create([
+         $new  = Article::create([
             'author'=>$validatedArticles['author'],
             'title'=>$validatedArticles['title'],
             'body'=>$validatedArticles['body'],
             'excerpt'=>$validatedArticles['excerpt'],
+            'article_category_id' =>$validatedArticles['article_category_id'],
             'cover_image'=>$fileNameToStore
         ]);
+
+     
         return redirect(route('home.articles'))->with('message', 'successfully Published Articles');
     }
 

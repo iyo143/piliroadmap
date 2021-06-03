@@ -28,6 +28,7 @@ class ArticleRequest extends FormRequest
             'title'=>'required',
             'body'=>'required',
             'excerpt'=>'required',
+            'article_category_id' => 'required',
             'cover_image'=>'required|image'
         ];
     }

@@ -12,4 +12,8 @@ class ArticleCategory extends Model
     protected $fillable = [
       'category_name' => 'required'  
     ];
+
+    public function articles(){
+        return $this->hasMany(Article::class);
+    }
 }

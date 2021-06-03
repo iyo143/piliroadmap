@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\LocationTag;
 use App\Models\Article;
+use App\Models\ArticleCategory;
 use App\Models\User;
 use App\Models\Gallery;
 use Spatie\Permission\Models\Role;
@@ -23,27 +24,25 @@ class PagesController extends Controller
         $gallery = Gallery::get();
         return view('index',compact('location','trees','processors','retailers','farmers','gallery'));
     }
-    public function mainArticle()
+
+    public function mainArticle($id)
     {
-        $articles = Article::get();
+        $category = ArticleCategory::findorfail($id);
+        $articles = $category->articles()->get();
         return view('main-article',compact('articles'));
     }
     public function mainAbout()
     {
-       
         return view('main-article',compact('articles'));
     }
     public function mainArchive()
     {
-       
         return view('main-article',compact('articles'));
     }
     public function mainGallery()
     {
-       
         return view('main-article',compact('articles'));
     }
-   
     /**
      * Display a listing of the resource.
      *

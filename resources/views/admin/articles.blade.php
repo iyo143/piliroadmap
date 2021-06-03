@@ -34,6 +34,15 @@
                             <input class="form-control" placeholder="Excerpt" type="text" name="excerpt">
                         </div>
                         <br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fab fa-tumblr"></i></span>
+                            <select name="article_category_id" id="" class="form-control">
+                                @foreach ($articleCategories as $articleCategories )
+                                    <option value="{{ $articleCategories->id }}">{{ $articleCategories->category_name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <br>
                         <textarea name="body" id="" cols="30" rows="10"></textarea>
                         <br>
                         <div class="input-group">

@@ -14,6 +14,11 @@ class Article extends Model
         'title',
         'excerpt',
         'cover_image',
-        'body'
+        'body',
+        'article_category_id'
     ];
+
+    public function article_category(){
+        return $this->belongsTo(ArticleCategory::class);
+    }
 }

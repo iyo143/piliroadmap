@@ -14,7 +14,7 @@
       <div class="row">
       
         <div class="col-lg-8 py-3">
-        @foreach($articles as $data)
+        @forelse($articles as $data)
           <article class="blog-entry wow fadeInUp">
             <div class="entry-header">
               <div class="post-thumbnail wow fadeInUp">
@@ -38,9 +38,11 @@
             <div class="entry-content">
               <p>{{$data->excerpt}}</p>
             </div>
-            <a href="{{route('subArticle',$data->id)}}" class="btn btn-success">Continue Reading</a>
+            <a href="{{route('main.article',$data->id)}}" class="btn btn-success">Continue Reading</a>
           </article>
-        @endforeach
+          @empty
+          <h4 class="text-center mt-4">There is no Available Article</h4>
+        @endforelse
         
         </div>
         <!-- Sidebar -->

@@ -90,7 +90,7 @@ class GalleryController extends Controller
      */
     public function update(Request $request, Gallery $gallery)
     {
-        //
+        
     }
 
     /**
@@ -99,8 +99,11 @@ class GalleryController extends Controller
      * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gallery $gallery)
+    public function destroy($id)
     {
-        //
+        $image = Gallery::findorfail($id);
+        $image->delete();
+        return redirect()->back()->with('message', 'Image deleted Successfully');
+
     }
 }

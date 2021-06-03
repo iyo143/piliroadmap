@@ -19,9 +19,9 @@
           <li><a href="#portfolio">Gallery</a></li>
           <li class="menu-has-children"><a href="#">Articles</a>
             <ul>
-              <li><a href="#">Research</a></li>
-              <li><a href="#">News</a></li>
-              <li><a href="#">Events</a></li>
+              @foreach ($categories as $category)
+                <li><a href="{{ route('main.articles', $category->id) }}">{{$category->category_name}}</a></li>
+              @endforeach
             </ul>
           </li>
           <li><a href="#contact">Contact</a></li>
