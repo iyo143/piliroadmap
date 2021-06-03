@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GalleryRequest;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
 
@@ -33,20 +34,17 @@ class GalleryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GalleryRequest $request)
     {
-        $validatedGallery = request()->validate([
-            'image_name'=>'required|image|max:2000',
-            'folders_for'=>'required'
-        ]);
+        $validatedGallery = $request->validated();
 
-        if($request->hasFile('image_name'))
+        if($request->hasFile('image_file'))
         {
-            $filenameWithExt = $request->file('image_name')->getClientOriginalName();
+            $filenameWithExt = $request->file('image_file')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('image_name')->getClientOriginalExtension();
+            $extension = $request->file('image_file')->getClientOriginalExtension();
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            $path = $request->file('image_name')->storeAs('public/gallery_images',$fileNameToStore);
+            $path = $request->file('image_file')->storeAs('public/gallery_images',$fileNameToStore);
         }
         else
         {
@@ -54,8 +52,9 @@ class GalleryController extends Controller
         }
 
         Gallery::create([
-            'image_name'=>$fileNameToStore,
-            'folders_for'=>'folders_for'
+            'image_name'=>$validatedGallery['image_name'], 
+            'image_file'=>$fileNameToStore,
+            'folders_for'=>$validatedGallery['folders_for']
         ]);
         return redirect(route('home.gallery'))->with('message', 'Successfully added Image');
     }

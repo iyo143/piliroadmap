@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
@@ -35,16 +36,11 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
-        $validatedArticles = request()->validate([
-            'author'=>'required',
-            'title'=>'required',
-            'body'=>'required',
-            'excerpt'=>'required',
-            'cover_image'=>'required|image'
-        ]);
-
+       
+        $validatedArticles = $request->validated();
+        
         if($request->hasFile('cover_image'))
         {
             $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
