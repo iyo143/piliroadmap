@@ -37,10 +37,6 @@ class HomeController extends Controller
     }
     public function articles()
     {
-        $category = ArticleCategory::find(3);
-        $articles = $category->articles()->get();
-
-        dd($articles);
         $articles = Article::get();
         $articleCategories = ArticleCategory::get();
         return view ('admin.articles',compact('articles', 'articleCategories'));
