@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
+use App\Models\ArticleCategory;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
@@ -16,7 +18,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -35,24 +37,18 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
-        $validatedArticles = request()->validate([
-            'author'=>'required',
-            'title'=>'required',
-            'body'=>'required',
-            'excerpt'=>'required',
-            'cover_image'=>'required|image'
-        ]);
+
+        $validatedArticles = $request->validated();
+
 
         if($request->hasFile('cover_image'))
         {
             $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-
             $extension = $request->file('cover_image')->getClientOriginalExtension();
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
-
             $path = $request->file('cover_image')->storeAs('public/article_images',$fileNameToStore);
 
         }
@@ -60,12 +56,12 @@ class ArticleController extends Controller
         {
             $fileNameToStore = 'noimage.jpg';
         }
-
-        Article::create([
+          Article::create([
             'author'=>$validatedArticles['author'],
             'title'=>$validatedArticles['title'],
             'body'=>$validatedArticles['body'],
             'excerpt'=>$validatedArticles['excerpt'],
+            'article_category_id' =>$validatedArticles['article_category_id'],
             'cover_image'=>$fileNameToStore
         ]);
         return redirect(route('home.articles'))->with('message', 'successfully Published Articles');
@@ -81,7 +77,6 @@ class ArticleController extends Controller
     {
         $article = Article::findorfail($id);
         $articles = Article::get();
-
         return view('article',compact('article','articles'));
     }
 
@@ -91,9 +86,12 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $article)
+    public function edit($id)
     {
-        //
+       $article = Article::findorfail($id);
+       $articles = Article::get();
+       $articleCategories = ArticleCategory::get();
+       return view('admin.edit-articles', compact('article', 'articleCategories', 'articles'));
     }
 
     /**
@@ -103,9 +101,16 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+    public function update(ArticleRequest $request, $id)
     {
-        //
+        $article = Article::findorfail($id);
+
+        $validated = $request->validated();
+
+        $article->update($validated);
+
+        return redirect()->back()->with('update-message', 'Article Successfully Updated');
+
     }
 
     /**
@@ -114,8 +119,10 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Article $article)
+    public function destroy(Request $request)
     {
-        
+        $article = Article::findorfail($request->id);
+        $article->delete();
+        return redirect()->back()->with('delete-message', 'Articles Deleted Successfully');
     }
 }

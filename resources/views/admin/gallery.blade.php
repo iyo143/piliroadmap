@@ -20,12 +20,12 @@
                         <div class="panel-body">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="far fa-images"></i></span>
-                                <input class="form-control" placeholder="Image Name" type="text" name="name">
+                                <input class="form-control" placeholder="Image Name" type="text" name="image_name">
                             </div>
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="far fa-images"></i></span>
-                                <input class="form-control" placeholder="Excerpt" type="file" name="image_name">
+                                <input class="form-control" placeholder="Excerpt" type="file" name="image_file">
                             </div>
                             <br>
                             <div class="input-group">

@@ -5,14 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Gallery extends Model
+class ArticleCategory extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'image_name',
-        'image_file',
-        'folders_for'
+      'category_name' => 'required'  
     ];
 
+    public function articles(){
+        return $this->hasMany(Article::class);
+    }
 }

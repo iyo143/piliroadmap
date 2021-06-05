@@ -127,7 +127,6 @@
             </ul>
           </div>
         </div>
-
         <div class="row portfolio-container">
          @forelse($gallery as $data)
           <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
