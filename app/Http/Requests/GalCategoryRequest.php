@@ -24,7 +24,7 @@ class GalCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            "category_name" => "required"
+            "gallery_category_name" => "required"
         ];
     }
 }

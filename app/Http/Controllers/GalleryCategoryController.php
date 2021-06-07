@@ -12,6 +12,6 @@ class GalleryCategoryController extends Controller
     public function store(GalCategoryRequest $request){
         $validated = $request->validated();
         GalleryCategory::create($validated);
-        return redirect()->back()-with('cat_message', 'Successfully added Gallery Category');
+        return redirect(route('home.gallery'))->with('cat_message', 'Successfully added Gallery Category');
     }
 }

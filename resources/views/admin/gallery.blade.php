@@ -57,7 +57,7 @@
                         <div class="panel-body">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="far fa-images"></i></span>
-                                <input class="form-control" placeholder="Category Name" type="text" name="category_name">
+                                <input class="form-control" placeholder="Category Name" type="text" name="gallery_category_name">
                             </div>
                             <br>
                             <button class="btn btn-primary btn-block" type="submit">Submit</button>
@@ -67,7 +67,7 @@
             </div>
 
             </div>
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <div class="panel">
                     <div class="panel-heading">
                         <h3 class="panel-title">List of Images</h3>
@@ -91,41 +91,41 @@
                                     <td><img src="/storage/gallery_images/{{$data->image_file}}" width="25"></td>
                                     <td>{{$data->gallery_category->gallery_category_name}}</td>
                                     <td>
-                                                <span>
-                                                    <a  href=""
-                                                        class="btn btn-primary btn-circle"
-                                                        data-toggle="tooltip"
-                                                        data-placement="top"
-                                                        title="View">
-                                                        <i
-                                                            class="fas fa-eye">
-                                                        </i>
-                                                    </a>
-                                                </span>
                                         <span>
-                                                    <a  href=""
-                                                        class="btn btn-success btn-circle"
-                                                        data-toggle="tooltip"
-                                                        data-placement="top"
-                                                        title="Edit">
-                                                        <i
-                                                            class="fas fa-edit">
-                                                        </i>
-                                                    </a>
-                                                </span>
+                                            <a  href=""
+                                                class="btn btn-primary btn-circle"
+                                                data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="View">
+                                                <i
+                                                    class="fas fa-eye">
+                                                </i>
+                                            </a>
+                                        </span>
+                                        <span>
+                                            <a  href=""
+                                                class="btn btn-success btn-circle"
+                                                data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="Edit">
+                                                <i
+                                                    class="fas fa-edit">
+                                                </i>
+                                            </a>
+                                        </span>
                                         <span data-id="{{$data->id}}"
                                               data-target="#DeleteModal"
                                               data-toggle="modal" >
-                                                    <a
-                                                        class="btn btn-danger btn-circle"
-                                                        data-toggle="tooltip"
-                                                        data-placement="top"
-                                                        title="Delete">
-                                                        <i
-                                                            class="fas fa-trash-alt">
-                                                        </i>
-                                                    </a>
-                                                </span>
+                                                <a
+                                                    class="btn btn-danger btn-circle"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Delete">
+                                                    <i
+                                                        class="fas fa-trash-alt">
+                                                    </i>
+                                                </a>
+                                        </span>
                                     </td>
                                 </tr>
                             @endforeach
