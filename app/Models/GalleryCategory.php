@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class GalleryCategory extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'gallery_category_name'
+    ];
+
+    public function galleries(){
+        return $this->hasMany(Gallery::class);
+    }
+
 }
+
+

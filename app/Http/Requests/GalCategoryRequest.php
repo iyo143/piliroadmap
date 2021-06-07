@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GalleryRequest extends FormRequest
+class GalCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,7 @@ class GalleryRequest extends FormRequest
     public function rules()
     {
         return [
-            'image_name' => 'required',
-            'image_file'=>'required|image|max:2000',
-            'gallery_category_id'=>'required'
+            "category_name" => "required"
         ];
     }
 }

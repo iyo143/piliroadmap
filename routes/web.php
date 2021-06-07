@@ -5,6 +5,8 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\LocationTagController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GalleryCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,17 +31,17 @@ Route::prefix('/')->group(function () {
 Auth::routes();
 
 Route::prefix('home')->group(function () {
-    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('mapping', [App\Http\Controllers\HomeController::class, 'mapping'])->name('home.mapping');
-    Route::get('articles', [App\Http\Controllers\HomeController::class, 'articles'])->name('home.articles');
-    Route::get('archives', [App\Http\Controllers\HomeController::class, 'archives'])->name('home.archive');
-    Route::get('gallery', [App\Http\Controllers\HomeController::class, 'gallery'])->name('home.gallery');
-    Route::get('about', [App\Http\Controllers\HomeController::class, 'about'])->name('home.about');
-    Route::get('contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('home.contact');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('mapping', [HomeController::class, 'mapping'])->name('home.mapping');
+    Route::get('articles', [HomeController::class, 'articles'])->name('home.articles');
+    Route::get('archives', [HomeController::class, 'archives'])->name('home.archive');
+    Route::get('gallery', [HomeController::class, 'gallery'])->name('home.gallery');
+    Route::get('about', [HomeController::class, 'about'])->name('home.about');
+    Route::get('contact', [HomeController::class, 'contact'])->name('home.contact');
 
     Route::prefix('mapping')->group(function () {
-        Route::POST('store-tag',[App\Http\Controllers\LocationTagController::class, 'store'])->name('map.store');
-        Route::DELETE('delete/{id}',[App\Http\Controllers\LocationTagController::class, 'destroy'])->name('map.destroy');
+        Route::POST('store-tag',[LocationTagController::class, 'store'])->name('map.store');
+        Route::DELETE('delete/{id}',[LocationTagController::class, 'destroy'])->name('map.destroy');
     });
 
     Route::prefix('articles')->group(function () {
@@ -49,7 +51,10 @@ Route::prefix('home')->group(function () {
         Route::PUT('update/{id}', [ArticleController::class, 'update'])->name('articles.update');
     });
     Route::prefix('gallery')->group(function () {
-        Route::POST('store',[App\Http\Controllers\GalleryController::class, 'store'])->name('gallery.store');
+        Route::POST('store',[GalleryController::class, 'store'])->name('gallery.store');
+    });
+    Route::prefix('gallery_category')->group(function(){
+        Route::POST('store',[GalleryCategoryController::class, 'store'])->name('galCategory.store');
     });
 });
 

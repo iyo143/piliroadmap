@@ -10,10 +10,11 @@ class ArticleCategory extends Model
     use HasFactory;
 
     protected $fillable = [
-      'category_name' => 'required'  
+      'category_name' => 'required'
     ];
 
     public function articles(){
         return $this->hasMany(Article::class);
     }
+
 }

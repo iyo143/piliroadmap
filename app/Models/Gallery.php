@@ -12,7 +12,11 @@ class Gallery extends Model
     protected $fillable = [
         'image_name',
         'image_file',
-        'folders_for'
+        'gallery_category_id'
     ];
+
+    public function gallery_category(){
+        return $this->belongsTo(GalleryCategory::class);
+    }
 
 }

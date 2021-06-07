@@ -52,9 +52,9 @@ class GalleryController extends Controller
         }
 
         Gallery::create([
-            'image_name'=>$validatedGallery['image_name'], 
+            'image_name'=>$validatedGallery['image_name'],
             'image_file'=>$fileNameToStore,
-            'folders_for'=>$validatedGallery['folders_for']
+            'gallery_category_id'=>$validatedGallery['gallery_category_id']
         ]);
         return redirect(route('home.gallery'))->with('message', 'Successfully added Image');
     }
@@ -90,7 +90,7 @@ class GalleryController extends Controller
      */
     public function update(Request $request, Gallery $gallery)
     {
-        
+
     }
 
     /**
