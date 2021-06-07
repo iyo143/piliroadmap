@@ -86,7 +86,7 @@
                                     <td>{{$data->id}}</td>
                                     <td>{{$data->author}}</td>
                                     <td>{{$data->title}}</td>
-                                    <td>{{$data->excerpt}}</td>
+                                    <td>{{\Illuminate\Support\Str::limit($data->excerpt, 20)}} </td>
                                     <td>{{ $data->article_category->category_name }}</td>
                                     <td>
                                         <a href="" class="btn btn-primary"><i class="far fa-eye"></i></a>
@@ -143,7 +143,6 @@
 </div>
 
 @endsection
-
 @section('scripts')
     <script>
         tinymce.init({

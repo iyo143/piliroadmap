@@ -45,7 +45,7 @@ Route::prefix('home')->group(function () {
     });
 
     Route::prefix('articles')->group(function () {
-        Route::POST('store',[App\Http\Controllers\ArticleController::class, 'store'])->name('articles.store');
+        Route::POST('store',[ArticleController::class, 'store'])->name('articles.store');
         Route::DELETE('delete/{id}', [ArticleController::class, 'destroy'])->name('articles.destroy');
         Route::GET('edit/{id}', [ArticleController::class, 'edit'])->name('articles.edit');
         Route::PUT('update/{id}', [ArticleController::class, 'update'])->name('articles.update');

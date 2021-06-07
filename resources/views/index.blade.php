@@ -60,8 +60,8 @@
       </div>
     </section><!-- #about -->
 
-   
- 
+
+
 
 
     <!--==========================
@@ -132,12 +132,12 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
             <div class="portfolio-wrap">
               <figure>
-                <img src="/storage/gallery_images/{{$data->image_name}}" style = "width:100%; height:100%;"alt="">
-                <a href="/storage/gallery_images/{{$data->image_name}}" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                <img src="/storage/gallery_images/{{$data->image_file}}" style = "width:100%; height:100%;"alt="">
+                <a href="/storage/gallery_images/{{$data->image_file}}" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                 <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
               </figure>
               <div class="portfolio-info">
-                <h4><a href="#">{{$data->folders_for}}</a></h4>
+                <h4><a href="#">{{$data->image_name}}</a></h4>
                 <p>Description</p>
               </div>
             </div>
@@ -145,7 +145,7 @@
           @empty
           <h1>There is no availbale Images</h1>
         @endforelse
-         
+
 
         </div>
 

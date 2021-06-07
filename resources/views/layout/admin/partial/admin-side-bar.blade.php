@@ -2,7 +2,7 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="index.html" class="{{Request::path()=== 'home' ? 'active' : ''}}"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li><a href="{{route('home')}}" class="{{Request::path()=== 'home' ? 'active' : ''}}"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="{{route('home.mapping')}}" class="{{Request::path()=== 'home/mapping' ? 'active' : ''}}"><i class="fas fa-map-marked-alt"></i> <span>Mapping</span></a></li>
 						<li><a href="{{route('home.articles')}}" class="{{Request::path()=== 'home/articles' ? 'active' : ''}}"><i class="far fa-newspaper"></i><span>Articles</span></a></li>
 						<li><a href="{{route('home.gallery')}}" class="{{Request::path()=== 'home/gallery' ? 'active' : ''}}"><i class="fas fa-images"></i><span>Gallery</span></a></li>

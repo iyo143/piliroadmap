@@ -109,7 +109,7 @@ class ArticleController extends Controller
 
         $article->update($validated);
 
-        return redirect()->back()->with('update-message', 'Article Successfully Updated');
+        return redirect(route('home.articles'))->with('message', 'successfully Published Articles');
 
     }
 

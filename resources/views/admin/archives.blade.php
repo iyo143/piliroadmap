@@ -1,114 +1,153 @@
 @extends('layout.admin.admin-layout')
-<div class="main">
-    <div class="main-content">
-        <div class="row">
-            <div class="col-md-5">
+
+@section('content')
+    <div class="main">
+        <div class="main-content">
+            <div class="row">
+                <div class="col-md-12">
                     @if(session('message'))
                         <div class="alert alert-success alert-dismissible">
-                            {{session('message')}}
+                            Article Successfully added!
+                        </div>
+                    @elseif (session('delete-message'))
+                        <div class="alert alert-danger alert-dismissible">
+                            {{ session('delete-message') }}
                         </div>
                     @endif
-        
+
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Insert Image</h3>
+                            <h3 class="panel-title">Publish Article</h3>
                         </div>
-                    
-                        <form action="{{route('gallery.store')}}" method="post" enctype="multipart/form-data">
+
+                        <form action="" method="post" enctype="multipart/form-data">
                             @csrf
-                        <div class="panel-body">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="far fa-images"></i></span>
-                                <input class="form-control" placeholder="Image Name" type="text" name="image_name">
+                            <div class="panel-body">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                                    <input class="form-control" placeholder="Author" type="text" name="author">
+                                </div>
+                                <br>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fab fa-tumblr"></i></span>
+                                    <input class="form-control" placeholder="Title" type="text" name="title">
+                                </div>
+                                <br>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fab fa-tumblr"></i></span>
+                                    <input class="form-control" placeholder="Excerpt" type="text" name="excerpt">
+                                </div>
+                                <br>
+                                <textarea name="body" id="" cols="30" rows="10"></textarea>
+                                <br>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="far fa-images"></i></span>
+                                    <input class="form-control" placeholder="Excerpt" type="file" name="cover_image">
+                                </div>
+                                <br>
+                                <button class="btn btn-primary btn-block" type="submit">Submit</button>
                             </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="far fa-images"></i></span>
-                                <input class="form-control" placeholder="Excerpt" type="file" name="image_file">
-                            </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="far fa-folder"></i></span>
-                                <input class="form-control" placeholder="Folders For" type="text" name="folders_for">
-                            </div>
-                            <br>
-                            <button class="btn btn-primary btn-block" type="submit">Submit</button>              
-                        </div>
                         </form>
-                    </div>   
-                </div>   
-                <div class="col-md-7">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- TABLE HOVER -->
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">List of Images</h3>
+                            <h3 class="panel-title">List of Published Articles</h3>
                         </div>
                         <div class="panel-body">
-                            <table class="table table-hover table-responsive">
+                            <table class="table table-hover">
                                 <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Image Name</th>
-                                        <th>Image</th>
-                                        <th>Folders For</th>
-                                        <th>Actions</th>
-                                    </tr>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Author</th>
+                                    <th>Title</th>
+                                    <th>Excerpt</th>
+                                    <th>Category</th>
+
+                                    <th>Action</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($gallery as $data)
+                                @foreach($archives as $data)
                                     <tr>
                                         <td>{{$data->id}}</td>
-                                        <td>{{$data->name}}</td>
-                                        <td>{{$data->image_name}}</td>
-                                        <td>{{$data->folders_for}}</td>
+                                        <td>{{$data->author}}</td>
+                                        <td>{{$data->title}}</td>
+                                        <td>{{\Illuminate\Support\Str::limit($data->excerpt, 20)}} </td>
+                                        <td>{{ $data->article_category->category_name }}</td>
                                         <td>
-                                            <span>
-                                                <a  href=""
-                                                    class="btn btn-primary btn-circle"
-                                                    data-toggle="tooltip"
-                                                    data-placement="top"
-                                                    title="View">
-                                                    <i
-                                                        class="fas fa-eye">
-                                                    </i>
-                                                </a>
-                                            </span>
-                                            <span>
-                                                <a  href=""
-                                                    class="btn btn-success btn-circle"
-                                                    data-toggle="tooltip"
-                                                    data-placement="top"
-                                                    title="Edit">
-                                                    <i
-                                                        class="fas fa-edit">
-                                                    </i>
-                                                </a>
-                                            </span>
+                                            <a href="" class="btn btn-primary"><i class="far fa-eye"></i></a>
+                                            <a href="{{route('articles.edit', $data->id)}}" class="btn btn-success"><i class="far fa-edit"></i></a>
                                             <span data-id="{{$data->id}}"
                                                   data-target="#DeleteModal"
                                                   data-toggle="modal" >
-                                                <a
-                                                    class="btn btn-danger btn-circle"
-                                                    data-toggle="tooltip"
-                                                    data-placement="top"
-                                                    title="Delete">
-                                                    <i
-                                                        class="fas fa-trash-alt">
-                                                    </i>
-                                                </a>
-                                            </span>
+                                          <a
+                                              class="btn btn-danger btn-circle"
+                                              data-toggle="tooltip"
+                                              data-placement="top"
+                                              title="Delete">
+                                              <i
+                                                  class="fas fa-trash-alt">
+                                              </i>
+                                          </a>
+                                      </span>
                                         </td>
                                     </tr>
-                                    @endforeach
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                </div>  
+                    <!-- END TABLE HOVER -->
+                </div>
             </div>
-           
- 
-    </div>
-</div>
 
-@section('content')
+        </div>
+    </div>
+    <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Deletion</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Are you sure you want to Delete the User?</h4>
+                    <form action="{{route('articles.destroy','id')}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <div class="modal-footer">
+                            <input type="hidden" name="id" id="id">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endsection
+@section('scripts')
+    <script>
+        tinymce.init({
+            selector: 'textarea'
+        });
+    </script>
+    <script>
+        $('#DeleteModal').on('show.bs.modal',function (event){
+            var button = $(event.relatedTarget);
+            var user_id = button.data('id');
+            var modal = $(this);
+            modal.find('.modal-title').text('Delete User');
+            modal.find('.modal-body #id').val(user_id);
+        });
+    </script>
+
 @endsection

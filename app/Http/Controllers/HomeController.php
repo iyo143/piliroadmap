@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Archive;
 use Illuminate\Http\Request;
 use App\Models\LocationTag;
 use App\Models\Article;
@@ -47,7 +48,8 @@ class HomeController extends Controller
     }
     public function archives()
     {
-        return view ('admin.archives');
+        $archives = Archive::get();
+        return view ('admin.archives', compact('archives'));
     }
     public function gallery()
     {
@@ -57,9 +59,9 @@ class HomeController extends Controller
     }
     public function contact()
     {
-   
+
         return view ('admin.contact-us');
     }
 
-  
+
 }
