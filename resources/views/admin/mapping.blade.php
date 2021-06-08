@@ -52,7 +52,7 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-users"></i></span>
                                     <input class="form-control" placeholder="No. of Farmers" type="text" name="farmers">
-                                    
+
                                 </div>
                                 @error('farmers')
                                         <span class="text-danger" role="alert">
@@ -67,7 +67,7 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-users"></i></span>
                                     <input class="form-control" placeholder="No. of Retailers" type="text" name="retailers">
-                                    
+
                                 </div>
                                 @error('retailers')
                                         <span class="text-danger" role="alert">
@@ -79,7 +79,7 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-cogs"></i></span>
                                     <input class="form-control" placeholder="No. of Processors" type="text" name="processors">
-                                    
+
                                 </div>
                                 @error('processors')
                                         <span class="text-danger" role="alert">
@@ -92,7 +92,7 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fas fa-map-marker-alt"></i></span>
                             <input class="form-control" placeholder="Lattitude" type="text" name="latitude" id="lat">
-                           
+
                         </div>
                         @error('latitude')
                         <span class="text-danger" role="alert">
@@ -245,7 +245,7 @@
         attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
     }).addTo(map);
     L.Control.geocoder().addTo(map);
-    
+
     function putDraggables() {
         draggableMarker = L.marker([ map.getCenter().lat, map.getCenter().lng], {draggable:true, zIndexOffset:900}).addTo(map);
         draggableMarker.on('dragend', function(e) {
@@ -256,8 +256,8 @@
     $(document).ready(function() {
         putDraggables();
     });
-    
-   
+
+
 </script>
 <script type="text/javascript">
     var my_handlers = {

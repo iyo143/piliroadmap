@@ -7,6 +7,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GalleryCategoryController;
+use App\Http\Controllers\ArchiveController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,6 +56,9 @@ Route::prefix('home')->group(function () {
     });
     Route::prefix('gallery_category')->group(function(){
         Route::POST('store',[GalleryCategoryController::class, 'store'])->name('galCategory.store');
+    });
+    Route::prefix('archives')->group(function(){
+        Route::POST('store', [ArchiveController::class, 'store'])->name('archives.store');
     });
 });
 

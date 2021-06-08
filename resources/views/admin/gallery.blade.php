@@ -21,11 +21,17 @@
                             <span class="input-group-addon"><i class="far fa-images"></i></span>
                             <input class="form-control" placeholder="Image Name" type="text" name="image_name">
                         </div>
+                        @error('image_name')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                         <br>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="far fa-images"></i></span>
                             <input class="form-control" placeholder="Excerpt" type="file" name="image_file">
                         </div>
+                        @error('image_file')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                         <br>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="far fa-folder"></i></span>
@@ -35,6 +41,9 @@
                                 @endforeach
                             </select>
                         </div>
+                        @error('gallery_category_id')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                         <br>
                         <button class="btn btn-primary btn-block" type="submit">Submit</button>
                     </div>
@@ -59,6 +68,9 @@
                                 <span class="input-group-addon"><i class="far fa-images"></i></span>
                                 <input class="form-control" placeholder="Category Name" type="text" name="gallery_category_name">
                             </div>
+                            @error('gallery_category_name')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                             <br>
                             <button class="btn btn-primary btn-block" type="submit">Submit</button>
                         </div>

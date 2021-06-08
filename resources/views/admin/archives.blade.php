@@ -5,9 +5,9 @@
         <div class="main-content">
             <div class="row">
                 <div class="col-md-12">
-                    @if(session('message'))
+                    @if(session('success_message'))
                         <div class="alert alert-success alert-dismissible">
-                            Article Successfully added!
+                            {{session('success_message')}}
                         </div>
                     @elseif (session('delete-message'))
                         <div class="alert alert-danger alert-dismissible">
@@ -20,29 +20,17 @@
                             <h3 class="panel-title">Publish Article</h3>
                         </div>
 
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <form action="{{route('archives.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="panel-body">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-user"></i></span>
-                                    <input class="form-control" placeholder="Author" type="text" name="author">
+                                    <input class="form-control" placeholder="Author" type="text" name="pdf_name">
                                 </div>
-                                <br>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fab fa-tumblr"></i></span>
-                                    <input class="form-control" placeholder="Title" type="text" name="title">
-                                </div>
-                                <br>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fab fa-tumblr"></i></span>
-                                    <input class="form-control" placeholder="Excerpt" type="text" name="excerpt">
-                                </div>
-                                <br>
-                                <textarea name="body" id="" cols="30" rows="10"></textarea>
                                 <br>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="far fa-images"></i></span>
-                                    <input class="form-control" placeholder="Excerpt" type="file" name="cover_image">
+                                    <input class="form-control" placeholder="Excerpt" type="file" name="pdf_file">
                                 </div>
                                 <br>
                                 <button class="btn btn-primary btn-block" type="submit">Submit</button>
@@ -51,57 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- TABLE HOVER -->
-                    <div class="panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">List of Published Articles</h3>
-                        </div>
-                        <div class="panel-body">
-                            <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Author</th>
-                                    <th>Title</th>
-                                    <th>Excerpt</th>
-                                    <th>Category</th>
 
-                                    <th>Action</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($archives as $data)
-                                    <tr>
-                                        <td>{{$data->id}}</td>
-                                        <td>{{$data->author}}</td>
-                                        <td>{{$data->title}}</td>
-                                        <td>{{\Illuminate\Support\Str::limit($data->excerpt, 20)}} </td>
-                                        <td>{{ $data->article_category->category_name }}</td>
-                                        <td>
-                                            <a href="" class="btn btn-primary"><i class="far fa-eye"></i></a>
-                                            <a href="{{route('articles.edit', $data->id)}}" class="btn btn-success"><i class="far fa-edit"></i></a>
-                                            <span data-id="{{$data->id}}"
-                                                  data-target="#DeleteModal"
-                                                  data-toggle="modal" >
-                                          <a
-                                              class="btn btn-danger btn-circle"
-                                              data-toggle="tooltip"
-                                              data-placement="top"
-                                              title="Delete">
-                                              <i
-                                                  class="fas fa-trash-alt">
-                                              </i>
-                                          </a>
-                                      </span>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                     <!-- END TABLE HOVER -->
                 </div>
             </div>

@@ -20,24 +20,36 @@
                         <h3 class="panel-title">Publish Article</h3>
                     </div>
 
-                    <form action="{{route('articles.store')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('articles.store')}}" method="post" enctype="multipart/form-data" >
                         @csrf
                     <div class="panel-body">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fas fa-user"></i></span>
-                            <input class="form-control" placeholder="Author" type="text" name="author">
+                            <input class="form-control @error('title') is-invalid @enderror" placeholder="Author" type="text" name="author">
                         </div>
+                        @error('author')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                         <br>
+
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fab fa-tumblr"></i></span>
-                            <input class="form-control" placeholder="Title" type="text" name="title">
+                            <input class=" form-control @error('title') is-invalid @enderror " placeholder="Title" type="text" name="title">
                         </div>
+                        @error('title')
+                        <div class="text-danger" role="alert">{{ $message }}</div>
+                        @enderror
                         <br>
+
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fab fa-tumblr"></i></span>
                             <input class="form-control" placeholder="Excerpt" type="text" name="excerpt">
                         </div>
+                        @error('excerpt')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                         <br>
+
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fab fa-tumblr"></i></span>
                             <select name="article_category_id" id="" class="form-control">
@@ -46,14 +58,26 @@
                                 @endforeach
                             </select>
                         </div>
+                        @error('article_category_id')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                         <br>
                         <textarea name="body" id="" cols="30" rows="10"></textarea>
+                        @error('body')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                         <br>
+
                         <div class="input-group">
                             <span class="input-group-addon"><i class="far fa-images"></i></span>
                             <input class="form-control" placeholder="Excerpt" type="file" name="cover_image">
+
                         </div>
+                        @error('cover_image')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                         <br>
+
                         <button class="btn btn-primary btn-block" type="submit">Submit</button>
                     </div>
                     </form>

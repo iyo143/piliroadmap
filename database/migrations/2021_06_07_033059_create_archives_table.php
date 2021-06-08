@@ -15,7 +15,7 @@ class CreateArchivesTable extends Migration
     {
         Schema::create('archives', function (Blueprint $table) {
             $table->id();
-            $table->string('file_name');
+            $table->string('pdf_name');
             $table->string('pdf_file');
             $table->timestamps();
         });
