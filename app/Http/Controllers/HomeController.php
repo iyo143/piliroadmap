@@ -34,13 +34,13 @@ class HomeController extends Controller
     public function mapping()
     {
         $location = LocationTag::get();
-        return view('admin.mapping',compact('location'));
+        return view('admin.location_tag.mapping',compact('location'));
     }
     public function articles()
     {
         $articles = Article::get();
         $articleCategories = ArticleCategory::get();
-        return view ('admin.articles',compact('articles', 'articleCategories'));
+        return view ('admin.articles.articles',compact('articles', 'articleCategories'));
     }
     public function about()
     {
@@ -49,13 +49,13 @@ class HomeController extends Controller
     public function archives()
     {
         $archives = Archive::get();
-        return view ('admin.archives', compact('archives'));
+        return view ('admin.arcives.archives', compact('archives'));
     }
     public function gallery()
     {
         $gallery = Gallery::get();
         $galleryCategories = GalleryCategory::get();
-        return view ('admin.gallery', compact('gallery','galleryCategories'));
+        return view ('admin.gallery.gallery', compact('gallery','galleryCategories'));
     }
     public function contact()
     {

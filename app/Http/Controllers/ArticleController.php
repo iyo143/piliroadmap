@@ -91,7 +91,7 @@ class ArticleController extends Controller
        $article = Article::findorfail($id);
        $articles = Article::get();
        $articleCategories = ArticleCategory::get();
-       return view('admin.edit-articles', compact('article', 'articleCategories', 'articles'));
+       return view('admin.articles.edit-articles', compact('article', 'articleCategories', 'articles'));
     }
 
     /**
@@ -107,9 +107,23 @@ class ArticleController extends Controller
 
         $validated = $request->validated();
 
-        $article->update($validated);
+        if($request->hasFile('cover_image')){
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('cover_image')->storeAs('public/article_images',$fileNameToStore);
+        }
+        $article->update([
+            'author'=>$validated['author'],
+            'title'=>$validated['title'],
+            'body'=>$validated['body'],
+            'excerpt'=>$validated['excerpt'],
+            'article_category_id' =>$validated['article_category_id'],
+            'cover_image'=>$fileNameToStore
+        ]);
 
-        return redirect(route('home.articles'))->with('message', 'successfully Published Articles');
+        return redirect(route('home.articles.articles'))->with('update_message', 'Successfully Update Article');
 
     }
 

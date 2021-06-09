@@ -13,6 +13,10 @@
                     <div class="alert alert-danger alert-dismissible">
                         {{ session('delete-message') }}
                     </div>
+                @elseif (session('update_message'))
+                    <div class="alert alert-success alert-dismissible">
+                        {{ session('update_message') }}
+                    </div>
                 @endif
 
                 <div class="panel">
