@@ -8,6 +8,14 @@
                     <div class="alert alert-success alert-dismissible">
                         {{session('message')}}
                     </div>
+                @elseif(session('delete_message'))
+                    <div class="alert alert-danger alert-dismissible">
+                        {{session('delete_message')}}
+                    </div>
+                @elseif(session('update_message'))
+                    <div class="alert alert-success alert-dismissible">
+                        {{session('update_message')}}
+                    </div>
                 @endif
                 <div class="panel">
                     <div class="panel-heading">
@@ -97,11 +105,13 @@
                             </thead>
                             <tbody>
                             @foreach($gallery as $data)
+                                {{$categoryname = $data->gallery_category->gallery_category_name}}
                                 <tr>
                                     <td>{{$data->id}}</td>
                                     <td>{{$data->image_name}}</td>
                                     <td><img src="/storage/gallery_images/{{$data->image_file}}" width="25"></td>
                                     <td>{{$data->gallery_category->gallery_category_name}}</td>
+
                                     <td>
                                         <span>
                                             <a  href=""
@@ -115,21 +125,7 @@
                                             </a>
                                         </span>
                                         <span>
-                                            <a
-                                                data-target="#editModal"
-                                                data-id="{{$data->id}}"
-                                                data-image_name="{{$data->image_name}}"
-                                                data-image_file="{{$data->image_file}}"
-                                                data-gallery_category_id="{{$data->gallery_category->gallery_category_id}}"
-                                                data-gallery_category_name="{{$data->gallery_category->gallery_category_name}}"
-                                                class="btn btn-success btn-circle"
-                                                data-toggle="modal"
-                                                data-placement="top"
-                                                title="Edit">
-                                                <i
-                                                    class="fas fa-edit">
-                                                </i>
-                                            </a>
+                                            <a href="{{route('gallery.edit', $data->id)}}" class="btn btn-success"><i class="far fa-edit"></i></a>
                                         </span>
                                         <span data-id="{{$data->id}}"
                                               data-target="#DeleteModal"
@@ -183,16 +179,8 @@
                                                     </i>
                                                 </a>
                                             </span>
-                                        <span>
-                                                <a  data-target="#EditModal"
-                                                    class="btn btn-success btn-circle"
-                                                    data-toggle="tooltip"
-                                                    data-placement="top"
-                                                    title="Edit">
-                                                    <i
-                                                        class="fas fa-edit">
-                                                    </i>
-                                                </a>
+                                            <span>
+
                                             </span>
                                         <span data-id="{{$data->id}}"
                                               data-target="#DeleteModal"
@@ -217,54 +205,24 @@
             </div>
     </div>
 </div>
-
-<div class="modal fade " data-backdrop="static" data-keyboard="false" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit Users</h5>
+                <h3 class="modal-title" id="exampleModalLabel">Deletion</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" method="POST" id="validateform" class="cmxform">
+                <h4>Are you sure you want to Delete the User?</h4>
+                <form action="{{route('gallery.destroy','id')}}" method="POST">
                     @csrf
-                    @method('PUT')
-                    <input type="hidden" name="id" id="id">
-                    <input type="text" id="gal">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="far fa-images"></i></span>
-                        <input class="form-control" placeholder="Image Name" type="text" name="image_name" id="image_name">
-                    </div>
-                    <br>
-                    @error('image_name')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="far fa-images"></i></span>
-                        <input class="form-control" placeholder="Excerpt" type="file" name="image_file" id="image_file">
-                    </div>
-                    <br>
-                    @error('image_file')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="far fa-folder"></i></span>
-                        <select name="gallery_category_id" id="gallery_category" class="form-control">
-                            <option value="" selected="selected" id="gallery_category_name"></option>
-                            @foreach ($galleryCategories as $galleryCategory )
-                                <option value="{{ $galleryCategory->id }}">{{ $galleryCategory->gallery_category_name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    @error('gallery_category_id')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
+                    @method('DELETE')
                     <div class="modal-footer">
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary justify-content-center btn-save-change">Save Changes</button>
-                        </div>
+                        <input type="text" name="id" id="id">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
                     </div>
                 </form>
             </div>
@@ -274,20 +232,12 @@
 @endsection
 @section('scripts')
     <script>
-        $('#editModal').on('shown.bs.modal', function (event) {
+        $('#DeleteModal').on('show.bs.modal',function (event){
             var button = $(event.relatedTarget);
             var user_id = button.data('id');
-            var image_name = button.data('image_name');
-            var image_file = button.data('image_file');
-            var gallery_category_name = "text";
-            var gallery_category_id = button.data('gallery_category_id');
             var modal = $(this);
-            modal.find('.modal-title').text('Edit Info');
+            modal.find('.modal-title').text('Delete User');
             modal.find('.modal-body #id').val(user_id);
-            modal.find('.modal-body #image_name').val(image_name);
-            modal.find('.modal-body #image_file').val(image_file);
-            modal.find('.modal-body #gal').val(gallery_category_id);
-            modal.find('.modal-body #gal').val(gallery_category_name);
         });
     </script>
 @endsection

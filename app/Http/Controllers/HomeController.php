@@ -38,7 +38,7 @@ class HomeController extends Controller
     }
     public function articles()
     {
-        $articles = Article::get();
+        $articles = Article::paginate(2);
         $articleCategories = ArticleCategory::get();
         return view ('admin.articles.articles',compact('articles', 'articleCategories'));
     }
@@ -53,13 +53,12 @@ class HomeController extends Controller
     }
     public function gallery()
     {
-        $gallery = Gallery::get();
+        $gallery = Gallery::paginate();
         $galleryCategories = GalleryCategory::get();
         return view ('admin.gallery.gallery', compact('gallery','galleryCategories'));
     }
     public function contact()
     {
-
         return view ('admin.contact-us');
     }
 

@@ -117,8 +117,8 @@
                                     <td>{{\Illuminate\Support\Str::limit($data->excerpt, 20)}} </td>
                                     <td>{{ $data->article_category->category_name }}</td>
                                     <td>
-                                        <a href="" class="btn btn-primary"><i class="far fa-eye"></i></a>
-                                        <a href="{{route('articles.edit', $data->id)}}" class="btn btn-success"><i class="far fa-edit"></i></a>
+                                        <a href="{{route('articles.show', $data->id)}}" class="btn btn-primary"><i class="lnr lnr-eye"></i></a>
+                                        <a href="{{route('articles.edit', $data->id)}}" class="btn btn-success"><i class="lnr lnr-pencil"></i></a>
                                         <span data-id="{{$data->id}}"
                                             data-target="#DeleteModal"
                                             data-toggle="modal" >
@@ -128,19 +128,25 @@
                                               data-placement="top"
                                               title="Delete">
                                               <i
-                                                  class="fas fa-trash-alt">
+                                                  class="lnr lnr-trash">
                                               </i>
                                           </a>
                                       </span>
                                     </td>
                                 </tr>
                                 @endforeach
+
                             </tbody>
+
                         </table>
+
                     </div>
+
                 </div>
+
                 <!-- END TABLE HOVER -->
             </div>
+            {{ $articles->links()}}
         </div>
 
     </div>
@@ -163,6 +169,29 @@
                         <input type="hidden" name="id" id="id">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="View" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Deletion</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>Are you sure you want to Delete the User?</h4>
+                <form action="{{route('articles.destroy','id')}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <div class="modal-footer">
+                        <input type="hidden" name="id" id="id">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </form>
             </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\GalleryRequest;
 use App\Models\Gallery;
+use App\Models\GalleryCategory;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -54,7 +55,8 @@ class GalleryController extends Controller
         Gallery::create([
             'image_name'=>$validatedGallery['image_name'],
             'image_file'=>$fileNameToStore,
-            'gallery_category_id'=>$validatedGallery['gallery_category_id']
+            'gallery_category_id'=>$validatedGallery['gallery_category_id'],
+            'user_id' => auth()->user()->id
         ]);
         return redirect(route('home.gallery'))->with('message', 'Successfully added Image');
     }
@@ -76,9 +78,12 @@ class GalleryController extends Controller
      * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gallery $gallery)
+    public function edit($id)
     {
-        //
+        $gallery = Gallery::findorfail($id);
+        $galleries = Gallery::get();
+        $galleryCategories = GalleryCategory::get();
+        return view ('admin.gallery.edit-gallery', compact('galleries','gallery', 'galleryCategories'));
     }
 
     /**
@@ -88,9 +93,27 @@ class GalleryController extends Controller
      * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gallery $gallery)
+    public function update(GalleryRequest $request, $id)
     {
+        $gallery = Gallery::findorfail($id);
 
+        $validated = $request->validated();
+
+        if($request->hasFile('image_file')){
+            $filenameWithExt = $request->file('image_file')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('image_file')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('image_file')->storeAs('public/gallery_images',$fileNameToStore);
+        }
+
+        $gallery->update([
+            'image_name'=>$validated['image_name'],
+            'image_file'=>$fileNameToStore,
+            'image_category'=>$validated['gallery_category_id'],
+            'user_id' => auth()->user()->id
+        ]);
+        return redirect(route('home.gallery'))->with('update_message', 'Successfully Update Image');
     }
 
     /**
@@ -102,8 +125,9 @@ class GalleryController extends Controller
     public function destroy($id)
     {
         $image = Gallery::findorfail($id);
+        dd($image);
         $image->delete();
-        return redirect()->back()->with('message', 'Image deleted Successfully');
 
+        return redirect()->back()->with('delete-message', 'Articles Deleted Successfully');
     }
 }

@@ -12,11 +12,16 @@ class Gallery extends Model
     protected $fillable = [
         'image_name',
         'image_file',
-        'gallery_category_id'
+        'gallery_category_id',
+        'user_id'
     ];
 
     public function gallery_category(){
         return $this->belongsTo(GalleryCategory::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 
 }

@@ -47,12 +47,16 @@ Route::prefix('home')->group(function () {
 
     Route::prefix('articles')->group(function () {
         Route::POST('store',[ArticleController::class, 'store'])->name('articles.store');
-        Route::DELETE('delete/{id}', [ArticleController::class, 'destroy'])->name('articles.destroy');
+        Route::DELETE('delete/{id}',[ArticleController::class, 'destroy'])->name('articles.destroy');
         Route::GET('edit/{id}', [ArticleController::class, 'edit'])->name('articles.edit');
         Route::PUT('update/{id}', [ArticleController::class, 'update'])->name('articles.update');
+        Route::GET('show/{id}', [ArticleController::class,'show'])->name('articles.show');
     });
     Route::prefix('gallery')->group(function () {
         Route::POST('store',[GalleryController::class, 'store'])->name('gallery.store');
+        Route::GET('edit/{id}',[GalleryController::class, 'edit'])->name('gallery.edit');
+        Route::PUT('update/{id}',[GalleryController::class, 'update'])->name('gallery.update');
+        Route::DELETE('delete/{id}',[GalleryController::class, 'destroy'])->name('gallery.destroy');
     });
     Route::prefix('gallery_category')->group(function(){
         Route::POST('store',[GalleryCategoryController::class, 'store'])->name('galCategory.store');

@@ -62,7 +62,8 @@ class ArticleController extends Controller
             'body'=>$validatedArticles['body'],
             'excerpt'=>$validatedArticles['excerpt'],
             'article_category_id' =>$validatedArticles['article_category_id'],
-            'cover_image'=>$fileNameToStore
+            'cover_image'=>$fileNameToStore,
+            'user_id' =>auth()->user()->id
         ]);
         return redirect(route('home.articles'))->with('message', 'successfully Published Articles');
     }
@@ -76,8 +77,8 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Article::findorfail($id);
-        $articles = Article::get();
-        return view('article',compact('article','articles'));
+        $articleCategories = ArticleCategory::get();
+        return view('admin.articles.show-articles',compact('article','articleCategories'));
     }
 
     /**
@@ -123,7 +124,7 @@ class ArticleController extends Controller
             'cover_image'=>$fileNameToStore
         ]);
 
-        return redirect(route('home.articles.articles'))->with('update_message', 'Successfully Update Article');
+        return redirect(route('home.articles'))->with('update_message', 'Successfully Update Article');
 
     }
 

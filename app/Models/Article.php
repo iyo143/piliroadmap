@@ -15,10 +15,15 @@ class Article extends Model
         'excerpt',
         'cover_image',
         'body',
-        'article_category_id'
+        'article_category_id',
+        'user_id'
     ];
 
     public function article_category(){
         return $this->belongsTo(ArticleCategory::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
