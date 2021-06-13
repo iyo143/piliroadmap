@@ -257,7 +257,6 @@
         putDraggables();
     });
 
-
 </script>
 <script type="text/javascript">
     var my_handlers = {
@@ -271,6 +270,7 @@
         $('#municipality').ph_locations({'location_type': 'cities'});
         $('#brgy').ph_locations({'location_type': 'barangays'});
         $('#municipality').ph_locations( 'fetch_list', [{"province_code": "0562"}]);
+        $('#municipality').val()
     });
 </script>
 <script>

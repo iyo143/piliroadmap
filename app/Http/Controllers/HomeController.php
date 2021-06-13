@@ -38,7 +38,7 @@ class HomeController extends Controller
     }
     public function articles()
     {
-        $articles = Article::paginate(2);
+        $articles = auth()->user()->articles()->paginate(10);
         $articleCategories = ArticleCategory::get();
         return view ('admin.articles.articles',compact('articles', 'articleCategories'));
     }
@@ -53,7 +53,7 @@ class HomeController extends Controller
     }
     public function gallery()
     {
-        $gallery = Gallery::paginate();
+        $gallery = auth()->user()->galleries()->paginate(10);
         $galleryCategories = GalleryCategory::get();
         return view ('admin.gallery.gallery', compact('gallery','galleryCategories'));
     }

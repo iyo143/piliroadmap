@@ -122,12 +122,10 @@ class GalleryController extends Controller
      * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $image = Gallery::findorfail($id);
-        dd($image);
+        $image = Gallery::findorfail($request->id);
         $image->delete();
-
-        return redirect()->back()->with('delete-message', 'Articles Deleted Successfully');
+        return redirect()->back()->with('delete_message', 'Image Deleted Successfully');
     }
 }

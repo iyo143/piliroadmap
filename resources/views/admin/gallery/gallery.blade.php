@@ -113,8 +113,13 @@
                                     <td>{{$data->gallery_category->gallery_category_name}}</td>
 
                                     <td>
-                                        <span>
-                                            <a  href=""
+                                        <span data-id="{{$data->id}}"
+                                              data-image_name = "{{$data->image_name}}"
+                                              data-image_file = "/storage/gallery_images/{{$data->image_file}}"
+                                              data-gallery_category_name = "{{$data->gallery_category->gallery_category_name}}"
+                                              data-target="#ShowModal"
+                                              data-toggle="modal">
+                                            <a
                                                 class="btn btn-primary btn-circle"
                                                 data-toggle="tooltip"
                                                 data-placement="top"
@@ -169,7 +174,7 @@
                                     <td>{{$data->gallery_category_name}}</td>
                                     <td>
                                             <span>
-                                                <a  href=""
+                                                <a
                                                     class="btn btn-primary btn-circle"
                                                     data-toggle="tooltip"
                                                     data-placement="top"
@@ -180,9 +185,8 @@
                                                 </a>
                                             </span>
                                             <span>
-
                                             </span>
-                                        <span data-id="{{$data->id}}"
+                                            <span
                                               data-target="#DeleteModal"
                                               data-toggle="modal" >
                                                     <a
@@ -229,8 +233,63 @@
         </div>
     </div>
 </div>
+{{--Show Modal--}}
+<div class="modal fade"
+     id="ShowModal"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog"
+         role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- w-100 class so that header
+        div covers 100% width of parent div -->
+                <h1 class="modal-title w-100 text-center"
+                    id="image_name">
+                </h1>
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close">
+                            <span aria-hidden="true">
+                              ×
+                          </span>
+                </button>
+            </div>
+
+            <!--Modal body with image-->
+            <div class="modal-body">
+                <h3 id="heading"></h3>
+                <div class="" style="width: 100%">
+                    <img class="first_img img-thumbnail" src="" id="image" />
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-danger"
+                        data-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{{--End Show Modal--}}
 @endsection
 @section('scripts')
+    <script>
+        $('#ShowModal').on('show.bs.modal', function (event){
+            var button = $(event.relatedTarget);
+            var image_name = button.data('image_name')
+            var image_file = button.data('image_file');
+            var modal = $(this);
+            modal.find('.modal-body #image').attr("src", image_file);
+            modal.find('#image_name').text( image_name);
+        });
+    </script>
     <script>
         $('#DeleteModal').on('show.bs.modal',function (event){
             var button = $(event.relatedTarget);

@@ -13,4 +13,8 @@ class Archive extends Model
         'pdf_name',
         'pdf_file'
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
