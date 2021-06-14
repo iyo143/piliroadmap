@@ -59,11 +59,11 @@
 					</div>
 					<!-- END OVERVIEW -->
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-12">
 							<!-- RECENT PURCHASES -->
 							<div class="panel">
 								<div class="panel-heading">
-									<h3 class="panel-title">Recent Purchases</h3>
+									<h3 class="panel-title">Recent Published Articles</h3>
 									<div class="right">
 										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
 										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
@@ -72,23 +72,28 @@
 								<div class="panel-body no-padding">
 									<table class="table table-striped">
 										<thead>
-											<tr>
-												<th>Department</th>
-												<th>Articles</th>
-												<th>Gallery</th>
-												<th>Archives</th>
-                                                <th>Action</th>
-											</tr>
+
+                                                <tr>
+                                                    <th>Department</th>
+                                                    <th>Author</th>
+                                                    <th>Title</th>
+                                                    <th>Excerpt</th>
+                                                    <th>Category</th>
+                                                    <th>Action</th>
+                                                </tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td><a href="#">763648</a></td>
-												<td>Steve</td>
-												<td>$122</td>
-												<td>Oct 21, 2016</td>
-												<td><span class="label label-success">COMPLETED</span></td>
-											</tr>
-										</tbody>
+                                            @foreach($articles as $article)
+                                                <tr>
+                                                    <td>{{$article->user->name}}</td>
+                                                    <td>{{$article->author}}</td>
+                                                    <td>{{$article->title}}</td>
+                                                    <td>{{\Illuminate\Support\Str::limit($article->excerpt, 20)}} </td>
+                                                    <td>{{$article->article_category->category_name}}</td>
+                                                    <td><a href="{{route('articles.show', $article->id)}}"><span class="label label-success">View</span></a></td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
 									</table>
 								</div>
 								<div class="panel-footer">
@@ -100,23 +105,49 @@
 							</div>
 							<!-- END RECENT PURCHASES -->
 						</div>
-						<div class="col-md-6">
-							<!-- MULTI CHARTS -->
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Projection vs. Realization</h3>
-									<div class="right">
-										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
-									</div>
-								</div>
-								<div class="panel-body">
-									<div id="visits-trends-chart" class="ct-chart"></div>
-								</div>
-							</div>
-							<!-- END MULTI CHARTS -->
-						</div>
 					</div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Recent Added Image in Gallery</h3>
+                                    <div class="right">
+                                        <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+                                        <button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+                                    </div>
+                                </div>
+                                <div class="panel-body no-padding">
+                                    <table class="table table-striped">
+                                        <thead>
+
+                                        <tr>
+                                            <th>Department</th>
+                                            <th>Image Name</th>
+                                            <th>Image Photo</th>
+                                            <th>Category</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($galleries as $gallery)
+                                            <tr>
+                                                <td>{{$gallery->user->name}}</td>
+                                                <td>{{$gallery->image_name}}</td>
+                                                <td><img src="/storage/gallery_images/{{$gallery->image_file}}" alt="" width="50"></td>
+                                                <td><a href="{{route('articles.show', $article->id)}}"><span class="label label-success">View</span></a></td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="row">
+                                        <div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i> Last 24 hours</span></div>
+                                        <div class="col-md-6 text-right"><a href="#" class="btn btn-primary">View All Records</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 					<div class="row">
 						<div class="col-md-7">
 							<!-- TODO LIST -->

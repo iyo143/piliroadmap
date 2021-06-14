@@ -128,7 +128,7 @@
 
             </div>
             <div class="col-md-8">
-                <div id="map" style="height: 400px"></div>
+                <div id="map" style="height: 500px"></div>
             </div>
         </div>
         <div class="row">

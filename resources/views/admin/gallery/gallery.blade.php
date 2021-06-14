@@ -180,7 +180,7 @@
                                                     data-placement="top"
                                                     title="View">
                                                     <i
-                                                        class="fas fa-eye">
+                                                        class="lnr lnr-eye">
                                                     </i>
                                                 </a>
                                             </span>
@@ -195,7 +195,7 @@
                                                         data-placement="top"
                                                         title="Delete">
                                                         <i
-                                                            class="fas fa-trash-alt">
+                                                            class="lnr lnr-trash">
                                                         </i>
                                                     </a>
                                             </span>

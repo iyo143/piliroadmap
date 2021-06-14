@@ -14,4 +14,7 @@ class GalleryCategoryController extends Controller
         GalleryCategory::create($validated);
         return redirect(route('home.gallery'))->with('cat_message', 'Successfully added Gallery Category');
     }
+    public function destory(){
+
+    }
 }
