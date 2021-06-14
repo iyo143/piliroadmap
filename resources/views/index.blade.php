@@ -119,14 +119,15 @@
           <div class="col-lg-12">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-card">Research gallery</li>
-              <li data-filter=".filter-web">Events</li>
+                @foreach($galleryCategories as $galleryCategory)
+                    <li data-filter=".filter-{{$galleryCategory->gallery_category_name}}">{{$galleryCategory->gallery_category_name}}</li>
+                @endforeach
             </ul>
           </div>
         </div>
         <div class="row portfolio-container">
          @forelse($gallery as $data)
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-{{$data->gallery_category->gallery_category_name}} wow fadeInUp">
             <div class="portfolio-wrap">
               <figure>
                 <img src="/storage/gallery_images/{{$data->image_file}}" style = "width:100%; height:100%;"alt="">

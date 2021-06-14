@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GalleryCategory;
 use Illuminate\Http\Request;
 use App\Models\LocationTag;
 use App\Models\Article;
@@ -22,7 +23,8 @@ class PagesController extends Controller
         $retailers = LocationTag::sum('retailers');
         $farmers = LocationTag::sum('farmers');
         $gallery = Gallery::get();
-        return view('index',compact('location','trees','processors','retailers','farmers','gallery'));
+        $galleryCategories = GalleryCategory::get();
+        return view('index',compact('location','trees','processors','retailers','farmers','gallery','galleryCategories'));
     }
 
     public function mainArticle($id)

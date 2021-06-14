@@ -29,7 +29,12 @@ class HomeController extends Controller
     public function index()
     {
         $location = LocationTag::get();
-        return view('admin.admin',compact('location'));
+        $countFarmers = LocationTag::sum('farmers');
+        $countRetailers = LocationTag::sum('retailers');
+        $countProcessors = LocationTag::sum('processors');
+        $countTrees = LocationTag::sum('trees');
+
+        return view('admin.admin',compact('location', 'countFarmers', 'countRetailers', 'countProcessors', 'countTrees'));
     }
     public function mapping()
     {

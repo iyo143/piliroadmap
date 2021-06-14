@@ -50,7 +50,7 @@ Route::prefix('home')->group(function () {
         Route::DELETE('delete/{id}',[ArticleController::class, 'destroy'])->name('articles.destroy');
         Route::GET('edit/{id}', [ArticleController::class, 'edit'])->name('articles.edit');
         Route::PUT('update/{id}', [ArticleController::class, 'update'])->name('articles.update');
-        Route::GET('show/{id}', [ArticleController::class,'show'])->name('articles.show');
+        Route::GET('show/{id}', [ArticleController::class,'homeShow'])->name('articles.show');
     });
     Route::prefix('gallery')->group(function () {
         Route::POST('store',[GalleryController::class, 'store'])->name('gallery.store');
@@ -60,6 +60,7 @@ Route::prefix('home')->group(function () {
     });
     Route::prefix('gallery_category')->group(function(){
         Route::POST('store',[GalleryCategoryController::class, 'store'])->name('galCategory.store');
+        Route::DELETE('delete/{id}',[GalleryCategoryController::class, 'destroy'])->name('galCategory.destroy');
     });
     Route::prefix('archives')->group(function(){
         Route::POST('store', [ArchiveController::class, 'store'])->name('archives.store');

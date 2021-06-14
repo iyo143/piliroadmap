@@ -9,7 +9,7 @@
 					<div class="panel panel-headline">
 						<div class="panel-heading">
 							<h3 class="panel-title">Location Tags Overview</h3>
-							
+
 						</div>
 						<div class="panel-body">
 							<div class="row">
@@ -17,7 +17,7 @@
 									<div class="metric">
 										<span class="icon"><i class="fas fa-tree"></i></span>
 										<p>
-											<span class="number">1,252</span>
+											<span class="number">{{$countTrees}}</span>
 											<span class="title">Trees</span>
 										</p>
 									</div>
@@ -26,7 +26,7 @@
 									<div class="metric">
 										<span class="icon"><i class="fas fa-users-cog"></i></span>
 										<p>
-											<span class="number">203</span>
+											<span class="number">{{$countProcessors}}</span>
 											<span class="title">Processors</span>
 										</p>
 									</div>
@@ -35,7 +35,7 @@
 									<div class="metric">
 										<span class="icon"><i class="fas fa-store"></i></span>
 										<p>
-											<span class="number">274,678</span>
+											<span class="number">{{$countRetailers}}</span>
 											<span class="title">Retailers</span>
 										</p>
 									</div>
@@ -44,7 +44,7 @@
 									<div class="metric">
 										<span class="icon"><i class="fas fa-users"></i></span>
 										<p>
-											<span class="number">35</span>
+											<span class="number">{{$countFarmers}}</span>
 											<span class="title">Farmers</span>
 										</p>
 									</div>
@@ -73,11 +73,11 @@
 									<table class="table table-striped">
 										<thead>
 											<tr>
-												<th>Order No.</th>
-												<th>Name</th>
-												<th>Amount</th>
-												<th>Date &amp; Time</th>
-												<th>Status</th>
+												<th>Department</th>
+												<th>Articles</th>
+												<th>Gallery</th>
+												<th>Archives</th>
+                                                <th>Action</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -88,41 +88,13 @@
 												<td>Oct 21, 2016</td>
 												<td><span class="label label-success">COMPLETED</span></td>
 											</tr>
-											<tr>
-												<td><a href="#">763649</a></td>
-												<td>Amber</td>
-												<td>$62</td>
-												<td>Oct 21, 2016</td>
-												<td><span class="label label-warning">PENDING</span></td>
-											</tr>
-											<tr>
-												<td><a href="#">763650</a></td>
-												<td>Michael</td>
-												<td>$34</td>
-												<td>Oct 18, 2016</td>
-												<td><span class="label label-danger">FAILED</span></td>
-											</tr>
-											<tr>
-												<td><a href="#">763651</a></td>
-												<td>Roger</td>
-												<td>$186</td>
-												<td>Oct 17, 2016</td>
-												<td><span class="label label-success">SUCCESS</span></td>
-											</tr>
-											<tr>
-												<td><a href="#">763652</a></td>
-												<td>Smith</td>
-												<td>$362</td>
-												<td>Oct 16, 2016</td>
-												<td><span class="label label-success">SUCCESS</span></td>
-											</tr>
 										</tbody>
 									</table>
 								</div>
 								<div class="panel-footer">
 									<div class="row">
 										<div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i> Last 24 hours</span></div>
-										<div class="col-md-6 text-right"><a href="#" class="btn btn-primary">View All Purchases</a></div>
+										<div class="col-md-6 text-right"><a href="#" class="btn btn-primary">View All Records</a></div>
 									</div>
 								</div>
 							</div>

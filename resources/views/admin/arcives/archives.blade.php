@@ -3,47 +3,43 @@
 @section('content')
     <div class="main">
         <div class="main-content">
-            <div class="row">
-                <div class="col-md-12">
-                    @if(session('success_message'))
-                        <div class="alert alert-success alert-dismissible">
-                            {{session('success_message')}}
-                        </div>
-                    @elseif (session('delete-message'))
-                        <div class="alert alert-danger alert-dismissible">
-                            {{ session('delete-message') }}
-                        </div>
-                    @endif
-
-                    <div class="panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Publish Article</h3>
-                        </div>
-
-                        <form action="{{route('archives.store')}}" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <div class="panel-body">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fas fa-user"></i></span>
-                                    <input class="form-control" placeholder="Author" type="text" name="pdf_name">
-                                </div>
-                                <br>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="far fa-images"></i></span>
-                                    <input class="form-control" placeholder="Excerpt" type="file" name="pdf_file">
-                                </div>
-                                <br>
-                                <button class="btn btn-primary btn-block" type="submit">Submit</button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10">
+                        @if(session('success_message'))
+                            <div class="alert alert-success alert-dismissible">
+                                {{session('success_message')}}
                             </div>
-                        </form>
+                        @elseif (session('delete-message'))
+                            <div class="alert alert-danger alert-dismissible">
+                                {{ session('delete-message') }}
+                            </div>
+                        @endif
+
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Publish Archive</h3>
+                            </div>
+                            <form action="{{route('archives.store')}}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <div class="panel-body">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                                        <input class="form-control" placeholder="PDF Name" type="text" name="pdf_name">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="far fa-images"></i></span>
+                                        <input class="form-control" placeholder="Excerpt" type="file" name="pdf_file">
+                                    </div>
+                                    <br>
+                                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-
-                    <!-- END TABLE HOVER -->
-                </div>
-            </div>
-
         </div>
     </div>
     <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

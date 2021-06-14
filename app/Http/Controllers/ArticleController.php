@@ -74,13 +74,18 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function homeShow($id)
     {
         $article = Article::findorfail($id);
         $articleCategories = ArticleCategory::get();
         return view('admin.articles.show-articles',compact('article','articleCategories'));
     }
-
+    public function  show($id){
+        $articles = Article::get();
+        $article = Article::findorfail($id);
+        $articleCategories = ArticleCategory::get();
+        return view('article',compact('article','articleCategories','articles'));
+    }
     /**
      * Show the form for editing the specified resource.
      *

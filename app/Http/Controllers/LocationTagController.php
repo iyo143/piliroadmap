@@ -39,7 +39,7 @@ class LocationTagController extends Controller
     {
         $validatedTags = $request->validated();
 
-        dd($validatedTags['brgy']);
+
         if($request->hasFile('pili_image'))
         {
             $fileNameWithExt = $request->file('pili_image')->getClientOriginalName();
