@@ -22,13 +22,15 @@
                         @csrf
                     <div class="panel-body">
                         <div class="input-group">
+                            <input type="hidden" name="municipality" id="mun">
                             <span class="input-group-addon"><i class="fas fa-globe-asia"></i></span>
-                            <select class="form-control" type="text" name="municipality" id="municipality"></select>
+                            <select class="form-control" type="text" name="s" id="municipality" onChange="myNewFunction(this);"></select>
                         </div>
                         <br>
                         <div class="input-group">
+                            <input type="hidden" name="brgy" id="brgay">
                             <span class="input-group-addon"><i class="fas fa-globe-asia"></i></span>
-                            <select class="form-control form-control-user @error('trees') is-invalid @enderror" type="text" name="brgy" id="brgy"></select>
+                            <select class="form-control form-control-user @error('trees') is-invalid @enderror" type="text" name="f" id="brgy" onchange="myNewFunctionbrgy(this);"></select>
                         </div>
                         @error('brgy')
                         <span class="text-danger" role="alert">
@@ -272,6 +274,12 @@
         $('#municipality').ph_locations( 'fetch_list', [{"province_code": "0562"}]);
         $('#municipality').val()
     });
+    function myNewFunction(sel) {
+        $('#mun').val(sel.options[sel.selectedIndex].text);
+    }
+    function myNewFunctionbrgy(sel) {
+        $('#brgay').val(sel.options[sel.selectedIndex].text);
+    }
 </script>
 <script>
     $('#DeleteModal').on('show.bs.modal',function (event){

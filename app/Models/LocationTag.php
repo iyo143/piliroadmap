@@ -18,7 +18,12 @@ class LocationTag extends Model
         'processors',
         'latitude',
         'longitude',
-        'pili_image'
+        'pili_image',
+        'user_id'
     ];
-  
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
 }

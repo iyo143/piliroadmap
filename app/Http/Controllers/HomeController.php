@@ -35,11 +35,13 @@ class HomeController extends Controller
         $countTrees = LocationTag::sum('trees');
         $articles = Article::paginate(5);
         $galleries = Gallery::paginate(5);
+        $archives = Archive::paginate(5);
+        $locationTags = LocationTag::paginate(5);
 
         return view('admin.admin',compact('location',
                   'countFarmers','countRetailers',
                             'countProcessors','countTrees',
-                            'articles', 'galleries'));
+                            'articles', 'galleries', 'archives','locationTags'));
     }
     public function mapping()
     {

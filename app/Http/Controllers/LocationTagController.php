@@ -38,8 +38,7 @@ class LocationTagController extends Controller
     public function store(LocationTagRequest $request)
     {
         $validatedTags = $request->validated();
-
-
+       
         if($request->hasFile('pili_image'))
         {
             $fileNameWithExt = $request->file('pili_image')->getClientOriginalName();
@@ -55,6 +54,7 @@ class LocationTagController extends Controller
             $fileNameToStore = 'noimage.jpeg';
         }
         LocationTag::create([
+            'user_id' => auth()->user()->id,
             'brgy'=>$validatedTags['brgy'],
             'municipality'=>$validatedTags['municipality'],
             'trees'=>$validatedTags['trees'],

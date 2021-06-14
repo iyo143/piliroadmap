@@ -51,4 +51,7 @@ class User extends Authenticatable
     public function archives(){
         return $this->hasMany(Archive::class);
     }
+    public function location_tags(){
+        return $this->hasMany(LocationTag::class);
+    }
 }
