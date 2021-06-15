@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GalleryCategoryController;
 use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\GalleryVideoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +24,8 @@ Route::get('/',[PagesController::class, 'homePage'])->name('homePage');
 Route::prefix('/')->group(function () {
     Route::get('articles/{id}', [PagesController::class, 'mainArticle'])->name('main.articles');
     Route::get('about', [PagesController::class, 'mainAbout'])->name('main.about');
+    Route::get('gallery', [PagesController::class, 'mainGallery'])->name('main.gallery');
+
     Route::prefix('articles')->group(function () {
         Route::get('article/{id}', [ArticleController::class, 'show'])->name('main.article');
     });
@@ -65,6 +68,9 @@ Route::prefix('home')->group(function () {
     });
     Route::prefix('archives')->group(function(){
         Route::POST('store', [ArchiveController::class, 'store'])->name('archives.store');
+    });
+    Route::prefix('gallery_video')->group(function(){
+        Route::POST('store', [GalleryVideoController::class, 'store'])->name('galVideo.store');
     });
 });
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\GalleryCategory;
+use App\Models\GalleryVideo;
 use Illuminate\Http\Request;
 use App\Models\LocationTag;
 use App\Models\Article;
@@ -44,7 +45,10 @@ class PagesController extends Controller
     }
     public function mainGallery()
     {
-        return view('main-article',compact('articles'));
+        $images = Gallery::get();
+        $videos = GalleryVideo::get();
+        $galleryCategories = GalleryCategory::get();
+        return view('gallery',compact('images', 'videos', 'galleryCategories'));
     }
     /**
      * Display a listing of the resource.

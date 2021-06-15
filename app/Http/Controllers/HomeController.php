@@ -69,7 +69,8 @@ class HomeController extends Controller
     {
         $gallery = auth()->user()->galleries()->paginate(10);
         $galleryCategories = GalleryCategory::get();
-        return view ('admin.gallery.gallery', compact('gallery','galleryCategories'));
+        $galleryVideo = auth()->user()->gallery_videos()->paginate(10);
+        return view ('admin.gallery.gallery', compact('gallery','galleryCategories', 'galleryVideo'));
     }
     public function contact()
     {

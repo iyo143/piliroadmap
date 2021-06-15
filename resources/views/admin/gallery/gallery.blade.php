@@ -3,7 +3,7 @@
 <div class="main">
     <div class="main-content">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 @if(session('message'))
                     <div class="alert alert-success alert-dismissible">
                         {{session('message')}}
@@ -62,7 +62,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 @if(session('cat_message'))
                     <div class="alert alert-success alert-dismissible">
                         {{session('cat_message')}}
@@ -90,8 +90,46 @@
                 </div>
             </div>
 
+            <div class="col-md-4">
+                @if(session('cat_message'))
+                    <div class="alert alert-success alert-dismissible">
+                        {{session('cat_message')}}
+                    </div>
+                @endif
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Insert Gallery Category</h3>
+                    </div>
+
+                    <form action="{{route('galVideo.store')}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="panel-body">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="far fa-images"></i></span>
+                                <input class="form-control" placeholder="Category Name" type="text" name="video_name">
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fas fa-link"></i></span>
+                                <input class="form-control" placeholder="Video Link" type="text" name="video_link">
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="far fa-images"></i></span>
+                                <input class="form-control" placeholder="Excerpt" type="file" name="video_image">
+                            </div>
+                            <br>
+                            @error('gallery_category_name')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+
+                            <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="col-md-8">
+            </div>
+            <div class="col-md-4">
                 <div class="panel">
                     <div class="panel-heading">
                         <h3 class="panel-title">List of Images</h3>
@@ -210,6 +248,64 @@
                     </div>
                 </div>
             </div>
+        <div class="col-md-4">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">List of Category</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover table-responsive">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th class="text-center">Video Name</th>
+                            <th class="text-center">Video Image</th>
+                            <th class="text-center">Video Link</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($galleryVideo as $data)
+                            <tr>
+                                <td>{{$data->id}}</td>
+                                <td>{{$data->video_name}}</td>
+                                <td><img src="/storage/gallery_videos/{{$data->video_image}}" width="25"></td>
+                                <td>{{$data->video_link}}</td>
+                                <td>
+                                        <span>
+                                            <a
+                                                class="btn btn-primary btn-circle"
+                                                data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="View">
+                                                <i
+                                                    class="lnr lnr-eye">
+                                                </i>
+                                            </a>
+                                        </span>
+                                    <span
+                                        data-id="{{$data->id}}"
+                                        data-target="#DeleteGalModal"
+                                        data-toggle="modal" >
+                                            <a
+                                                class="btn btn-danger btn-circle"
+                                                data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="Delete">
+                                                <i
+                                                    class="lnr lnr-trash">
+                                                </i>
+                                            </a>
+                                        </span>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
 </div>
 <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

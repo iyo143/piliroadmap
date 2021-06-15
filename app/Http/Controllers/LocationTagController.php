@@ -99,7 +99,7 @@ class LocationTagController extends Controller
      */
     public function update(Request $request, LocationTag $locationTag)
     {
-        //
+
     }
 
     /**

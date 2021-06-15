@@ -54,4 +54,7 @@ class User extends Authenticatable
     public function location_tags(){
         return $this->hasMany(LocationTag::class);
     }
+    public function gallery_videos(){
+        return $this->hasMany(GalleryVideo::class);
+    }
 }
