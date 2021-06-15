@@ -132,7 +132,7 @@
               <figure>
                 <img src="/storage/gallery_images/{{$data->image_file}}" style = "width:100%; height:100%;"alt="">
                 <a href="/storage/gallery_images/{{$data->image_file}}" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+
               </figure>
               <div class="portfolio-info">
                 <h4><a href="#">{{$data->image_name}}</a></h4>
@@ -226,7 +226,8 @@
                   <input type="text" name="contact" class="form-control" placeholder="Contact Number" />
               </div>
               <div class="form-group col-md-6">
-                  <select class="form-control" name="department" >
+                  <input type="hidden" name="department_name" id="department_name">
+                  <select class="form-control" name="department" onchange="myNewFunction(this)">
                       <option value="" disabled selected>Send to Deparment</option>
                       @foreach($departments as $department)
                           <option value="{{$department->email}}">{{$department->name}}</option>
@@ -287,4 +288,9 @@
        );
     @endforeach
   </script>
+    <script>
+        function myNewFunction(sel) {
+            $('#department_name').val(sel.options[sel.selectedIndex].text);
+        }
+    </script>
 @endsection

@@ -17,6 +17,7 @@ class Feedback extends Model
         'province',
         'subject',
         'feedback',
-        'department'
+        'department',
+        'department_name'
     ];
 }

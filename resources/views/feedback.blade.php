@@ -1,7 +1,7 @@
 @component('mail::message')
 # Feedback
 
-Hi, {{$department}}
+Hi, {{$departmentName}}
 
 Subject:
 {{$subject}}

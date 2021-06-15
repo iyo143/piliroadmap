@@ -12,12 +12,14 @@ class FeedbackController extends Controller
 {
     public function store(FeedbackRequest $request){
         $validated = $request->validated();
+
         $user_name = $validated['name'];
         $email = $validated['email'];
-        $department = 'department';
+        $departmentEmail = $validated['department'];
         $feedback = $validated['feedback'];
         $subject = $validated['subject'];
-        Mail::to($validated['department'])->send( new FeedbackMail($user_name, $email, $department, $feedback, $subject));
+        $departmentName = $validated['department_name'];
+        Mail::to($validated['department'])->send( new FeedbackMail($user_name, $email, $departmentEmail, $feedback, $subject, $departmentName));
         Feedback::create($validated);
 
 

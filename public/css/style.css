@@ -157,6 +157,59 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+    padding: 20px 0;
+    background-color: #f7f7f7;
+    min-height: 40px;
+    margin-top: 90px;
+}
+
+@media (max-width: 992px) {
+    .breadcrumbs {
+        margin-top: 80px;
+    }
+}
+
+.breadcrumbs h2 {
+    font-size: 24px;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.breadcrumbs ol li + li {
+    padding-left: 10px;
+}
+
+.breadcrumbs ol li + li::before {
+    display: inline-block;
+    padding-right: 10px;
+    color: #6c757d;
+    content: "/";
+}
+
+@media (max-width: 768px) {
+    .breadcrumbs .d-flex {
+        display: block !important;
+    }
+    .breadcrumbs ol {
+        display: block;
+    }
+    .breadcrumbs ol li {
+        display: inline-block;
+    }
+}
+/*--------------------------------------------------------------
 # Intro Section
 --------------------------------------------------------------*/
 #intro {
@@ -966,8 +1019,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   opacity: 0;
   line-height: 1;
   text-align: center;
-  width: 36px;
-  height: 36px;
+  width: 50px;
+  height: 50px;
   background: #fff;
   border-radius: 50%;
   transition: 0.2s linear;
@@ -975,8 +1028,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #portfolio .portfolio-item figure .link-preview i,
 #portfolio .portfolio-item figure .link-details i {
-  padding-top: 6px;
-  font-size: 22px;
+  padding-top: 10px;
+  font-size: 28px;
   color: #333;
 }
 
@@ -1002,7 +1055,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #portfolio .portfolio-item figure:hover .link-preview {
   opacity: 1;
-  left: calc(50% - 44px);
+  left: calc(50% - 25px);
 }
 
 #portfolio .portfolio-item figure:hover .link-details {

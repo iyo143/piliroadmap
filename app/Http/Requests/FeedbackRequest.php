@@ -31,7 +31,8 @@ class FeedbackRequest extends FormRequest
             'country' => 'required',
             'subject' => 'required',
             'feedback' => 'required',
-            'department' => 'required'
+            'department' => 'required',
+            'department_name' => 'required'
         ];
     }
 }

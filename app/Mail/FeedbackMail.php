@@ -13,21 +13,23 @@ class FeedbackMail extends Mailable
 
     public $user_name;
     public $email;
-    public $department;
+    public $departmentEmail;
     public $feedback;
     public $subject;
+    public $departmentName;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($user_name,$email, $department, $feedback, $subject)
+    public function __construct($user_name,$email, $departmentEmail, $feedback, $subject, $departmentName)
     {
         $this->email = $email;
         $this->user_name = $user_name;
-        $this->department = $department;
+        $this->departmentEmail = $departmentEmail;
         $this->subject  = $subject;
         $this->feedback = $feedback;
+        $this->departmentName = $departmentName;
     }
 
     /**
