@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Archive;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\LocationTag;
 use App\Models\Article;
@@ -36,6 +37,7 @@ class HomeController extends Controller
         $articles = Article::paginate(5);
         $galleries = Gallery::paginate(5);
         $archives = Archive::paginate(5);
+
         $locationTags = LocationTag::paginate(5);
 
         return view('admin.admin',compact('location',

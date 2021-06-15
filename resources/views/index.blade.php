@@ -222,11 +222,22 @@
                 <div class="validation"></div>
               </div>
             </div>
-            <div class="form-ro">
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Department" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validation"></div>
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Contact Number" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                      <div class="validation"></div>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <select class="form-control" name="user_id" id="subject" >
+                          @foreach($departments as $department)
+                              <option value="{{$department->id}}">{{$department->name}}</option>
+                          @endforeach
+                      </select>
+                      <div class="validation"></div>
+                  </div>
               </div>
+            <div class="form-group">
+
               <div class="form-group">
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                 <div class="validation"></div>

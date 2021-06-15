@@ -24,7 +24,8 @@ class PagesController extends Controller
         $farmers = LocationTag::sum('farmers');
         $gallery = Gallery::get();
         $galleryCategories = GalleryCategory::get();
-        return view('index',compact('location','trees','processors','retailers','farmers','gallery','galleryCategories'));
+        $departments = User::get();
+        return view('index',compact('location','trees','processors','retailers','farmers','gallery','galleryCategories', 'departments'));
     }
 
     public function mainArticle($id)

@@ -133,7 +133,7 @@
                                                 <td>{{$gallery->user->name}}</td>
                                                 <td>{{$gallery->image_name}}</td>
                                                 <td><img src="/storage/gallery_images/{{$gallery->image_file}}" alt="" width="50"></td>
-                                                <td><a href="{{route('articles.show', $article->id)}}"><span class="label label-success">View</span></a></td>
+                                                <td><a href="{{route('articles.show', $gallery->id)}}"><span class="label label-success">View</span></a></td>
                                             </tr>
                                         @endforeach
                                         </tbody>
@@ -173,7 +173,7 @@
                                                 <td>{{$gallery->user->name}}</td>
                                                 <td>{{$gallery->image_name}}</td>
                                                 <td><img src="/storage/gallery_images/{{$gallery->image_file}}" alt="" width="50"></td>
-                                                <td><a href="{{route('articles.show', $article->id)}}"><span class="label label-success">View</span></a></td>
+                                                <td><a href="{{route('articles.show', $gallery->id)}}"><span class="label label-success">View</span></a></td>
                                             </tr>
                                         @endforeach
                                         </tbody>
