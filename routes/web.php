@@ -8,6 +8,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GalleryCategoryController;
 use App\Http\Controllers\ArchiveController;
+use App\Http\Controllers\FeedbackController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +23,10 @@ Route::get('/',[PagesController::class, 'homePage'])->name('homePage');
 Route::prefix('/')->group(function () {
     Route::get('articles/{id}', [PagesController::class, 'mainArticle'])->name('main.articles');
     Route::get('about', [PagesController::class, 'mainAbout'])->name('main.about');
-
     Route::prefix('articles')->group(function () {
         Route::get('article/{id}', [ArticleController::class, 'show'])->name('main.article');
     });
+    Route::post('feedback', [FeedbackController::class, 'store'])->name('main.feedback');
 
 });
 
