@@ -94,7 +94,6 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fas fa-map-marker-alt"></i></span>
                             <input class="form-control" placeholder="Lattitude" type="text" name="latitude" id="lat">
-
                         </div>
                         @error('latitude')
                         <span class="text-danger" role="alert">
@@ -180,15 +179,7 @@
                                             </a>
                                         </span>
                                         <span>
-                                            <a  href=""
-                                                class="btn btn-success btn-circle"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Edit">
-                                                <i
-                                                    class="fas fa-edit">
-                                                </i>
-                                            </a>
+                                            <a href="{{route('map.edit', $data->id)}}" class="btn btn-success"><i class="lnr lnr-pencil"></i></a>
                                         </span>
                                         <span data-id="{{$data->id}}"
                                               data-target="#DeleteModal"

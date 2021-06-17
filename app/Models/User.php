@@ -57,4 +57,8 @@ class User extends Authenticatable
     public function gallery_videos(){
         return $this->hasMany(GalleryVideo::class);
     }
+    public function stores(){
+        return $this->hasMany(Stores::class);
+    }
+
 }

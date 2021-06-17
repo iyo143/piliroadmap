@@ -85,9 +85,11 @@ class LocationTagController extends Controller
      * @param  \App\Models\LocationTag  $locationTag
      * @return \Illuminate\Http\Response
      */
-    public function edit(LocationTag $locationTag)
+    public function edit($id)
     {
-        //
+        $locations = LocationTag::get();
+        $location = LocationTag::findorfail($id);
+        return view('admin.location_tag.edit-mapping', compact('location', 'locations'));
     }
 
     /**

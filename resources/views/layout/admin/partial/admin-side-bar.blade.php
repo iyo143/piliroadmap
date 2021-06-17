@@ -9,6 +9,7 @@
 						<li><a href="{{route('home.about')}}" class="{{Request::path()=== 'home/about' ? 'active' : ''}}"><i class="fas fa-question-circle"></i><span>About us</span></a></li>
 						<li><a href="{{route('home.archive')}}" class="{{Request::path()=== 'home/archives' ? 'active' : ''}}"><i class="far fa-file-archive"></i><span>Archives</span></a></li>
 						<li><a href="{{route('home.contact')}}" class="{{Request::path()=== 'home/contact' ? 'active' : ''}}"><i class="fas fa-phone"></i><span>Contact Us</span></a></li>
+                        <li><a href="{{route('home.stores')}}" class="{{Request::path()=== 'home/stores' ? 'active' : ''}}"><i class="fas fa-phone"></i><span>Stores</span></a></li>
 					</ul>
 				</nav>
 			</div>

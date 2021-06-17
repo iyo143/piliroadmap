@@ -10,6 +10,7 @@ use App\Http\Controllers\GalleryCategoryController;
 use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GalleryVideoController;
+use App\Http\Controllers\StoresController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +31,7 @@ Route::prefix('/')->group(function () {
         Route::get('article/{id}', [ArticleController::class, 'show'])->name('main.article');
     });
     Route::post('feedback', [FeedbackController::class, 'store'])->name('main.feedback');
+    Route::get('stores', [PagesController::class, 'mainStores'])->name('main.stores');
 
 });
 
@@ -43,9 +45,11 @@ Route::prefix('home')->group(function () {
     Route::get('gallery', [HomeController::class, 'gallery'])->name('home.gallery');
     Route::get('about', [HomeController::class, 'about'])->name('home.about');
     Route::get('contact', [HomeController::class, 'contact'])->name('home.contact');
+    Route::get('stores', [HomeController::class, 'stores'])->name('home.stores');
 
     Route::prefix('mapping')->group(function () {
         Route::POST('store-tag',[LocationTagController::class, 'store'])->name('map.store');
+        Route::GET('edit/{id}', [LocationTagController::class, 'edit'])->name('map.edit');
         Route::DELETE('delete/{id}',[LocationTagController::class, 'destroy'])->name('map.destroy');
     });
 
@@ -71,6 +75,9 @@ Route::prefix('home')->group(function () {
     });
     Route::prefix('gallery_video')->group(function(){
         Route::POST('store', [GalleryVideoController::class, 'store'])->name('galVideo.store');
+    });
+    Route::prefix('stores')->group(function(){
+        Route::POST('store', [StoresController::class, 'store'])->name('stores.store');
     });
 });
 

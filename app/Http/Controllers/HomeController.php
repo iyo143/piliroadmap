@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Archive;
+use App\Models\Stores;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\LocationTag;
@@ -37,13 +38,14 @@ class HomeController extends Controller
         $articles = Article::paginate(5);
         $galleries = Gallery::paginate(5);
         $archives = Archive::paginate(5);
+        $stores = Stores::get();
 
         $locationTags = LocationTag::paginate(5);
 
         return view('admin.admin',compact('location',
                   'countFarmers','countRetailers',
                             'countProcessors','countTrees',
-                            'articles', 'galleries', 'archives','locationTags'));
+                            'articles', 'galleries', 'archives','locationTags','stores'));
     }
     public function mapping()
     {
@@ -75,6 +77,9 @@ class HomeController extends Controller
     public function contact()
     {
         return view ('admin.contact-us');
+    }
+    public function stores(){
+        return view ('admin.stores');
     }
 
 

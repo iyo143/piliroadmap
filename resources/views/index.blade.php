@@ -1,10 +1,51 @@
 @extends('layout.layout')
-
+@section('links')
+    <link rel="stylesheet" href="{{asset('css/stores.css')}}">
+@endsection
 @section('content')
     @include('layout.partials.sub-header')
     <!--==========================
       About Us Section
     ============================-->
+    <section id="about">
+        <div class="container">
+
+            <header class="section-header">
+                <h3>Stores</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </header>
+
+            <div class="row about-cols">
+                @foreach($stores as $store)
+                    <div class="col-lg-4 col-md-6 wow fadeInUp">
+                        <div class="team-box text-center bg-white mt-4">
+                            <div class="team-img">
+                                <img src="/storage/stores_image/{{$store->store_image}}" alt="" class="img-fluid rounded">
+                                <div class="team-name">
+                                    <h5 class="text-white f-18 font-weight-light mb-0">{{$store->store_name}}</h5>
+                                </div>
+                            </div>
+                            <div class="team-content text-center p-3">
+                                <div class="">
+                                    <p class="f-17 mb-0"><a href="#" class="text-dark">{{$store->store_owner}}</a></p>
+                                    <div class="team-social-icon p-2">
+                                        <ul class="blog-details-icons list-inline mb-0">
+                                            <li class="list-inline-item"><a href="{{$store->fb_link}}" class=""><i class="fab fa-facebook-f"></i></a></li>
+                                            <li class="list-inline-item"><a href="{{$store->ig_link}}" class=""><i class="fab fa-instagram"></i></a></li>
+                                            <li class="list-inline-item"><a href="{{$store->twit_link}}" class=""><i class="fab fa-twitter"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+
+            </div>
+
+        </div>
+    </section>
     <section id="about">
       <div class="container">
 
@@ -143,8 +184,6 @@
           @empty
           <h1>There is no availbale Images</h1>
         @endforelse
-
-
         </div>
 
       </div>

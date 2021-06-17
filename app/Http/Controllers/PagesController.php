@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\GalleryCategory;
 use App\Models\GalleryVideo;
+use App\Models\Stores;
 use Illuminate\Http\Request;
 use App\Models\LocationTag;
 use App\Models\Article;
 use App\Models\ArticleCategory;
 use App\Models\User;
 use App\Models\Gallery;
+use Illuminate\Session\Store;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 class PagesController extends Controller
@@ -26,7 +28,8 @@ class PagesController extends Controller
         $gallery = Gallery::get();
         $galleryCategories = GalleryCategory::get();
         $departments = User::get();
-        return view('index',compact('location','trees','processors','retailers','farmers','gallery','galleryCategories', 'departments'));
+        $stores = Stores::get();
+        return view('index',compact('location','trees','processors','retailers','farmers','gallery','galleryCategories', 'departments', 'stores'));
     }
 
     public function mainArticle($id)
@@ -45,10 +48,17 @@ class PagesController extends Controller
     }
     public function mainGallery()
     {
+        $articles = Article::get();
         $images = Gallery::get();
         $videos = GalleryVideo::get();
         $galleryCategories = GalleryCategory::get();
-        return view('gallery',compact('images', 'videos', 'galleryCategories'));
+        return view('gallery',compact('images', 'videos', 'galleryCategories','articles'));
+    }
+    public function mainStores()
+    {
+        $articles = Article::get();
+        $stores = Stores::get();
+        return view('main-stores', compact('stores','articles'));
     }
     /**
      * Display a listing of the resource.

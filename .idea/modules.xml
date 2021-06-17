@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$USER_HOME$/Downloads/BizPage-bootstrap-4/.idea/BizPage-bootstrap-4.iml" filepath="$USER_HOME$/Downloads/BizPage-bootstrap-4/.idea/BizPage-bootstrap-4.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/piliroadmap.iml" filepath="$PROJECT_DIR$/.idea/piliroadmap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../prm-2/.idea/prm-2.iml" filepath="$PROJECT_DIR$/../prm-2/.idea/prm-2.iml" />
     </modules>
   </component>
 </project>

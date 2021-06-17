@@ -24,13 +24,17 @@
                                 <div class="input-group">
                                     <input type="hidden" name="municipality" id="mun">
                                     <span class="input-group-addon"><i class="fas fa-globe-asia"></i></span>
-                                    <select class="form-control" type="text" name="s" id="municipality" onChange="myNewFunction(this);"></select>
+                                    <select class="form-control" type="text" name="brgy_value" id="municipality" onChange="myNewFunction(this);">
+
+                                    </select>
+
                                 </div>
                                 <br>
                                 <div class="input-group">
                                     <input type="hidden" name="brgy" id="brgay">
                                     <span class="input-group-addon"><i class="fas fa-globe-asia"></i></span>
-                                    <select class="form-control form-control-user @error('trees') is-invalid @enderror" type="text" name="f" id="brgy" onchange="myNewFunctionbrgy(this);"></select>
+                                    <select class="form-control form-control-user @error('trees') is-invalid @enderror" type="text" name="" id="brgy" onchange="myNewFunctionbrgy(this);">
+                                    </select>
                                 </div>
                                 @error('brgy')
                                 <span class="text-danger" role="alert">
@@ -99,7 +103,7 @@
                                 @error('latitude')
                                 <span class="text-danger" role="alert">
                             {{ $message }}
-                        </span>
+                            </span>
                                 @enderror
                                 <br>
                                 <div class="input-group">
@@ -122,12 +126,10 @@
                                 </span>
                                 @enderror
                                 <br>
-                                <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                                <button class="btn btn-success btn-block" type="submit">Update</button>
                             </div>
                         </form>
                     </div>
-
-
                 </div>
                 <div class="col-md-8">
                     <div id="map" style="height: 500px"></div>
@@ -156,7 +158,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($location as $data)
+                                @foreach($locations as $data)
                                     <tr>
                                         <td>{{$data->id}}</td>
                                         <td>{{$data->brgy}}</td>
@@ -180,15 +182,7 @@
                                             </a>
                                         </span>
                                             <span>
-                                            <a  href=""
-                                                class="btn btn-success btn-circle"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Edit">
-                                                <i
-                                                    class="fas fa-edit">
-                                                </i>
-                                            </a>
+                                            <a href="{{route('map.edit', $data->id)}}" class="btn btn-success"><i class="lnr lnr-pencil"></i></a>
                                         </span>
                                             <span data-id="{{$data->id}}"
                                                   data-target="#DeleteModal"
@@ -272,7 +266,7 @@
             $('#municipality').ph_locations({'location_type': 'cities'});
             $('#brgy').ph_locations({'location_type': 'barangays'});
             $('#municipality').ph_locations( 'fetch_list', [{"province_code": "0562"}]);
-            $('#municipality').val()
+
         });
         function myNewFunction(sel) {
             $('#mun').val(sel.options[sel.selectedIndex].text);
