@@ -29,7 +29,7 @@ class ArticleRequest extends FormRequest
             'body'=>'required',
             'excerpt'=>'required',
             'article_category_id' => 'required',
-            'cover_image'=>'required|image'
+            'cover_image'=>'nullable|image'
         ];
     }
 }
