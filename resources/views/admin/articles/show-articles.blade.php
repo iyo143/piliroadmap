@@ -14,7 +14,7 @@
                         <h3 class="text-center text-dark" >{{$article->title}}</h3>
                     </div>
                     <div class="cover-image" style="padding: 0 10%">
-                        <img src="/storage/article_images/{{$article->cover_image}}" alt="" class="img-thumbnail">
+                        <img src="/public/article_images/{{$article->cover_image}}" alt="" class="img-thumbnail">
                     </div>
                     <div class="body-content" style="padding: 0 10%">
                         <p class="text-center">{!!$article->body!!}</p>
