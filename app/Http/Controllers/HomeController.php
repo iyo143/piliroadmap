@@ -32,7 +32,7 @@ class HomeController extends Controller
     {
         $location = LocationTag::get();
         $countFarmers = LocationTag::sum('farmers');
-        $countRetailers = LocationTag::sum('retailers');
+        $countRespondents = LocationTag::sum('respondents');
         $countProcessors = LocationTag::sum('processors');
         $countTrees = LocationTag::sum('trees');
         $articles = Article::paginate(5);
@@ -43,7 +43,7 @@ class HomeController extends Controller
         $locationTags = LocationTag::paginate(5);
 
         return view('admin.admin',compact('location',
-                  'countFarmers','countRetailers',
+                  'countFarmers','countRespondents',
                             'countProcessors','countTrees',
                             'articles', 'galleries', 'archives','locationTags','stores'));
     }

@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/css/stores.css": "/css/stores.css",
     "/css/style.css": "/css/style.css",
     "/contactform/contactform.js": "/contactform/contactform.js",
     "/contactform/Readme.txt": "/contactform/Readme.txt",
@@ -14,6 +15,7 @@
     "/img/facts-img.png": "/img/facts-img.png",
     "/img/favicon-2.png": "/img/favicon-2.png",
     "/img/favicon.png": "/img/favicon.png",
+    "/img/logo.png": "/img/logo.png",
     "/img/Map.png": "/img/Map.png",
     "/img/preloader.gif": "/img/preloader.gif",
     "/img/PRM-Logo-2.png": "/img/PRM-Logo-2.png",

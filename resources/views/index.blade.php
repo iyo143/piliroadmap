@@ -14,7 +14,6 @@
                 <h3>Stores</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </header>
-
             <div class="row about-cols">
                 @foreach($stores as $store)
                     <div class="col-lg-4 col-md-6 wow fadeInUp">
@@ -41,6 +40,11 @@
                     </div>
                 @endforeach
 
+
+            </div>
+            <div class="d-felx justify-content-center">
+
+                {{ $stores->links() }}
 
             </div>
 
@@ -131,8 +135,8 @@
   				</div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">{{$retailers}}</span>
-            <p>Retailers</p>
+            <span data-toggle="counter-up">{{$respondents}}</span>
+            <p>Repondents</p>
   				</div>
 
   			</div>

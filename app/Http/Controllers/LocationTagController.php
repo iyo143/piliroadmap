@@ -59,11 +59,16 @@ class LocationTagController extends Controller
             'municipality'=>$validatedTags['municipality'],
             'trees'=>$validatedTags['trees'],
             'farmers'=>$validatedTags['farmers'],
-            'retailers'=>$validatedTags['retailers'],
+            'respondents'=>$validatedTags['respondents'],
             'processors'=>$validatedTags['processors'],
             'latitude'=>$validatedTags['latitude'],
             'longitude'=>$validatedTags['longitude'],
-            'pili_image'=>$fileNameToStore
+            'brgy_value' =>$validatedTags['brgy_value'],
+            'municipality_value' => $validatedTags['municipality_value'],
+            'pili_image'=>$fileNameToStore,
+            'data_collector' =>$validatedTags['data_collector'],
+            'daily_per_40_days' => $validatedTags['daily_per_40_days'],
+
         ]);
         return redirect(route('home.mapping'))->with('message','successfully added Location Tag');
     }

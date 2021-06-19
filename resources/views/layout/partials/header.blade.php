@@ -6,7 +6,7 @@
 
     <div id="logo" class="pull-left">
         <div class="row">
-          <h1><a href="#intro" class="scrollto"></a></h1>
+
           <div class="logo"></div>
         </div>
     </div>

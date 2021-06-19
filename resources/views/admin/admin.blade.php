@@ -35,8 +35,8 @@
 									<div class="metric">
 										<span class="icon"><i class="fas fa-store"></i></span>
 										<p>
-											<span class="number">{{$countRetailers}}</span>
-											<span class="title">Retailers</span>
+											<span class="number">{{$countRespondents}}</span>
+											<span class="title">Respondents</span>
 										</p>
 									</div>
 								</div>
@@ -207,7 +207,7 @@
                                                 <th>Barangay</th>
                                                 <th>Municipality</th>
                                                 <th>Farmers</th>
-                                                <th>Retailers</th>
+                                                <th>Respondents</th>
                                                 <th>Processors</th>
                                                 <th>Trees</th>
                                                 <th>Latitude</th>
@@ -222,7 +222,7 @@
                                                 <td>{{$locationTag->brgy}}</td>
                                                 <td>{{$locationTag->municipality}}</td>
                                                 <td>{{$locationTag->farmers}}</td>
-                                                <td>{{$locationTag->retailers}}</td>
+                                                <td>{{$locationTag->respondents}}</td>
                                                 <td>{{$locationTag->processors}}</td>
                                                 <td>{{$locationTag->trees}}</td>
                                                 <td>{{$locationTag->latitude}}</td>
@@ -469,8 +469,8 @@
                 "<td>{{$data->trees}}"+
             "</tr>"+
             "<tr>" +
-                "<th>Retailers</th>"+
-                "<td>{{$data->retailers}}"+
+                "<th>Respondents</th>"+
+                "<td>{{$data->respondents}}"+
             "</tr>"+
             "<tr>" +
                 "<th>farmers</th>"+

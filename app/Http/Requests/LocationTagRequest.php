@@ -28,11 +28,15 @@ class LocationTagRequest extends FormRequest
             'municipality'=>'required',
             'trees'=>'required',
             'farmers'=>'required',
-            'retailers'=>'required',
+            'respondents'=>'required',
             'processors'=>'required',
             'latitude'=>'required',
             'longitude'=>'required',
-            'pili_image'=>'required|image'
+            'pili_image'=>'required|image',
+            'brgy_value' => 'required',
+            'municipality_value' => 'required',
+            'data_collector' => 'required',
+            'daily_per_40_days' => 'required',
         ];
     }
 }

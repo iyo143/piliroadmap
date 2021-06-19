@@ -25,7 +25,6 @@
                                     <input type="hidden" name="municipality" id="mun">
                                     <span class="input-group-addon"><i class="fas fa-globe-asia"></i></span>
                                     <select class="form-control" type="text" name="brgy_value" id="municipality" onChange="myNewFunction(this);">
-
                                     </select>
 
                                 </div>
@@ -34,6 +33,7 @@
                                     <input type="hidden" name="brgy" id="brgay">
                                     <span class="input-group-addon"><i class="fas fa-globe-asia"></i></span>
                                     <select class="form-control form-control-user @error('trees') is-invalid @enderror" type="text" name="" id="brgy" onchange="myNewFunctionbrgy(this);">
+                                        <option value="{{$location->brgy_value}}"></option>
                                     </select>
                                 </div>
                                 @error('brgy')
@@ -255,12 +255,14 @@
 
     </script>
     <script type="text/javascript">
+        var municipality = document.getElementById("")
         var my_handlers = {
             fill_barangays: function(){
                 var city_code = $(this).val();
                 $('#brgy').ph_locations('fetch_list', [{"city_code": city_code}]);
             }
         };
+
         $(function(){
             $('#municipality').on('change', my_handlers.fill_barangays);
             $('#municipality').ph_locations({'location_type': 'cities'});

@@ -24,13 +24,13 @@
                         <div class="input-group">
                             <input type="hidden" name="municipality" id="mun">
                             <span class="input-group-addon"><i class="fas fa-globe-asia"></i></span>
-                            <select class="form-control" type="text" name="s" id="municipality" onChange="myNewFunction(this);"></select>
+                            <select class="form-control" type="text" name="municipality_value" id="municipality" onChange="myNewFunction(this);"></select>
                         </div>
                         <br>
                         <div class="input-group">
                             <input type="hidden" name="brgy" id="brgay">
                             <span class="input-group-addon"><i class="fas fa-globe-asia"></i></span>
-                            <select class="form-control form-control-user @error('trees') is-invalid @enderror" type="text" name="f" id="brgy" onchange="myNewFunctionbrgy(this);"></select>
+                            <select class="form-control form-control-user @error('trees') is-invalid @enderror" type="text" name="brgy_value" id="brgy" onchange="myNewFunctionbrgy(this);"></select>
                         </div>
                         @error('brgy')
                         <span class="text-danger" role="alert">
@@ -68,8 +68,7 @@
                         <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-users"></i></span>
-                                    <input class="form-control" placeholder="No. of Retailers" type="text" name="retailers">
-
+                                    <input class="form-control" placeholder="No. of Respondents" type="text" name="respondents">
                                 </div>
                                 @error('retailers')
                                         <span class="text-danger" role="alert">
@@ -81,13 +80,37 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-cogs"></i></span>
                                     <input class="form-control" placeholder="No. of Processors" type="text" name="processors">
-
                                 </div>
                                 @error('processors')
                                         <span class="text-danger" role="alert">
                                             {{ $message }}
                                         </span>
                                      @enderror
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fas fa-users"></i></span>
+                                    <input class="form-control" placeholder="Daily(/40 days)" type="text" name="daily_per_40_days">
+                                </div>
+                                @error('retailers')
+                                <span class="text-danger" role="alert">
+                                            {{ $message }}
+                                        </span>
+                                @enderror
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fas fa-cogs"></i></span>
+                                    <input class="form-control" placeholder="Data Collector" type="text" name="data_collector">
+                                </div>
+                                @error('processors')
+                                <span class="text-danger" role="alert">
+                                            {{ $message }}
+                                        </span>
+                                @enderror
                             </div>
                         </div>
                         <br>

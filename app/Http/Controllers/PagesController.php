@@ -23,13 +23,13 @@ class PagesController extends Controller
         $location = LocationTag::get();
         $trees = LocationTag::sum('trees');
         $processors = LocationTag::sum('processors');
-        $retailers = LocationTag::sum('retailers');
+        $respondents = LocationTag::sum('respondents');
         $farmers = LocationTag::sum('farmers');
         $gallery = Gallery::get();
         $galleryCategories = GalleryCategory::get();
         $departments = User::get();
-        $stores = Stores::get();
-        return view('index',compact('location','trees','processors','retailers','farmers','gallery','galleryCategories', 'departments', 'stores'));
+        $stores = Stores::paginate(2);
+        return view('index',compact('location','trees','processors','respondents','farmers','gallery','galleryCategories', 'departments', 'stores'));
     }
 
     public function mainArticle($id)

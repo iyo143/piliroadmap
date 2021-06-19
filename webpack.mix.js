@@ -16,7 +16,8 @@ mix.js('resources/js/app.js', 'public/js')
     .sourceMaps();
 
 mix.sass('resources/css-copy/app.scss', 'public/css')
-    .sass('resources/css-copy/style.scss', 'public/css');
+    .sass('resources/css-copy/style.scss', 'public/css')
+    .sass('resources/css-copy/stores.scss', 'public/css');
 
 mix.copyDirectory('resources/assets', 'public/assets')
     .copyDirectory('resources/contactform', 'public/contactform')
