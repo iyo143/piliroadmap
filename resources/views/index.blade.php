@@ -42,11 +42,7 @@
 
 
             </div>
-            <div class="d-felx justify-content-center">
-
-                {{ $stores->links() }}
-
-            </div>
+            <div class="d-felx justify-content-center">{{$stores->links()}}</div>
 
         </div>
     </section>

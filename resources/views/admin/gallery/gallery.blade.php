@@ -98,7 +98,7 @@
                 @endif
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Insert Gallery Category</h3>
+                        <h3 class="panel-title">Insert Video</h3>
                     </div>
 
                     <form action="{{route('galVideo.store')}}" method="post" enctype="multipart/form-data">
@@ -106,7 +106,7 @@
                         <div class="panel-body">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="far fa-images"></i></span>
-                                <input class="form-control" placeholder="Category Name" type="text" name="video_name">
+                                <input class="form-control" placeholder="Video Name" type="text" name="video_name">
                             </div>
                             <br>
                             <div class="input-group">
@@ -253,14 +253,14 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">List of Category</h3>
                 </div>
-                <div class="panel-body">
-                    <table class="table table-hover table-responsive">
+                <div class="panel-body table-responsive">
+                    <table class="table table-hover ">
                         <thead>
                         <tr>
                             <th>#</th>
                             <th class="text-center">Video Name</th>
                             <th class="text-center">Video Image</th>
-                            <th class="text-center">Video Link</th>
+                            <th class="text-center" style="width: 25%">Video Link</th>
                             <th>Actions</th>
                         </tr>
                         </thead>

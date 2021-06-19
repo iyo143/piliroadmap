@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Archive;
+use App\Models\GalleryVideo;
 use App\Models\Stores;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -39,13 +40,15 @@ class HomeController extends Controller
         $galleries = Gallery::paginate(5);
         $archives = Archive::paginate(5);
         $stores = Stores::get();
+        $videos = GalleryVideo::get();
+
 
         $locationTags = LocationTag::paginate(5);
 
         return view('admin.admin',compact('location',
                   'countFarmers','countRespondents',
                             'countProcessors','countTrees',
-                            'articles', 'galleries', 'archives','locationTags','stores'));
+                            'articles', 'galleries', 'archives','locationTags','stores', 'videos'));
     }
     public function mapping()
     {

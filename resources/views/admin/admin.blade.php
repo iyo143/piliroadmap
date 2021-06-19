@@ -98,7 +98,7 @@
 								</div>
 								<div class="panel-footer">
 									<div class="row">
-										<div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i> Last 24 hours</span></div>
+										<div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i> Last 10 entries</span></div>
 										<div class="col-md-6 text-right"><a href="#" class="btn btn-primary">View All Records</a></div>
 									</div>
 								</div>
@@ -141,7 +141,7 @@
                                 </div>
                                 <div class="panel-footer">
                                     <div class="row">
-                                        <div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i> Last 24 hours</span></div>
+                                        <div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i> Last 10 entries</span></div>
                                         <div class="col-md-6 text-right"><a href="#" class="btn btn-primary">View All Records</a></div>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@
                         <div class="col-md-6">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Recent Added Image in Gallery</h3>
+                                    <h3 class="panel-title">Recent Added Video in Gallery</h3>
                                     <div class="right">
                                         <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                                         <button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
@@ -162,17 +162,20 @@
 
                                         <tr>
                                             <th>Department</th>
-                                            <th>Image Name</th>
-                                            <th>Image Photo</th>
-                                            <th>Category</th>
+                                            <th>Video Name</th>
+                                            <th>Video Photo</th>
+                                            <th>Video Link</th>
+                                            <th>Actions</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($galleries as $gallery)
+                                        @foreach($videos as $gallery)
                                             <tr>
                                                 <td>{{$gallery->user->name}}</td>
-                                                <td>{{$gallery->image_name}}</td>
-                                                <td><img src="/storage/gallery_images/{{$gallery->image_file}}" alt="" width="50"></td>
+                                                <td>{{$gallery->video_name}}</td>
+                                                <td><img src="/storage/gallery_videos/{{$gallery->video_image}}" alt="" width="50"></td>
+                                                <td>{{$gallery->video_link}}</td>
+
                                                 <td><a href="{{route('articles.show', $gallery->id)}}"><span class="label label-success">View</span></a></td>
                                             </tr>
                                         @endforeach
@@ -181,7 +184,7 @@
                                 </div>
                                 <div class="panel-footer">
                                     <div class="row">
-                                        <div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i> Last 24 hours</span></div>
+                                        <div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i> Last 10 entries</span></div>
                                         <div class="col-md-6 text-right"><a href="#" class="btn btn-primary">View All Records</a></div>
                                     </div>
                                 </div>
@@ -193,7 +196,7 @@
                             <!-- RECENT PURCHASES -->
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Recent Published Articles</h3>
+                                    <h3 class="panel-title">Recent Added Location Tags</h3>
                                     <div class="right">
                                         <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                                         <button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
@@ -235,7 +238,7 @@
                                 </div>
                                 <div class="panel-footer">
                                     <div class="row">
-                                        <div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i> Last 24 hours</span></div>
+                                        <div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i>Last 10 entries</span></div>
                                         <div class="col-md-6 text-right"><a href="#" class="btn btn-primary">View All Records</a></div>
                                     </div>
                                 </div>
