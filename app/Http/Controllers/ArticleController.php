@@ -80,7 +80,7 @@ class ArticleController extends Controller
         return view('admin.articles.show-articles',compact('article','articleCategories'));
     }
     public function  show($id){
-        $articles = Article::get();
+        $articles = Article::orderBy('id', 'DESC')->get();
         $article = Article::findorfail($id);
         $articleCategories = ArticleCategory::get();
         return view('article',compact('article','articleCategories','articles'));

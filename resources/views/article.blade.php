@@ -12,10 +12,10 @@
         <div class="col-lg-8 py-3 ">
             <h2 class="font-weight-normal font-italic py-4">{{$article->title}}</h2>
             <div class="row px-4 border-top pt-4">
-                <p><i class="far fa-clock"></i> February 6, 2020 | Posted by: {{$article->author}}</p>
+                <p><i class="far fa-clock"></i> {{$article->created_at}} | Posted by: {{$article->author}}</p>
             </div>
             <div class="" >
-                  <img style="width:100%;" src="/storage/article_images/{{$article->cover_image}}" alt="">
+                <img style="width:100%;" src="/public/article_images/{{$article->cover_image}}" alt="">
             </div>
             <div class="border-bottom"></div>
             <p>{!!$article->body!!}</p>
@@ -34,17 +34,17 @@
          
             <div class="widget-wrap wow fadeInUp">
               <h3 class="widget-title">Recent Articles</h3>
-              @foreach($articles as $data)
+              @foreach($articles->slice(0, 5) as $data)
               <div class="blog-widget">
                 <div class="blog-img">
-                  <img src="/storage/article_images/{{$data->cover_image}}" alt="">
+                  <img src="/public/article_images/{{$data->cover_image}}" alt="">
                 </div>
                 <div class="entry-footer">
                   <div class="blog-title mb-2"><a href="#">{{$data->title}}</a></div>
                   <div class="meta">
-                    <a href="#"><span class="icon-calendar"></span> July 12, 2018</a>
-                    <a href="#"><span class="icon-person"></span> Admin</a>
-                    <a href="#"><span class="icon-chat"></span> 19</a>
+                    <a href="#"><span class="icon-calendar"></span>{{$data->title}}</a>
+                    <a href="#"><span class="icon-person"></span>{{$data->created_at}}</a>
+                    <a href="#"><span class="icon-chat"></span>{{$data->excerpt}}</a>
                   </div>
                 </div>
               </div>
