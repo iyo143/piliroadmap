@@ -45,26 +45,25 @@ class ArticleController extends Controller
 
         if($request->hasFile('cover_image'))
         {
-            $file = $request->file('cover_image');
-            $extension = $file->getClientOriginalExtension();
-            $fileNameToStore = time().'.'.$extension;
-            $file->move('public/article_images',$fileNameToStore);
-
-            Article::create([
-                'author'=>$validatedArticles['author'],
-                'title'=>$validatedArticles['title'],
-                'body'=>$validatedArticles['body'],
-                'excerpt'=>$validatedArticles['excerpt'],
-                'article_category_id' =>$validatedArticles['article_category_id'],
-                'cover_image'=>$fileNameToStore,
-                'user_id' =>auth()->user()->id
-            ]);
-
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('cover_image')->storeAs('public/article_images',$fileNameToStore);
         }
         else
         {
             $fileNameToStore = 'noimage.jpg';
         }
+        Article::create([
+            'author'=>$validatedArticles['author'],
+            'title'=>$validatedArticles['title'],
+            'body'=>$validatedArticles['body'],
+            'excerpt'=>$validatedArticles['excerpt'],
+            'article_category_id' =>$validatedArticles['article_category_id'],
+            'cover_image'=>$fileNameToStore,
+            'user_id' =>auth()->user()->id
+        ]);
         return redirect(route('home.articles'))->with('message', 'successfully Published Articles');
     }
 
@@ -112,21 +111,22 @@ class ArticleController extends Controller
         $article = Article::findorfail($id);
 
         $validated = $request->validated();
-        $article->author = $request->input('author');
-        $article->title = $request->input('title');
-        $article->body = $request->input('body');
-        $article->excerpt = $request->input('excerpt');
-        $article->excerpt = $request->input('article_category_id');
+        $article->author = $validated['author'];
+        $article->title = $validated['title'];
+        $article->body = $validated['body'];
+        $article->excerpt = $validated['excerpt'];
+        $article->article_category->article_category_id = $validated['article_category_id'];
         if($request->hasFile('cover_image')){
             $location = 'public/article_images'.$article->cover_image;
             if(File::exists($location))
             {
                 File::delete($location);
             }
-            $file = $request->file('cover_image');
-            $extension = $file->getClientOriginalExtension();
-            $fileNameToStore = time().'.'.$extension;
-            $file->move('public/article_images',$fileNameToStore);
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('cover_image')->storeAs('public/article_images',$fileNameToStore);
             $article->cover_image = $fileNameToStore;
         }
         $article->update();

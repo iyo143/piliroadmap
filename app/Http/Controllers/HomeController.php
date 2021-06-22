@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Archive;
+use App\Models\Feedback;
 use App\Models\GalleryVideo;
 use App\Models\Stores;
 use App\Models\User;
@@ -33,7 +34,7 @@ class HomeController extends Controller
     {
         $location = LocationTag::get();
         $countFarmers = LocationTag::sum('farmers');
-        $countRespondents = LocationTag::sum('respondents');
+        $countRespondents = LocationTag::sum('retailers');
         $countProcessors = LocationTag::sum('processors');
         $countTrees = LocationTag::sum('trees');
         $articles = Article::paginate(5);
@@ -79,10 +80,12 @@ class HomeController extends Controller
     }
     public function contact()
     {
-        return view ('admin.contact-us');
+        $feedback = Feedback::get();
+        return view ('admin.contact-us', compact('feedback'));
     }
     public function stores(){
-        return view ('admin.stores');
+        $stores = Stores::get();
+        return view ('admin.stores',compact('stores'));
     }
 
 

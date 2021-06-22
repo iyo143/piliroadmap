@@ -4,8 +4,8 @@
     <div class="main">
         <div class="main-content">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-10">
+                <div class="row ">
+                    <div class="col-md-10 ">
                         @if(session('success_message'))
                             <div class="alert alert-success alert-dismissible">
                                 {{session('success_message')}}

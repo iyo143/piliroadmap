@@ -33,7 +33,7 @@ class StoresController extends Controller
             'twit_link'=>$validatedTags['twit_link'],
             'store_image'=>$fileNameToStore
         ]);
-        return redirect(route('home.stores'))->with('message','successfully added Location Tag');
+        return redirect(route('home.stores'))->with('success_add','successfully added Store');
     }
 
 }

@@ -25,7 +25,7 @@ class GalleryRequest extends FormRequest
     {
         return [
             'image_name' => 'required',
-            'image_file'=>'required|image|max:2000|mimes:jpeg,png,jpg,gif,svg',
+            'image_file'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg',
             'gallery_category_id'=>'required'
         ];
     }

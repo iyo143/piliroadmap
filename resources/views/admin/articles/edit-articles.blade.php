@@ -42,7 +42,7 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fab fa-tumblr"></i></span>
                                     <select name="article_category_id" id="" class="form-control">
-                                            <option selected = "selected" value="{{$article->article_category->id}}">{{$article->article_category->category_name}}</option>
+                                        <option selected = "selected" value="{{$article->article_category->id}}">{{$article->article_category->category_name}}</option>
                                         @foreach ($articleCategories as $articleCategories )
                                             <option value="{{ $articleCategories->id }}">{{ $articleCategories->category_name }}</option>
                                         @endforeach
@@ -55,6 +55,9 @@
                                     <span class="input-group-addon"><i class="far fa-images"></i></span>
                                     <input class="form-control" placeholder="Excerpt" type="file" name="cover_image">
                                 </div>
+                                <br>
+                                <img src="/storage/article_images/{{$article->cover_image}}" alt="" width="500">
+                                <br>
                                 <br>
                                 <button class="btn btn-success btn-block" type="submit">Update</button>
                             </div>

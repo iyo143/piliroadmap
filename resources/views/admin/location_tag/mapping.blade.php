@@ -68,7 +68,7 @@
                         <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-users"></i></span>
-                                    <input class="form-control" placeholder="No. of Respondents" type="text" name="respondents">
+                                    <input class="form-control" placeholder="No. of Retailers" type="text" name="retailers">
                                 </div>
                                 @error('retailers')
                                         <span class="text-danger" role="alert">
@@ -86,31 +86,6 @@
                                             {{ $message }}
                                         </span>
                                      @enderror
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fas fa-users"></i></span>
-                                    <input class="form-control" placeholder="Daily(/40 days)" type="text" name="daily_per_40_days">
-                                </div>
-                                @error('retailers')
-                                <span class="text-danger" role="alert">
-                                            {{ $message }}
-                                        </span>
-                                @enderror
-                            </div>
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fas fa-cogs"></i></span>
-                                    <input class="form-control" placeholder="Data Collector" type="text" name="data_collector">
-                                </div>
-                                @error('processors')
-                                <span class="text-danger" role="alert">
-                                            {{ $message }}
-                                        </span>
-                                @enderror
                             </div>
                         </div>
                         <br>

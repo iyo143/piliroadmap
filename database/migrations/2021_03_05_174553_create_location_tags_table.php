@@ -18,11 +18,9 @@ class CreateLocationTagsTable extends Migration
             $table->string('brgy');
             $table->string('municipality');
             $table->bigInteger('farmers');
-            $table->bigInteger('respondents');
+            $table->bigInteger('retailers');
             $table->bigInteger('processors');
             $table->bigInteger('trees');
-            $table->bigInteger('data_collector');
-            $table->bigInteger('daily_per_40_days');
             $table->string('brgy_value');
             $table->string('municipality_value');
             $table->string('latitude');

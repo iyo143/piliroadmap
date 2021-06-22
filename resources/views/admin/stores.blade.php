@@ -3,8 +3,13 @@
 @section('content')
 <div class="main">
     <div class="main-content">
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                @if(session('success_add'))
+                    <div class="alert alert-success alert-dismissible">
+                        {{session('success_add')}}
+                    </div>
+                @endif
                 <div class="panel">
                     <div class="panel-heading">
                         <h3 class="panel-title">Add Stores</h3>
@@ -63,6 +68,74 @@
                             <button class="btn btn-primary btn-block" type="submit">Submit</button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            List of Stores
+                        </h3>
+                        <div class="panel-body">
+                            <table class="table table-hover table-responsive">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Store Name</th>
+                                    <th>Store Owner</th>
+                                    <th>Facebook Link</th>
+                                    <th>Instagram Link</th>
+                                    <th>Twitter Link</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($stores as $data)
+                                    <tr>
+                                        <td>{{$data->id}}</td>
+                                        <td>{{$data->store_name}}</td>
+                                        <td>{{$data->store_owner}}</td>
+                                        <td>{{$data->fb_link}}</td>
+                                        <td>{{$data->ig_link}}</td>
+                                        <td>{{$data->twit_link}}</td>
+
+                                        <td>
+                                        <span>
+                                            <a  href=""
+                                                class="btn btn-primary btn-circle"
+                                                data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="View">
+                                                <i
+                                                    class="fas fa-eye">
+                                                </i>
+                                            </a>
+                                        </span>
+                                            <span>
+                                            <a href="{{route('map.edit', $data->id)}}" class="btn btn-success"><i class="lnr lnr-pencil"></i></a>
+                                        </span>
+                                            <span data-id="{{$data->id}}"
+                                                  data-target="#DeleteModal"
+                                                  data-toggle="modal" >
+                                            <a
+                                                class="btn btn-danger btn-circle"
+                                                data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="Delete">
+                                                <i
+                                                    class="fas fa-trash-alt">
+                                                </i>
+                                            </a>
+                                        </span>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

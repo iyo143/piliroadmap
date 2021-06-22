@@ -3,10 +3,31 @@
   <component name="ChangeListManager">
     <list default="true" id="a8a3357f-271c-4bc1-be77-a300013c91da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LocationTagController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LocationTagController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StoresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StoresController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ArticleRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ArticleRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/GalleryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/GalleryRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/LocationTagRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/LocationTagRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/LocationTag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LocationTag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_05_174553_create_location_tags_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_05_174553_create_location_tags_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/arcives/archives.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/arcives/archives.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/articles/articles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/articles/articles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/articles/edit-articles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/articles/edit-articles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/articles/show-articles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/articles/show-articles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/contact-us.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/contact-us.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/gallery/edit-gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/gallery/edit-gallery.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/gallery/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/gallery/gallery.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/location_tag/mapping.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/location_tag/mapping.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/stores.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/stores.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gallery.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../prm-2/resources/css-copy/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../prm-2/resources/css-copy/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../prm-2/resources/views/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../prm-2/resources/views/admin/admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../prm-2/resources/views/admin/articles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../prm-2/resources/views/admin/articles.blade.php" afterDir="false" />
@@ -148,6 +169,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/css-copy" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -178,7 +200,11 @@
       <workItem from="1623804656052" duration="4948000" />
       <workItem from="1623880514277" duration="7727000" />
       <workItem from="1623939740451" duration="19146000" />
-      <workItem from="1624111808689" duration="3433000" />
+      <workItem from="1624111808689" duration="3695000" />
+      <workItem from="1624154786095" duration="637000" />
+      <workItem from="1624193751587" duration="345000" />
+      <workItem from="1624200092098" duration="4969000" />
+      <workItem from="1624214148633" duration="7457000" />
     </task>
     <servers />
   </component>

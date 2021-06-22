@@ -318,12 +318,12 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h4>Are you sure you want to Delete the User?</h4>
+                <h4 class="text-center">Are you sure you want to Delete the Image?</h4><br>
                 <form action="{{route('gallery.destroy','id')}}" method="POST">
                     @csrf
                     @method('DELETE')
                     <div class="modal-footer">
-                        <input type="text" name="id" id="id">
+                        <input type="hidden" name="id" id="id">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </div>
@@ -342,7 +342,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h4>Are you sure you want to Delete the User?</h4>
+                <h4 class="text-center">Are you sure you want to Delete the Category?</h4><br>
                 <form action="{{route('galCategory.destroy','id')}}" method="POST">
                     @csrf
                     @method('DELETE')
@@ -418,7 +418,7 @@
             var button = $(event.relatedTarget);
             var user_id = button.data('id');
             var modal = $(this);
-            modal.find('.modal-title').text('Delete User');
+            modal.find('.modal-title').text('Delete Image');
             modal.find('.modal-body #id').val(user_id);
         });
     </script>
@@ -427,7 +427,7 @@
             var button = $(event.relatedTarget);
             var user_id = button.data('id');
             var modal = $(this);
-            modal.find('.modal-title').text('Delete User');
+            modal.find('.modal-title').text('Delete Category');
             modal.find('.modal-body #id').val(user_id);
         });
     </script>

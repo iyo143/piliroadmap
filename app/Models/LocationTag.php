@@ -14,16 +14,15 @@ class LocationTag extends Model
         'municipality',
         'trees',
         'farmers',
-        'respondents',
+        'retailers',
         'processors',
         'latitude',
         'longitude',
         'pili_image',
         'user_id',
         'brgy_value',
-        'municipality_value',
-        'data_collector',
-        'daily_per_40_days'
+        'municipality_value'
+
     ];
 
     public function user(){

@@ -42,7 +42,8 @@
 
 
             </div>
-            <div class="d-felx justify-content-center">{{$stores->links()}}</div>
+            <br>
+            <div class="d-flex justify-content-center text-success">{{$stores->links()}}</div>
 
         </div>
     </section>
@@ -131,7 +132,7 @@
   				</div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">{{$respondents}}</span>
+            <span data-toggle="counter-up">{{$retailers}}</span>
             <p>Repondents</p>
   				</div>
 

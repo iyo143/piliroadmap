@@ -26,7 +26,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-8">
-                            <section id="portfolio" class="section-bg mt-5" >
+                            <section id="portfolio" class=" mt-5" >
                                 <div class="container">
                                     <h2 class="text-center">Images</h2>
                                     <div class="row justify-content-center">
@@ -60,10 +60,10 @@
                                     </div>
                                 </div>
                             </section>
-                            <section id="portfolio" class="section-bg">
+                            <section id="portfolio" class="">
                                 <div class="container">
                                     <h2 class="text-center">Videos</h2>
-                                    <div class="row portfolio-container">
+                                    <div class="row portfolio-container mt-8">
                                         @forelse($videos as $data)
                                             <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp filter-active">
                                                 <div class="portfolio-wrap">
