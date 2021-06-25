@@ -19,9 +19,8 @@
         </div>
     </section>
 
-    <section class="inner-page mt-4">
+    <section class="inner-page section-bg">
         <div class="container-fluid">
-
             <div class="page-section">
                 <div class="container-fluid">
                     <div class="row">

@@ -251,7 +251,7 @@
         <div class="col-md-4">
             <div class="panel">
                 <div class="panel-heading">
-                    <h3 class="panel-title">List of Category</h3>
+                    <h3 class="panel-title">List of Video</h3>
                 </div>
                 <div class="panel-body table-responsive">
                     <table class="table table-hover ">
