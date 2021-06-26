@@ -75,6 +75,9 @@ Route::prefix('home')->group(function () {
     });
     Route::prefix('gallery_video')->group(function(){
         Route::POST('store', [GalleryVideoController::class, 'store'])->name('galVideo.store');
+          Route::DELETE('delete/{id}', [GalleryVideoController::class, 'destroy'])->name('galVideo.destroy');
+        Route::GET('edit/{id}', [GalleryVideoController::class, 'edit'])->name('galVideo.edit');
+        Route::PUT('update/{id}', [GalleryVideoController::class, 'update'])->name('galVideo.update');
     });
     Route::prefix('stores')->group(function(){
         Route::POST('store', [StoresController::class, 'store'])->name('stores.store');
