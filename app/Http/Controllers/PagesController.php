@@ -14,6 +14,7 @@ use App\Models\Gallery;
 use Illuminate\Session\Store;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Carbon\Carbon;
 class PagesController extends Controller
 {
 
@@ -36,6 +37,7 @@ class PagesController extends Controller
     {
         $category = ArticleCategory::findorfail($id);
         $articles = $category->articles()->get();
+
         return view('main-article',compact('articles'));
     }
     public function mainAbout()

@@ -33,8 +33,8 @@
                                             <img src="/storage/article_images/{{$data->cover_image}}" alt="">
                                         </div>
                                         <div class="post-date wow fadeInUp">
-                                            <h3>20</h3>
-                                            <span>Feb</span>
+                                            <h3>{{$data->created_at->format('d')}}</h3>
+                                            <span>{{$data->created_at->format('M')}}</span>
                                         </div>
                                     </div>
                                     <div class="post-title"><a href="blog-details.html">{{$data->title}}</a></div>
@@ -79,7 +79,7 @@
                                         <div class="entry-footer">
                                             <div class="blog-title mb-2"><a href="#">{{$data->title}}</a></div>
                                             <div class="meta">
-                                                <a href="#"><span class="icon-calendar"></span> July 12, 2018</a>
+                                                <a href="#"><span class="icon-calendar"></span>{{$data->created_at->format('M d Y')}}</a>
                                                 <a href="#"><span class="icon-person"></span> Admin</a>
                                                 <a href="#"><span class="icon-chat"></span> 19</a>
                                             </div>

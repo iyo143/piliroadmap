@@ -10,9 +10,9 @@
       <div class="row">
 
         <div class="col-lg-8 py-3 ">
-            <h2 class="font-weight-normal font-italic py-4">{{$article->title}}</h2>
+            <h2 class="font-weight-normal text-uppercase py-4">{{$article->title}}</h2>
             <div class="row px-4 border-top pt-4">
-                <p><i class="far fa-clock"></i> {{$article->created_at}} | Posted by: {{$article->author}}</p>
+                <p><i class="far fa-clock"></i> {{$article->created_at->format('M d Y')}}| Posted by: {{$article->author}}</p>
             </div>
             <div class="" >
                 <img style="width:100%;" src="/storage/article_images/{{$article->cover_image}}" alt="">
@@ -42,9 +42,7 @@
                 <div class="entry-footer">
                   <div class="blog-title mb-2"><a href="#">{{$data->title}}</a></div>
                   <div class="meta">
-                    <a href="#"><span class="icon-calendar"></span>{{$data->title}}</a>
-                    <a href="#"><span class="icon-person"></span>{{$data->created_at}}</a>
-                    <a href="#"><span class="icon-chat"></span>{{$data->excerpt}}</a>
+                    <a href="#"><span class="icon-person"></span>{{$data->created_at->format('M d Y')}}</a>
                   </div>
                 </div>
               </div>
