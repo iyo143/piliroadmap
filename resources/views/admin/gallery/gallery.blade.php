@@ -16,10 +16,6 @@
                     <div class="alert alert-success alert-dismissible">
                         {{session('update_message')}}
                     </div>
-                @elseif(session('delete_gal_category'))
-                    <div class="alert alert-danger alert-dismissible">
-                        {{session('delete_gal_category')}}
-                    </div>
                 @endif
                 <div class="panel">
                     <div class="panel-heading">
@@ -67,6 +63,10 @@
                     <div class="alert alert-success alert-dismissible">
                         {{session('cat_message')}}
                     </div>
+                @elseif(session('delete_gal_category'))
+                    <div class="alert alert-danger alert-dismissible">
+                        {{session('delete_gal_category')}}
+                    </div>
                 @endif
                 <div class="panel">
                     <div class="panel-heading">
@@ -91,10 +91,18 @@
             </div>
 
             <div class="col-md-4">
-                @if(session('cat_message'))
+                @if(session('video_message'))
                     <div class="alert alert-success alert-dismissible">
-                        {{session('cat_message')}}
+                        {{session('video_message')}}
                     </div>
+                @elseif(session('delete-vid-message'))
+                    <div class="alert alert-danger alert-dismissible">
+                        {{session('delete-vid-message')}}
+                    </div>
+                @elseif(session('update_vid_message'))
+                <div class="alert alert-success alert-dismissible">
+                    {{session('update_vid_message')}}
+                </div>
                 @endif
                 <div class="panel">
                     <div class="panel-heading">
@@ -108,18 +116,24 @@
                                 <span class="input-group-addon"><i class="far fa-images"></i></span>
                                 <input class="form-control" placeholder="Video Name" type="text" name="video_name">
                             </div>
+                            @error('video_name')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fas fa-link"></i></span>
                                 <input class="form-control" placeholder="Video Link" type="text" name="video_link">
                             </div>
+                            @error('video_link')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                             <br>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="far fa-images"></i></span>
                                 <input class="form-control" placeholder="Excerpt" type="file" name="video_image">
                             </div>
                             <br>
-                            @error('gallery_category_name')
+                            @error('video_link')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
 
@@ -272,20 +286,23 @@
                                 <td><img src="/storage/gallery_videos/{{$data->video_image}}" width="25"></td>
                                 <td>{{$data->video_link}}</td>
                                 <td>
-                                        <span>
-                                            <a
-                                                class="btn btn-primary btn-circle"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="View">
-                                                <i
-                                                    class="lnr lnr-eye">
-                                                </i>
-                                            </a>
-                                        </span>
+                                    <span>
+                                        <a
+                                            class="btn btn-primary btn-circle"
+                                            data-toggle="tooltip"
+                                            data-placement="top"
+                                            title="View">
+                                            <i
+                                                class="lnr lnr-eye">
+                                            </i>
+                                        </a>
+                                    </span>
+                                    <span>
+                                        <a href="{{route('galVideo.edit', $data->id)}}" class="btn btn-success"><i class="far fa-edit"></i></a>
+                                    </span>
                                     <span
                                         data-id="{{$data->id}}"
-                                        data-target="#DeleteGalModal"
+                                        data-target="#DeleteVidModal"
                                         data-toggle="modal" >
                                             <a
                                                 class="btn btn-danger btn-circle"
@@ -344,6 +361,30 @@
             <div class="modal-body">
                 <h4 class="text-center">Are you sure you want to Delete the Category?</h4><br>
                 <form action="{{route('galCategory.destroy','id')}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <div class="modal-footer">
+                        <input type="hidden" name="id" id="id">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="DeleteVidModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Deletion</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4 class="text-center">Are you sure you want to Delete?</h4><br>
+                <form action="{{route('galVideo.destroy','id')}}" method="POST">
                     @csrf
                     @method('DELETE')
                     <div class="modal-footer">
@@ -428,6 +469,15 @@
             var user_id = button.data('id');
             var modal = $(this);
             modal.find('.modal-title').text('Delete Category');
+            modal.find('.modal-body #id').val(user_id);
+        });
+    </script>
+    <script>
+        $('#DeleteVidModal').on('show.bs.modal',function (event){
+            var button = $(event.relatedTarget);
+            var user_id = button.data('id');
+            var modal = $(this);
+            modal.find('.modal-title').text('Delete Video');
             modal.find('.modal-body #id').val(user_id);
         });
     </script>

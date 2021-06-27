@@ -26,7 +26,7 @@ class GalleryVideoRequest extends FormRequest
         return [
             'video_name' => 'required',
             'video_link' => 'required',
-            'video_image' => 'required'
+            'video_image' => 'nullable'
         ];
     }
 }
