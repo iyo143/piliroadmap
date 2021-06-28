@@ -15,7 +15,7 @@
         <ul class="nav-menu">
           <li class="menu-active"><a href="{{route('homePage')}}">Home</a></li>
           <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Archives</a></li>
+          <li><a href="{{route('main.archive')}}">Archives</a></li>
           <li><a href="{{route('main.stores')}}">stores</a></li>
           <li><a href="{{route('main.gallery')}}">Gallery</a></li>
           <li class="menu-has-children"><a href="#">Articles</a>

@@ -46,7 +46,8 @@ class PagesController extends Controller
     }
     public function mainArchive()
     {
-        return view('main-article',compact('articles'));
+        $articles = Article::get();
+        return view('main-archive',compact('articles'));
     }
     public function mainGallery()
     {
