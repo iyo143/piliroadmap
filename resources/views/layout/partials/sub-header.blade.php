@@ -1,58 +1,20 @@
 <!--==========================
     Intro Section
   ============================-->
-  <section id="intro">
-    <div class="intro-container">
-      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
-
-        <ol class="carousel-indicators"></ol>
-
-        <div class="carousel-inner" role="listbox">
-
-          <div class="carousel-item active">
-            <div class="carousel-background"><img src="img/intro-carousel/15.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2>Morphological Analysis of Pili of Pili</h2>
-                <p>This study focused on morphological and morphometric analysis of  Pili fruits and leaves, respectively to identify superior physical  characters exhibited by the Pili accessions within the province of  Sorsogon.</p>
-                <a href="#featured-services" class="btn-get-started scrollto">Read More</a>
-              </div>
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                <h1>Better Solutions For Your Business</h1>
+                <h2>We are team of talented designers making websites with Bootstrap</h2>
+                <div class="d-lg-flex">
+                    <a href="#about" class="btn-get-started scrollto">Get Started</a>
+                    <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"> Watch Video <i class="icofont-play-alt-2"></i></a>
+                </div>
             </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="carousel-background"><img src="img/intro-carousel/12.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2>Establishing the Baseline Data of Pili</h2>
-                <p>The baseline research has been conducted to gauge the current position of Pili and the industry within the province of Sorsogon, which is identified as its top producer in the country. </p>
-                <a href="#featured-services" class="btn-get-started scrollto">Read More</a>
-              </div>
+            <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+                <img src="images/piliback.png" class="img-fluid animated" alt="">
             </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="carousel-background"><img src="img/intro-carousel/3.jpg" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2>Soil Characterization of Top Producing Pili</h2>
-                <p>Relief of the land, moisture content, soil color, soil pH, level of Nitrogen, Phosphorus and Potassium were investigated through various procedures such as ocular inspection, gravimetric method, and utilization of Munsell Color Chart and Soil Test Kit.</p>
-                <a href="#featured-services" class="btn-get-started scrollto">Read More</a>
-              </div>
-            </div>
-          </div>
         </div>
-
-        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-
-        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-
-      </div>
     </div>
-  </section><!-- #intro -->
+</section>

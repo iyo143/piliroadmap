@@ -6,11 +6,9 @@
 
     <div id="logo" class="pull-left">
         <div class="row">
-
           <div class="logo"></div>
         </div>
     </div>
-
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="{{route('homePage')}}">Home</a></li>

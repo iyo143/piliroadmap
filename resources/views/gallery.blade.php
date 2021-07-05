@@ -5,7 +5,7 @@
 @endsection
 @section('content')
     <section class="breadcrumbs" >
-        <div class="container">
+        <div class="container padding-20">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="section-header wow fadeInUp">
                     <h3>Gallery</h3>
@@ -15,19 +15,16 @@
                     <li>Inner Page</li>
                 </ol>
             </div>
-
         </div>
     </section>
-
     <section class="inner-page section-bg">
         <div class="container-fluid">
             <div class="page-section">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-8">
-                            <section id="portfolio" class=" mt-5" >
+                            <section id="portfolio">
                                 <div class="container">
-                                    <h2 class="text-center">Images</h2>
                                     <div class="row justify-content-center">
                                         <div class="col-lg-12">
                                             <ul id="portfolio-flters">
@@ -83,41 +80,42 @@
                             </section>
                         </div>
                         <!-- Sidebar -->
-                        <div class="col-lg-2 py-3">
-                            <div class="widget-wrap wow fadeInUp">
-                                <form action="#" class="search-form">
-                                    <h3 class="widget-title">Search</h3>
-                                    <div class="form-group">
-                                        <span class="icon mai-search"></span>
-                                        <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div class="widget-wrap wow fadeInUp">
-                                <h3 class="widget-title">Recent Articles</h3>
-                                @foreach($articles as $data)
-                                    <div class="blog-widget">
-                                        <div class="blog-img">
-                                            <img src="/storage/article_images/{{$data->cover_image}}" alt="">
+                        <div class="col-lg-4 py-3 d-flex justify-content-center ">
+                            <div class="col-lg-8">
+                                <div class="widget-wrap wow fadeInUp">
+                                    <form action="#" class="search-form">
+                                        <h3 class="widget-title">Search</h3>
+                                        <div class="form-group">
+                                            <span class="icon mai-search"></span>
+                                            <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
                                         </div>
-                                        <div class="entry-footer">
-                                            <div class="blog-title mb-2"><a href="#">{{$data->title}}</a></div>
-                                            <div class="meta">
-                                                <a href="#"><span class="icon-calendar"></span> July 12, 2018</a>
-                                                <a href="#"><span class="icon-person"></span> Admin</a>
-                                                <a href="#"><span class="icon-chat"></span> 19</a>
+                                    </form>
+                                </div>
+                                <div class="widget-wrap wow fadeInUp">
+                                    <h3 class="widget-title">Recent Articles</h3>
+                                    @foreach($articles as $data)
+                                        <div class="blog-widget">
+                                            <div class="blog-img">
+                                                <img src="/storage/article_images/{{$data->cover_image}}" alt="">
+                                            </div>
+                                            <div class="entry-footer">
+                                                <div class="blog-title mb-2"><a href="#">{{$data->title}}</a></div>
+                                                <div class="meta">
+                                                    <a href="#"><span class="icon-calendar"></span>{{$data->created_at->format('M d Y')}}</a>
+                                                    <a href="#"><span class="icon-person"></span> Admin</a>
+                                                    <a href="#"><span class="icon-chat"></span> 19</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                            <div class="widget-wrap wow fadeInUp">
-                                <h3 class="widget-title wow fadeInUp">Authors</h3>
-                                <div class="tag-clouds">
-                                    @foreach($articles as $data)
-                                        <a href="#" class="tag-cloud-link">{{$data->author}}</a>
                                     @endforeach
+                                </div>
+                                <div class="widget-wrap wow fadeInUp">
+                                    <h3 class="widget-title wow fadeInUp">Authors</h3>
+                                    <div class="tag-clouds">
+                                        @foreach($articles as $data)
+                                            <a href="#" class="tag-cloud-link">{{$data->author}}</a>
+                                        @endforeach
+                                    </div>
                                 </div>
                             </div>
                         </div>

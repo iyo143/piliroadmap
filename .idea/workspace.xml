@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8a3357f-271c-4bc1-be77-a300013c91da" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/piliroadmap.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/piliroadmap.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/gallery/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/gallery/gallery.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/article.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/article.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prm-2/resources/css-copy/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../prm-2/resources/css-copy/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prm-2/resources/views/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../prm-2/resources/views/admin/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prm-2/resources/views/admin/articles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../prm-2/resources/views/admin/articles.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prm-2/resources/views/auth/UserRegistration.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../prm-2/resources/views/auth/UserRegistration.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prm-2/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../prm-2/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/mobster.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/mobster.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/archive.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/stores.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/stores.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css-copy/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css-copy/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gallery.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/partials/sub-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/partials/sub-header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main-archive.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main-archive.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main-stores.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main-stores.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +153,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/css-copy" />
+    <property name="last_opened_file_path" value="E:/Downloads 2/Mobster Free Website Template - Free-CSS.com" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -155,6 +163,7 @@
       <recent name="C:\Users\Rio\projects\code\piliroadmap\resources\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\piliroadmap\public\images" />
       <recent name="C:\Users\Rio\projects\code\piliroadmap\public\img" />
       <recent name="C:\Users\Rio\projects\code\piliroadmap\public\images" />
     </key>
@@ -184,6 +193,10 @@
       <workItem from="1624214148633" duration="7457000" />
       <workItem from="1624325892390" duration="4980000" />
       <workItem from="1624459899964" duration="1440000" />
+      <workItem from="1625075670888" duration="1633000" />
+      <workItem from="1625149199584" duration="608000" />
+      <workItem from="1625442443546" duration="238000" />
+      <workItem from="1625454888774" duration="10035000" />
     </task>
     <servers />
   </component>
