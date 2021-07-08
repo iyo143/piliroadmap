@@ -2,22 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8a3357f-271c-4bc1-be77-a300013c91da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/piliroadmap.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/piliroadmap.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/mobster.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/mobster.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/archive.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArchiveController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArchiveController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ArchiveRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ArchiveRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Archive.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_06_07_033059_create_archives_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_06_07_033059_create_archives_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/archive.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/archive.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/stores.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/stores.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css-copy/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css-copy/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/back3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/back3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/1624200690.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/1624200710.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/1624200729.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/1624203467.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/1624203486.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/1624215514.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/1624215576.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/1624215965.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/1624217558.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/1624217725.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/1624217783.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/1624217819.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/1624217856.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/1624217952.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/168539959_459071165342527_7589023701154411671_n_1623170469.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/public/article_images/UML (1)_1623170454.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/arcives/archives.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/arcives/archives.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/article.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/article.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gallery.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/partials/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout/partials/sub-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/partials/sub-header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/main-archive.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main-archive.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main-article.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main-article.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/main-stores.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main-stores.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +181,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\piliroadmap\public\images" />
+      <recent name="C:\xampp\piliroadmap\public\pili-stage" />
       <recent name="C:\Users\Rio\projects\code\piliroadmap\public\img" />
       <recent name="C:\Users\Rio\projects\code\piliroadmap\public\images" />
     </key>
@@ -197,6 +215,11 @@
       <workItem from="1625149199584" duration="608000" />
       <workItem from="1625442443546" duration="238000" />
       <workItem from="1625454888774" duration="10035000" />
+      <workItem from="1625533067980" duration="5222000" />
+      <workItem from="1625619598549" duration="3995000" />
+      <workItem from="1625628456661" duration="7471000" />
+      <workItem from="1625648439046" duration="1376000" />
+      <workItem from="1625703537502" duration="6336000" />
     </task>
     <servers />
   </component>

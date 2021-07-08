@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Archive;
 use App\Models\GalleryCategory;
 use App\Models\GalleryVideo;
 use App\Models\Stores;
@@ -47,7 +48,8 @@ class PagesController extends Controller
     public function mainArchive()
     {
         $articles = Article::get();
-        return view('main-archive',compact('articles'));
+        $archives = Archive::get();
+        return view('main-archive',compact('articles', 'archives'));
     }
     public function mainGallery()
     {

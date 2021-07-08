@@ -19,9 +19,11 @@ class ArchiveController extends Controller
             $filenameToStore = $filename.'_'.time().'.'.$extension;
             $path = $request->file('pdf_file')->storeAs('public/archives',$filenameToStore);
         }
+
         Archive::create([
            "pdf_name" => $validated['pdf_name'],
-           "pdf_file" => $filenameToStore
+           "pdf_file" => $filenameToStore,
+           "pdf_description"=> $validated['pdf_description']
         ]);
         return redirect(route('home.archive'))->with('success_message', "Archive successfully added");
     }

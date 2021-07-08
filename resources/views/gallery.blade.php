@@ -4,7 +4,8 @@
     <link rel="stylesheet" href="{{asset('assets/css/mobster.css')}}">
 @endsection
 @section('content')
-    <section class="breadcrumbs" >
+    @include('layout.partials.sub-header-2')
+    <section class="breadcrumbs section-bg" >
         <div class="container padding-20">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="section-header wow fadeInUp">

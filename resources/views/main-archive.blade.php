@@ -4,7 +4,8 @@
     <link rel="stylesheet" href="{{asset('css/archive.css')}}">
 @endsection
 @section('content')
-    <section class="breadcrumbs" >
+    @include('layout.partials.sub-header-2')
+    <section class="breadcrumbs section-bg" >
         <div class="container padding-20">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="section-header wow fadeInUp">
@@ -25,24 +26,24 @@
                         <div class="col-lg-8 py-3">
                             <div class="container" style="margin-right:0">
                                 <div class="row">
-                                    @for($i = 0; $i<10; $i++)
+                                  @forelse($archives as $archive)
                                     <div class="col-md-3 py-3">
                                         <div class="card-sl">
                                             <div class="card-image">
                                                 <img
-                                                    src="https://images.pexels.com/photos/1149831/pexels-photo-1149831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                                                    src="images/pdf.png"/>
                                             </div>
-                                            <a class="card-action" href="#"><i class="fas fa-cloud-download-alt"></i></a>
+                                            <a class="card-action" href="#"><i class="far fa-file-pdf"></i></a>
                                             <div class="card-heading ">
-                                                Audi Q8
-                                            </div>
-                                            <div class="card-text">
-                                                Audi Q8 is a full-size luxury crossover SUV coupé made by Audi that was launched in 2018.
+                                                {{$archive->pdf_name}}
                                             </div>
                                             <a href="#" class="card-button font-weight-bold"> DOWNLOAD</a>
                                         </div>
                                     </div>
-                                    @endfor
+
+                                    @empty
+                                        <h1>There is no available archives</h1>
+                                    @endforelse
                                 </div>
                             </div>
                         </div>

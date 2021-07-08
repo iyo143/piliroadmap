@@ -17,6 +17,7 @@ class CreateArchivesTable extends Migration
             $table->id();
             $table->string('pdf_name');
             $table->string('pdf_file');
+            $table->string('pdf_description');
             $table->timestamps();
         });
     }

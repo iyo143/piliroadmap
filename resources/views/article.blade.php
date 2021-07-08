@@ -2,6 +2,21 @@
 <link rel="stylesheet" href="{{asset('assets/css/mobster.css')}}">
 @section('content')
 <div class="page-section">
+
+    @include('layout.partials.sub-header-2')
+    <section class="breadcrumbs section-bg" >
+        <div class="container padding-20">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="section-header wow fadeInUp">
+                    <h3>Article</h3>
+                </div>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Inner Page</li>
+                </ol>
+            </div>
+        </div>
+    </section>
     <div class="container">
     <div class="section-header wow fadeInUp pt-100">
           <h3>Articles</h3>

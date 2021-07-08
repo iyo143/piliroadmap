@@ -29,6 +29,11 @@
                                     </div>
                                     <br>
                                     <div class="input-group">
+                                        <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                                        <input class="form-control" placeholder="PDF Description" type="text" name="pdf_description">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
                                         <span class="input-group-addon"><i class="far fa-images"></i></span>
                                         <input class="form-control" placeholder="Excerpt" type="file" name="pdf_file">
                                     </div>

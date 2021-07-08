@@ -25,7 +25,8 @@ class ArchiveRequest extends FormRequest
     {
         return [
             'pdf_name' => 'required',
-            'pdf_file' => 'required'
+            'pdf_file' => 'required',
+            'pdf_description' => 'required'
         ];
     }
 }

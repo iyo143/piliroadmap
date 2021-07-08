@@ -4,11 +4,12 @@
     <link rel="stylesheet" href="{{asset('css/stores.css')}}">
 @endsection
 @section('content')
-    <section class="breadcrumbs" >
-        <div class="container">
+    @include('layout.partials.sub-header-2')
+    <section class="breadcrumbs section-bg" >
+        <div class="container padding-20">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="section-header wow fadeInUp">
-                    <h3>Gallery</h3>
+                    <h3>Stores</h3>
                 </div>
                 <ol>
                     <li><a href="index.html">Home</a></li>
@@ -25,15 +26,13 @@
                         <div class="col-lg-8 py-3">
                             <div class="container" style="margin-right:0">
                                 <div class="row">
-                                    @for($i = 0; $i<12; $i++)
+                                    @forelse($stores as $store)
                                         <div class="col-lg-3 col-md-6 wow fadeInUp">
                                             <div class="team-box text-center bg-white mt-4">
                                                 <div class="team-img">
-{{--                                                    <img src="/storage/stores_image/{{$store->store_image}}" alt="" class="img-fluid rounded">--}}
-                                                    <img src="https://images.pexels.com/photos/1149831/pexels-photo-1149831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="img-fluid rounded">
+                                                    <img src="/storage/stores_image/{{$store->store_image}}" alt="" class="img-fluid rounded">
                                                     <div class="team-name">
-{{--                                                        <h5 class="text-white f-18 font-weight-light mb-0">{{$store->store_name}}</h5>--}}
-                                                        <h5 class="text-white f-18 font-weight-light mb-0">Store Name</h5>
+                                                        <h5 class="text-white f-18 font-weight-light mb-0">{{$store->store_name}}</h5>
                                                     </div>
                                                 </div>
                                                 <div class="team-content text-center p-3">
@@ -50,7 +49,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    @endfor
+                                    @empty
+                                        <h1>There is no store Available</h1>
+                                    @endforelse
                                 </div>
                             </div>
                         </div>
