@@ -13,6 +13,7 @@ use App\Models\ArticleCategory;
 use App\Models\User;
 use App\Models\Gallery;
 use Illuminate\Session\Store;
+use Illuminate\Support\Facades\View;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Carbon\Carbon;
@@ -64,6 +65,12 @@ class PagesController extends Controller
         $articles = Article::get();
         $stores = Stores::get();
         return view('main-stores', compact('stores','articles'));
+    }
+    public function mainRoadmap()
+    {
+        $articles = Article::get();
+        $stores = Stores::get();
+        return view('main-roadmap', compact('stores','articles'));
     }
     /**
      * Display a listing of the resource.

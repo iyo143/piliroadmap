@@ -11,6 +11,8 @@
     </div>
       <nav id="nav-menu-container">
         <ul class="nav-menu">
+
+
           <li class="menu-active"><a href="{{route('homePage')}}">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="{{route('main.archive')}}">Archives</a></li>
@@ -23,7 +25,7 @@
               @endforeach
             </ul>
           </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="{{route('main.roadmap')}}">Roadmap</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
