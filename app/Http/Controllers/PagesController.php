@@ -64,13 +64,19 @@ class PagesController extends Controller
     {
         $articles = Article::get();
         $stores = Stores::get();
+
         return view('main-stores', compact('stores','articles'));
     }
     public function mainRoadmap()
     {
         $articles = Article::get();
         $stores = Stores::get();
-        return view('main-roadmap', compact('stores','articles'));
+        $trees = LocationTag::sum('trees');
+        $processors = LocationTag::sum('processors');
+        $retailers = LocationTag::sum('retailers');
+        $farmers = LocationTag::sum('farmers');
+        $location = LocationTag::get();
+        return view('main-roadmap', compact('stores','articles', 'trees', 'processors', 'retailers', 'farmers','location'));
     }
     /**
      * Display a listing of the resource.

@@ -460,7 +460,7 @@ h6 {
 }
 
 #mobile-nav-toggle i {
-  color: #fff;
+  color: #000;
 }
 
 /* Mobile Nav Styling */
@@ -1936,4 +1936,49 @@ body.mobile-nav-active #mobile-nav-toggle {
     100% {
         transform: translateY(-10px);
     }
+}
+
+/*facts-2*/
+#facts-2 {
+    /*background: url(/images/facts-bg.jpg?da5fe4b5ab2141b2264a97f0abcf021b) center top no-repeat fixed;*/
+    background-size: cover;
+    padding: 60px 0 0 0;
+    position: relative;
+}
+
+#facts-2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.88);
+    z-index: 9;
+}
+
+#facts-2 .container {
+    position: relative;
+    z-index: 10;
+}
+
+#facts-2 .counters span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    display: block;
+    color: #18d26e;
+}
+
+#facts-2 .counters p {
+    padding: 0;
+    margin: 0 0 20px 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #111;
+}
+
+#facts-2 .facts-img {
+    text-align: center;
+    padding: 30px 0;
 }
