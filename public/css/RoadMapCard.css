@@ -1,24 +1,23 @@
-
 .card {
-    width: 400px;
-    border: none;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+  width: 400px;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
 }
 
 .stats {
-    background: #f2f5f8 !important;
-    color: #000 !important
+  background: #f2f5f8 !important;
+  color: #000 !important;
 }
 
 .articles {
-    font-size: 10px;
-    color: #a1aab9;
-    margin: 0;
+  font-size: 10px;
+  color: #a1aab9;
+  margin: 0;
 }
 
 .number1 {
-    font-weight: 500;
-    margin: 0;
+  font-weight: 500;
+  margin: 0;
 }

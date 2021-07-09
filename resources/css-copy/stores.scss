@@ -1,7 +1,7 @@
-
 .team-box {
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .team-name {
@@ -19,7 +19,7 @@
     position: relative;
     overflow: hidden;
     display: block;
-
+    height: 100%;
 }
 
 .blog-details-icons li {
@@ -36,26 +36,22 @@
     line-height: 30px;
     border-radius: 50%;
     border: 1px solid #777777;
-    -webkit-transition: all 0.5s;
     transition: all 0.5s;
 }
 
 .blog-details-icons li a:hover {
     background-color: #18D26E;
     color: #ffffff;
-    -webkit-transition: all 0.5s;
     transition: all 0.5s;
     border-color: #18D26E;
 }
 
 .blog-datails-item li a {
-    -webkit-transition: all 0.5s;
     transition: all 0.5s;
 }
 
 .blog-datails-item li a:hover {
     color: #ff4f6c !important;
-    -webkit-transition: all 0.5s;
     transition: all 0.5s;
     margin-left: 6px;
 }

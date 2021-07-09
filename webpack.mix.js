@@ -18,10 +18,14 @@ mix.js('resources/js/app.js', 'public/js')
 mix.sass('resources/css-copy/app.scss', 'public/css')
     .sass('resources/css-copy/style.scss', 'public/css')
     .sass('resources/css-copy/stores.scss', 'public/css')
-    .sass('resources/css-copy/archive.scss', 'public/css');
+    .sass('resources/css-copy/archive.scss', 'public/css')
+    .sass('resources/css-copy/carousel.scss', 'public/css')
+    .sass('resources/css-copy/RoadMapCard.scss', 'public/css');
 
 mix.copyDirectory('resources/assets', 'public/assets')
     .copyDirectory('resources/contactform', 'public/contactform')
     .copyDirectory('resources/img', 'public/img')
     .copyDirectory('resources/js-copy','public/js')
+    .copyDirectory('resources/images','public/images')
+    .copyDirectory('resources/pili-stage','public/pili-stage')
     .copyDirectory('resources/lib','public/lib');
