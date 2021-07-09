@@ -9,6 +9,14 @@
                     <div class="alert alert-success alert-dismissible">
                         {{session('success_add')}}
                     </div>
+                @elseif (session('delete-message'))
+                    <div class="alert alert-danger alert-dismissible">
+                        {{ session('delete-message') }}
+                    </div>
+                @elseif (session('update-message'))
+                    <div class="alert alert-success alert-dismissible">
+                        {{ session('update-message') }}
+                    </div>
                 @endif
                 <div class="panel">
                     <div class="panel-heading">
@@ -114,7 +122,7 @@
                                             </a>
                                         </span>
                                             <span>
-                                            <a href="{{route('map.edit', $data->id)}}" class="btn btn-success"><i class="lnr lnr-pencil"></i></a>
+                                            <a href="{{route('stores.edit', $data->id)}}" class="btn btn-success"><i class="lnr lnr-pencil"></i></a>
                                         </span>
                                             <span data-id="{{$data->id}}"
                                                   data-target="#DeleteModal"
@@ -141,4 +149,70 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Deletion</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+                <h4>Are you sure you want to delete this Store?</h4>
+                <form action="{{route('stores.destroy','id')}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <div class="modal-footer">
+                        <input type="hidden" name="id" id="id">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="View" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Deletion</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>Are you sure you want to Delete the User?</h4>
+                <form action="{{route('stores.destroy','id')}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <div class="modal-footer">
+                        <input type="hidden" name="id" id="id">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('scripts')
+    <script>
+        tinymce.init({
+        selector: 'textarea'
+    });
+    </script>
+    <script>
+         $('#DeleteModal').on('show.bs.modal',function (event){
+            var button = $(event.relatedTarget);
+            var user_id = button.data('id');
+            var modal = $(this);
+            modal.find('.modal-title').text('Delete Store');
+            modal.find('.modal-body #id').val(user_id);
+        });
+    </script>
+
 @endsection
