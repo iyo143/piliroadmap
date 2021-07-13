@@ -81,6 +81,9 @@ Route::prefix('home')->group(function () {
     });
     Route::prefix('stores')->group(function(){
         Route::POST('store', [StoresController::class, 'store'])->name('stores.store');
+        Route::DELETE('delete/{id}', [StoresController::class, 'destroy'])->name('stores.destroy');
+        Route::GET('edit/{id}', [StoresController::class, 'edit'])->name('stores.edit');
+        Route::PUT('update/{id}', [StoresController::class, 'update'])->name('stores.update');
     });
 });
 
