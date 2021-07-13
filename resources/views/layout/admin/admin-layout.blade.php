@@ -13,7 +13,6 @@
 	<link rel="stylesheet" href="{{asset('assets/vendor/chartist/css/chartist-custom.css')}}">
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
-	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
 	<link rel="stylesheet" href="{{asset('assets/css/demo.css')}}">
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
@@ -39,7 +38,7 @@
 		@yield('scripts')
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
-	
+
     <script src="https://kit.fontawesome.com/226fb0657d.js" crossorigin="anonymous"></script>
 	<script src="{{asset('assets/vendor/jquery/jquery.min.js')}}"></script>
 	<script src="{{asset('assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>

@@ -79,7 +79,7 @@
                                 <div class="body-content" style="padding: 0 15%">
                                     <p class="text-center">{!!$banner->body!!}</p>
                                 </div>
-                                <div class="panel-bottom">
+                                <div class="text-center" style="padding: 20px" >
                                     <a href="" class="btn btn-success">Edit</a>
                                     <a href="" class="btn btn-danger">Delete</a>
                                 </div>
