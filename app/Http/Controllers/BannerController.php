@@ -33,4 +33,15 @@ class BannerController extends Controller
 
         return redirect(route('home.banner'))->with('success_message', 'successfully added the Banner');
     }
+
+    public function destroy(Request $request){
+        $banner = Banner::findorfail($request->id);
+        $banner->delete();
+        return redirect()->back()->with('delete_message', 'Banner Deleted Successfully');
+    }
+
+    public function edit($id)
+    {
+
+    }
 }

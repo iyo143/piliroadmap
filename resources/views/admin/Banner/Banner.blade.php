@@ -10,9 +10,9 @@
                             <div class="alert alert-success alert-dismissible">
                                 {{session('success_message')}}
                             </div>
-                        @elseif (session('delete-message'))
+                        @elseif (session('delete_message'))
                             <div class="alert alert-danger alert-dismissible">
-                                {{ session('delete-message') }}
+                                {{ session('delete_message') }}
                             </div>
                         @elseif (session('update_message'))
                             <div class="alert alert-success alert-dismissible">
@@ -81,12 +81,10 @@
                                 </div>
                                 <div class="text-center" style="padding: 20px" >
                                     <a href="" class="btn btn-success">Edit</a>
-                                    <a href="" class="btn btn-danger">Delete</a>
+                                    <a data-target="#DeleteModal" data-id="{{$banner->id}}"
+                                       data-toggle="modal" class="btn btn-danger">Delete</a>
                                 </div>
-
                             </div>
-
-
                         @endforeach
                             <br>
 
@@ -108,11 +106,11 @@
                 </div>
                 <div class="modal-body">
                     <h4>Are you sure you want to Delete the User?</h4>
-                    <form action="{{route('articles.destroy','id')}}" method="POST">
+                    <form action="{{route('banner.destroy','id')}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <div class="modal-footer">
-                            <input type="hidden" name="id" id="id">
+                            <input type="text" name="id" id="id">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </div>

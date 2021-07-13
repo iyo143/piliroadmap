@@ -90,6 +90,7 @@ Route::prefix('home')->group(function () {
 
     Route::prefix('banner')->group(function(){
         Route::post('store', [BannerController::class, 'store'])->name('banner.store');
+        Route::DELETE('delete/{id}',[BannerController::class, 'destroy'])->name('banner.destroy');
     });
 });
 
