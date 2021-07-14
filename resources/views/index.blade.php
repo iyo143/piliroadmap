@@ -12,7 +12,6 @@
 
             <header class="section-header">
                 <h3>Stores</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </header>
             <div class="row about-cols">
                 @foreach($stores as $store)
@@ -52,7 +51,7 @@
 
         <header class="section-header">
           <h3>About Us</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p></p>
         </header>
 
         <div class="row about-cols">
@@ -111,7 +110,7 @@
 
         <header class="section-header">
           <h3>Road Map</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+
         </header>
 
         <div class="row counters">
