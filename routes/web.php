@@ -89,8 +89,10 @@ Route::prefix('home')->group(function () {
     });
 
     Route::prefix('banner')->group(function(){
-        Route::post('store', [BannerController::class, 'store'])->name('banner.store');
+        Route::POST('store', [BannerController::class, 'store'])->name('banner.store');
         Route::DELETE('delete/{id}',[BannerController::class, 'destroy'])->name('banner.destroy');
+        Route::get('edit/{id}',[BannerController::class, 'edit'])->name('banner.edit');
+        Route::PUT('update/{id}',[BannerController::class, 'update'])->name('banner.update');
     });
 });
 

@@ -100,7 +100,6 @@ class GalleryController extends Controller
         $gallery = Gallery::findorfail($id);
 
         $validated = $request->validated();
-
         if($request->hasFile('image_file')){
             $location = 'public/gallery_images'.$validated['image_file'];
             if(File::exists($location)){

@@ -80,7 +80,7 @@
                                     <p class="text-center">{!!$banner->body!!}</p>
                                 </div>
                                 <div class="text-center" style="padding: 20px" >
-                                    <a href="" class="btn btn-success">Edit</a>
+                                    <a href="{{route('banner.edit', $banner->id)}}" class="btn btn-success">Edit</a>
                                     <a data-target="#DeleteModal" data-id="{{$banner->id}}"
                                        data-toggle="modal" class="btn btn-danger">Delete</a>
                                 </div>
