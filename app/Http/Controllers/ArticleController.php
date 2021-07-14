@@ -64,7 +64,7 @@ class ArticleController extends Controller
             'cover_image'=>$fileNameToStore,
             'user_id' =>auth()->user()->id
         ]);
-        return redirect(route('home.articles'))->with('message', 'successfully Published Articles');
+        return redirect(route('home.articles'))->with('success_message', 'successfully Add Banner');
     }
 
     /**

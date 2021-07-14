@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Archive;
+use App\Models\Banner;
 use App\Models\Feedback;
 use App\Models\GalleryVideo;
 use App\Models\Stores;
@@ -86,6 +87,10 @@ class HomeController extends Controller
     public function stores(){
         $stores = Stores::get();
         return view ('admin.stores',compact('stores'));
+    }
+    public function banners(){
+        $banners = Banner::latest()->take(1)->get();
+        return view('admin.Banner.Banner', compact('banners'));
     }
 
 

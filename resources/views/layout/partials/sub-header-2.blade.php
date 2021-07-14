@@ -20,22 +20,22 @@
                 <div class="container-fluid">
                     <div class="row justify-content-center px-8">
                         <div class="col-md-2">
-                            <img src="pili-stage/1.png" class="img-fluid animated" alt="">
+                            <img src="{{asset('pili-stage/1.png')}}" class="img-fluid animated" alt="">
                         </div>
                         <div class="col-md-2">
-                            <img src="pili-stage/2.png" class="img-fluid animated" alt="">
+                            <img src="{{asset('pili-stage/2.png')}}" class="img-fluid animated" alt="">
                         </div>
                         <div class="col-md-2 col-sm-2">
-                            <img src="pili-stage/3.png" class="img-fluid animated" alt="">
+                            <img src="{{asset('pili-stage/3.png')}}" class="img-fluid animated" alt="">
                         </div>
                         <div class="col-md-2">
-                            <img src="pili-stage/4.png" class="img-fluid animated" alt="">
+                            <img src="{{asset('pili-stage/4.png')}}" class="img-fluid animated" alt="">
                         </div>
                         <div class="col-md-2">
-                            <img src="pili-stage/5.png" class="img-fluid animated" alt="">
+                            <img src="{{asset('pili-stage/5.png')}}" class="img-fluid animated" alt="">
                         </div>
                         <div class="col-md-2">
-                            <img src="pili-stage/6.png" class="img-fluid animated" alt="">
+                            <img src="{{asset('pili-stage/6.png')}}" class="img-fluid animated" alt="">
                         </div>
                     </div>
                 </div>
