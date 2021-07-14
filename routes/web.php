@@ -26,11 +26,14 @@ Route::get('/',[PagesController::class, 'homePage'])->name('homePage');
 Route::prefix('/')->group(function () {
     Route::get('articles/{id}', [PagesController::class, 'mainArticle'])->name('main.articles');
     Route::get('about', [PagesController::class, 'mainAbout'])->name('main.about');
-    Route::get('gallery', [PagesController::class, 'mainGallery'])->name('main.gallery');
     Route::get('archive', [PagesController::class, 'mainArchive'])->name('main.archive');
     Route::post('feedback', [FeedbackController::class, 'store'])->name('main.feedback');
     Route::get('stores', [PagesController::class, 'mainStores'])->name('main.stores');
     Route::get('roadmap', [PagesController::class, 'mainRoadmap'])->name('main.roadmap');
+    Route::prefix('gallery')->group(function () {
+        Route::get('images', [PagesController::class, 'mainGallery'])->name('main.gallery');
+        Route::get('videos', [PagesController::class, 'mainGalleryVideo'])->name('main.galleryVideo');
+    });
     Route::prefix('articles')->group(function () {
         Route::get('article/{id}', [ArticleController::class, 'show'])->name('main.article');
     });

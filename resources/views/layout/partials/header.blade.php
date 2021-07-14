@@ -17,7 +17,12 @@
           <li><a href="#about">About Us</a></li>
           <li><a href="{{route('main.archive')}}">Archives</a></li>
           <li><a href="{{route('main.stores')}}">stores</a></li>
-          <li><a href="{{route('main.gallery')}}">Gallery</a></li>
+            <li class="menu-has-children"><a href="#">Gallery</a>
+                <ul>
+                    <li><a href="{{ route('main.gallery') }}">Images</a></li>
+                    <li><a href="{{ route('main.galleryVideo') }}">Video</a></li>
+                </ul>
+            </li>
           <li class="menu-has-children"><a href="#">Articles</a>
             <ul>
               @foreach ($viewcategories as $category)

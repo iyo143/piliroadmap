@@ -60,6 +60,15 @@ class PagesController extends Controller
         $galleryCategories = GalleryCategory::get();
         return view('gallery',compact('images', 'videos', 'galleryCategories','articles'));
     }
+    public function mainGalleryVideo()
+    {
+        $articles = Article::get();
+        $videos = GalleryVideo::get();
+        $galleryCategories = GalleryCategory::get();
+        return view('gallery-video',compact('videos', 'galleryCategories','articles'));
+    }
+
+
     public function mainStores()
     {
         $articles = Article::get();
