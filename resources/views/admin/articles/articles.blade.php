@@ -136,13 +136,9 @@
                                     </td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
-
                         </table>
-
                     </div>
-
                 </div>
 
                 <!-- END TABLE HOVER -->

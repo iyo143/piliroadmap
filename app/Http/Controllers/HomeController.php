@@ -85,7 +85,7 @@ class HomeController extends Controller
         return view ('admin.contact-us', compact('feedback'));
     }
     public function stores(){
-        $stores = Stores::get();
+        $stores = auth()->user()->stores()->paginate(10);
         return view ('admin.stores',compact('stores'));
     }
     public function banners(){
