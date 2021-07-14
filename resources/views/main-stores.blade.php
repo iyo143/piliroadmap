@@ -29,7 +29,7 @@
                                     @forelse($stores as $store)
                                         <div class="col-lg-3 col-md-6 wow fadeInUp">
                                             <div class="team-box text-center bg-white mt-4">
-                                                <div class="team-img">
+                                                <div class="team-img" style="height: 200px">
                                                     <img src="/storage/stores_image/{{$store->store_image}}" alt="" class="img-fluid rounded">
                                                     <div class="team-name">
                                                         <h5 class="text-white f-18 font-weight-light mb-0">{{$store->store_name}}</h5>

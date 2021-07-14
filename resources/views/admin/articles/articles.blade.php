@@ -115,7 +115,7 @@
                                     <td>{{$data->id}}</td>
                                     <td>{{$data->author}}</td>
                                     <td>{{$data->title}}</td>
-                                    <td>{{\Illuminate\Support\Str::limit($data->excerpt, 20)}} </td>
+                                    <td>{{\Illuminate\Support\Str::limit($data->excerpt, 20)}}</td>
                                     <td>{{ $data->article_category->category_name }}</td>
                                     <td>
                                         <a href="{{route('articles.show', $data->id)}}" class="btn btn-primary"><i class="lnr lnr-eye"></i></a>
