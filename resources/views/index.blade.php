@@ -53,51 +53,20 @@
           <h3>About Us</h3>
           <p></p>
         </header>
-
         <div class="row about-cols">
-
-          <div class="col-md-4 wow fadeInUp">
-            <div class="about-col">
-              <div class="img">
-                <img src="img/intro-carousel/10.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+            @foreach($abouts as $about)
+              <div class="col-md-4 wow fadeInUp">
+                <div class="about-col">
+                  <div class="img">
+                    <img src="/storage/about_images/{{$about->about_image}}" alt="" class="img-fluid" style="height: 250px;" width="500">
+                    <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+                  </div>
+                  <h2 class="title"><a href="#">{{$about->title}}</a></h2>
+                  <p>{{$about->excerpt}}</p>
+                </div>
               </div>
-              <h2 class="title"><a href="#">Sorsogon Pili Development Board</a></h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="about-col">
-              <div class="img">
-                <img src="img/intro-carousel/12.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-eye-outline"></i></div>
-              </div>
-              <h2 class="title"><a href="#">Technical Working Group </a></h2>
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem  doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="about-col">
-              <div class="img">
-                <img src="img/intro-carousel/14.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-eye-outline"></i></div>
-              </div>
-              <h2 class="title"><a href="#">Sorsogon Pili Roadmap Program</a></h2>
-              <p>
-              The Pili Roadmap program is a strategic scheme created through the partnership of the Sorsogon State College and the Provincial Government of Sorsogon in collaboration with the Department of Agriculture (DA), Department of Science and Technology (DOST), Department of Environment and Natural Resources (DENR), Department of Trade and Industry (DTI), Local Government Units (LGU), Pili Processors and Producers Cooperative (PPPC), and other stakeholders to contribute to the efforts to strengthen the pili industry within the province and ultimately, establish Sorsogon Province as the “Pili Capital of the World”.
-
-              </p>
-            </div>
-          </div>
-
+            @endforeach
         </div>
-
       </div>
     </section><!-- #about -->
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Archive;
 use App\Models\GalleryCategory;
 use App\Models\GalleryVideo;
@@ -31,8 +32,11 @@ class PagesController extends Controller
         $gallery = Gallery::get();
         $galleryCategories = GalleryCategory::get();
         $departments = User::get();
+        $abouts = About::get();
         $stores = Stores::paginate(3);
-        return view('index',compact('location','trees','processors','retailers','farmers','gallery','galleryCategories', 'departments', 'stores'));
+        return view('index',compact('location','trees','processors',
+            'retailers','farmers','gallery','galleryCategories', 'departments', 'stores',
+            'abouts'));
     }
 
     public function mainArticle($id)

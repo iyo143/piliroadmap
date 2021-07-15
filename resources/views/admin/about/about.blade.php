@@ -53,13 +53,11 @@
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="far fa-images"></i></span>
                                         <input class="form-control" placeholder="Excerpt" type="file" name="about_image">
-
                                     </div>
                                     @error('cover_image')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                     <br>
-
                                     <button class="btn btn-primary btn-block" type="submit">Submit</button>
                                 </div>
                             </form>
