@@ -45,6 +45,11 @@ class ArchiveController extends Controller
         $pdf = Archive::findorfail($id);
         return response()->download('storage/archives/'.$pdf->pdf_file);
     }
-
+    public function destroy(Request $request)
+    {
+        $pdf = Archive::findorfail($request->id);
+        $pdf->delete();
+        return redirect()->back()->with('delete_message', 'PDF Deleted Successfully');
+    }
 
 }
