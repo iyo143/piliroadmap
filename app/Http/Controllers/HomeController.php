@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Archive;
 use App\Models\Banner;
 use App\Models\Feedback;
@@ -65,7 +66,8 @@ class HomeController extends Controller
     }
     public function about()
     {
-        return view ('admin.about');
+        $abouts = About::get();
+        return view ('admin.about.about',compact('abouts'));
     }
     public function archives()
     {

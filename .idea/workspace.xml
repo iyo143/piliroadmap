@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a8a3357f-271c-4bc1-be77-a300013c91da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArchiveController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArchiveController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main-archive.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main-archive.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AboutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AboutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/About.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/About.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_07_14_081832_create_abouts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_07_14_081832_create_abouts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/about/about.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/articles/articles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/articles/articles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,10 +167,11 @@
       <recent name="C:\Users\Rio\projects\code\piliroadmap\resources\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\piliroadmap\resources\views\admin" />
+      <recent name="C:\xampp\piliroadmap\resources\views\about" />
       <recent name="C:\xampp\piliroadmap\public\images" />
       <recent name="C:\xampp\piliroadmap\public\pili-stage" />
       <recent name="C:\Users\Rio\projects\code\piliroadmap\public\img" />
-      <recent name="C:\Users\Rio\projects\code\piliroadmap\public\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -211,7 +217,7 @@
       <workItem from="1626228645913" duration="4187000" />
       <workItem from="1626246197847" duration="539000" />
       <workItem from="1626251128543" duration="2523000" />
-      <workItem from="1626330707651" duration="8850000" />
+      <workItem from="1626330707651" duration="11753000" />
     </task>
     <servers />
   </component>
