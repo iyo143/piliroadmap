@@ -74,7 +74,7 @@
                                             <td>{{$data->pdf_description}}</td>
                                             <td>
                                                 <a href="{{route('archives.show', $data->id)}}" class="btn btn-primary"><i class="lnr lnr-eye"></i></a>
-                                                <a href="#" class="btn btn-success"><i class="lnr lnr-download"></i></a>
+                                                <a href="{{route('archives.download', $data->id)}}" class="btn btn-success"><i class="lnr lnr-download"></i></a>
                                                 <span data-id="{{$data->id}}"
                                                       data-target="#DeleteModal"
                                                       data-toggle="modal" >

@@ -37,8 +37,13 @@ class ArchiveController extends Controller
     }
 
     public function show($id){
-            $pdf = Archive::findorfail($id);
-            return view('admin.arcives.show-archives', compact('pdf'));
+        $pdf = Archive::findorfail($id);
+        return view('admin.arcives.show-archives', compact('pdf'));
+    }
+
+    public function downloadpdf($id){
+        $pdf = Archive::findorfail($id);
+        return response()->download('storage/archives/'.$pdf->pdf_file);
     }
 
 
