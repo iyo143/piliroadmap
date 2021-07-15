@@ -32,4 +32,11 @@ class AboutController extends Controller
         ]);
         return redirect(route('home.about'))->with('success_message', 'successfully Add About');
     }
+
+    public function destroy(Request $request)
+    {
+        $about = About::findorfail($request->id);
+        $about->delete();
+        return redirect()->back()->with('delete_message', 'About Deleted Successfully');
+    }
 }

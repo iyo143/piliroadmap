@@ -102,7 +102,8 @@ Route::prefix('home')->group(function () {
         Route::PUT('update/{id}',[BannerController::class, 'update'])->name('banner.update');
     });
     Route::prefix('about')->group(function(){
-        Route::POST('stgore', [AboutController::class, 'store'])->name('about.store');
+        Route::POST('store', [AboutController::class, 'store'])->name('about.store');
+        Route::DELETE('delete/{id}',[AboutController::class, 'destroy'])->name('about.destroy');
     });
 });
 

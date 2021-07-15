@@ -20,8 +20,6 @@ use Spatie\Permission\Models\Permission;
 use Carbon\Carbon;
 class PagesController extends Controller
 {
-
-
     public function homePage()
     {
         $location = LocationTag::get();
@@ -32,7 +30,7 @@ class PagesController extends Controller
         $gallery = Gallery::get();
         $galleryCategories = GalleryCategory::get();
         $departments = User::get();
-        $abouts = About::get();
+        $abouts = About::take(3)->get();
         $stores = Stores::paginate(3);
         return view('index',compact('location','trees','processors',
             'retailers','farmers','gallery','galleryCategories', 'departments', 'stores',
