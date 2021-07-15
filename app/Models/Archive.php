@@ -12,7 +12,8 @@ class Archive extends Model
     protected $fillable = [
         'pdf_name',
         'pdf_file',
-        'pdf_description'
+        'pdf_description',
+        'pdf_thumbnail'
     ];
 
     public function user(){

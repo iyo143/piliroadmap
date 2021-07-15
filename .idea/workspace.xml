@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a8a3357f-271c-4bc1-be77-a300013c91da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArchiveController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArchiveController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ArchiveRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ArchiveRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Archive.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_06_07_033059_create_archives_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_06_07_033059_create_archives_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/arcives/archives.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/arcives/archives.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,6 +216,7 @@
       <workItem from="1626228645913" duration="4187000" />
       <workItem from="1626246197847" duration="539000" />
       <workItem from="1626251128543" duration="2523000" />
+      <workItem from="1626330707651" duration="5341000" />
     </task>
     <servers />
   </component>

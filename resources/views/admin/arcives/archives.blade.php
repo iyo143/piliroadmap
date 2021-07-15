@@ -34,8 +34,13 @@
                                     </div>
                                     <br>
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="far fa-images"></i></span>
+                                        <span class="input-group-addon"><i class="far fa-file"></i></span>
                                         <input class="form-control" placeholder="Excerpt" type="file" name="pdf_file">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="far fa-image"></i></span>
+                                        <input class="form-control" placeholder="PDF Thumbnail" type="file" name="pdf_thumbnail">
                                     </div>
                                     <br>
                                     <button class="btn btn-primary btn-block" type="submit">Submit</button>
@@ -44,6 +49,58 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-10">
+                        <!-- TABLE HOVER -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">List of Published Articles</h3>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>PDF NAME</th>
+                                        <th>PDF DESCRIPTION</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($archives as $data)
+                                        <tr>
+                                            <td>{{$data->id}}</td>
+                                            <td>{{$data->pdf_name}}</td>
+                                            <td>{{$data->pdf_description}}</td>
+                                            <td>
+                                                <a href="{{route('archives.show', $data->id)}}" class="btn btn-primary"><i class="lnr lnr-eye"></i></a>
+                                                <a href="#" class="btn btn-success"><i class="lnr lnr-download"></i></a>
+                                                <span data-id="{{$data->id}}"
+                                                      data-target="#DeleteModal"
+                                                      data-toggle="modal" >
+                                          <a
+                                              class="btn btn-danger btn-circle"
+                                              data-toggle="tooltip"
+                                              data-placement="top"
+                                              title="Delete">
+                                              <i
+                                                  class="lnr lnr-trash">
+                                              </i>
+                                          </a>
+                                      </span>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- END TABLE HOVER -->
+                    </div>
+                    {{ $archives->links()}}
+                </div>
+
             </div>
         </div>
     </div>
