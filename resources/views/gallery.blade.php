@@ -57,28 +57,6 @@
                                     </div>
                                 </div>
                             </section>
-                            <section id="portfolio" class="">
-                                <div class="container">
-                                    <h2 class="text-center">Videos</h2>
-                                    <div class="row portfolio-container mt-8">
-                                        @forelse($videos as $data)
-                                            <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp filter-active">
-                                                <div class="portfolio-wrap">
-                                                    <figure>
-                                                        <img src="/storage/gallery_videos/{{$data->video_image}}" style = "width:100%; height:100%;"alt="">
-                                                        <a href="{{$data->video_link}}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                                    </figure>
-                                                    <div class="portfolio-info">
-                                                        <h4><a href="#">{{$data->video_name}}</a></h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @empty
-                                            <h3 class="pl-5 text-center">There is no availbale Images</h3>
-                                        @endforelse
-                                    </div>
-                                </div>
-                            </section>
                         </div>
                         <!-- Sidebar -->
                         <div class="col-lg-4 py-3 d-flex justify-content-center ">

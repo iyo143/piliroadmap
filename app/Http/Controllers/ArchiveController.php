@@ -19,13 +19,31 @@ class ArchiveController extends Controller
             $filenameToStore = $filename.'_'.time().'.'.$extension;
             $path = $request->file('pdf_file')->storeAs('public/archives',$filenameToStore);
         }
+        if($request->hasFile('pdf_thumbnail')){
+            $filenameWithExt = $request->file('pdf_thumbnail')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('pdf_thumbnail')->getClientOriginalExtension();
+            $pdfnameToStore = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('pdf_thumbnail')->storeAs('public/pdf_thumbnail',$filenameToStore);
+        }
 
         Archive::create([
            "pdf_name" => $validated['pdf_name'],
            "pdf_file" => $filenameToStore,
+           "pdf_thumbnail" => $pdfnameToStore,
            "pdf_description"=> $validated['pdf_description']
         ]);
         return redirect(route('home.archive'))->with('success_message', "Archive successfully added");
+    }
+
+    public function show($id){
+        $pdf = Archive::findorfail($id);
+        return view('admin.arcives.show-archives', compact('pdf'));
+    }
+
+    public function downloadpdf($id){
+        $pdf = Archive::findorfail($id);
+        return response()->download('storage/archives/'.$pdf->pdf_file);
     }
 
 

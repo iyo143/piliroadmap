@@ -69,7 +69,7 @@ class HomeController extends Controller
     }
     public function archives()
     {
-        $archives = Archive::get();
+        $archives = Archive::paginate(10);
         return view ('admin.arcives.archives', compact('archives'));
     }
     public function gallery()
