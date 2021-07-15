@@ -10,9 +10,9 @@
                             <div class="alert alert-success alert-dismissible">
                                 {{session('success_message')}}
                             </div>
-                        @elseif (session('delete-message'))
+                        @elseif (session('delete_message'))
                             <div class="alert alert-danger alert-dismissible">
-                                {{ session('delete-message') }}
+                                {{ session('delete_message') }}
                             </div>
                         @endif
 
@@ -25,23 +25,35 @@
                                 <div class="panel-body">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fas fa-user"></i></span>
-                                        <input class="form-control" placeholder="PDF Name" type="text" name="pdf_name">
+                                        <input class="form-control" placeholder="PDF Name" type="text" name="pdf_name" value="{{old('pdf_name')}}">
                                     </div>
+                                    @error('pdf_name')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                     <br>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fas fa-user"></i></span>
-                                        <input class="form-control" placeholder="PDF Description" type="text" name="pdf_description">
+                                        <input class="form-control" placeholder="PDF Description" type="text" name="pdf_description" value="{{old('pdf_description')}}">
                                     </div>
+                                    @error('pdf_description')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                     <br>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="far fa-file"></i></span>
-                                        <input class="form-control" placeholder="Excerpt" type="file" name="pdf_file">
+                                        <input class="form-control" placeholder="Excerpt" type="file" name="pdf_file" value="{{ old('pdf_file') }}">
                                     </div>
+                                    @error('pdf_file')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                     <br>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="far fa-image"></i></span>
                                         <input class="form-control" placeholder="PDF Thumbnail" type="file" name="pdf_thumbnail">
                                     </div>
+                                    @error('pdf_thumbnail')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                     <br>
                                     <button class="btn btn-primary btn-block" type="submit">Submit</button>
                                 </div>
@@ -95,11 +107,10 @@
                                 </table>
                             </div>
                         </div>
-
-                        <!-- END TABLE HOVER -->
                     </div>
-                    {{ $archives->links()}}
+
                 </div>
+                {{ $archives->links()}}
 
             </div>
         </div>
@@ -115,7 +126,7 @@
                 </div>
                 <div class="modal-body">
                     <h4>Are you sure you want to Delete the User?</h4>
-                    <form action="{{route('articles.destroy','id')}}" method="POST">
+                    <form action="{{route('archives.destroy','id')}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <div class="modal-footer">

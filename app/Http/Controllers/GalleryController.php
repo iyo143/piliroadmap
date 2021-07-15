@@ -112,7 +112,6 @@ class GalleryController extends Controller
             $path = $request->file('image_file')->storeAs('public/gallery_images',$fileNameToStore);
             $gallery->image_file = $fileNameToStore;
         }
-
         $gallery->update([
             'image_name'=>$validated['image_name'],
             'image_category'=>$validated['gallery_category_id'],

@@ -79,6 +79,7 @@ Route::prefix('home')->group(function () {
         Route::POST('store', [ArchiveController::class, 'store'])->name('archives.store');
         Route::get('show/{id}', [ArchiveController::class, 'show'])->name('archives.show');
         Route::get('download/{id}', [ArchiveController::class, 'downloadpdf'])->name('archives.download');
+        Route::DELETE('delete/{id}', [ArchiveController::class, 'destroy'])->name('archives.destroy');
     });
     Route::prefix('gallery_video')->group(function(){
         Route::POST('store', [GalleryVideoController::class, 'store'])->name('galVideo.store');
