@@ -24,7 +24,7 @@ class ArchiveController extends Controller
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('pdf_thumbnail')->getClientOriginalExtension();
             $pdfnameToStore = $filename.'_'.time().'.'.$extension;
-            $path = $request->file('pdf_thumbnail')->storeAs('public/pdf_thumbnail',$filenameToStore);
+            $path = $request->file('pdf_thumbnail')->storeAs('public/pdf_thumbnail',$pdfnameToStore);
         }
 
         Archive::create([
