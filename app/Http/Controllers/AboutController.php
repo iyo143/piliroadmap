@@ -32,7 +32,10 @@ class AboutController extends Controller
         ]);
         return redirect(route('home.about'))->with('success_message', 'successfully Add About');
     }
-
+    public function edit($id){
+        $about = About::findorfail($id);
+        return view('admin.about.edit-about', compact('about'));
+    }
     public function destroy(Request $request)
     {
         $about = About::findorfail($request->id);
