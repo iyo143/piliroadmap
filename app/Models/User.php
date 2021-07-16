@@ -60,5 +60,8 @@ class User extends Authenticatable
     public function stores(){
         return $this->hasMany(Stores::class);
     }
+    public function partners(){
+        return $this->hasMany(Partner::class);
+    }
 
 }

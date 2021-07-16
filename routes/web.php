@@ -52,7 +52,7 @@ Route::prefix('home')->group(function () {
     Route::get('contact', [HomeController::class, 'contact'])->name('home.contact');
     Route::get('stores', [HomeController::class, 'stores'])->name('home.stores');
     Route::get('banner', [HomeController::class, 'banners'])->name('home.banner');
-
+    Route::get('partner', [HomeController::class, 'partner'])->name('home.partner');
     Route::prefix('mapping')->group(function () {
         Route::POST('store-tag',[LocationTagController::class, 'store'])->name('map.store');
         Route::GET('edit/{id}', [LocationTagController::class, 'edit'])->name('map.edit');

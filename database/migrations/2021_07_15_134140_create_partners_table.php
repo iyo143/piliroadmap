@@ -19,6 +19,11 @@ class CreatePartnersTable extends Migration
             $table->string('agency_link');
             $table->string('agency_logo');
             $table->timestamps();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 

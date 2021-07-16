@@ -7,6 +7,7 @@ use App\Models\Archive;
 use App\Models\Banner;
 use App\Models\Feedback;
 use App\Models\GalleryVideo;
+use App\Models\Partner;
 use App\Models\Stores;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -94,6 +95,9 @@ class HomeController extends Controller
         $banners = Banner::latest()->take(1)->get();
         return view('admin.Banner.Banner', compact('banners'));
     }
-
+    public function partner(){
+        $agencies = Partner::paginate(10);
+        return view('admin.partners.partners', compact('agencies'));
+    }
 
 }
