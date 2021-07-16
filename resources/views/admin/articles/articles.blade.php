@@ -35,7 +35,6 @@
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                         <br>
-
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fab fa-tumblr"></i></span>
                             <input class=" form-control @error('title') is-invalid @enderror " placeholder="Title" type="text" name="title">

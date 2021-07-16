@@ -3,10 +3,71 @@
   <component name="ChangeListManager">
     <list default="true" id="a8a3357f-271c-4bc1-be77-a300013c91da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArchiveController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArchiveController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/arcives/archives.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/arcives/archives.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_07_15_134140_create_partners_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_07_15_134140_create_partners_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/apple-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/blog_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/blog_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/blog_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/blog_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/blog_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/blog_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/logo-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/profile-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/user-medium.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/user1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/user2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/user3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/user4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/user5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/about-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/about-mission.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/about-plan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/about-vision.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/clients/client-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/clients/client-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/clients/client-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/clients/client-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/10.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/11.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/12 (2).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/12 (3).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/12 (4).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/12 (5).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/6.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/7.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/8.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/intro-carousel/9.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/portfolio/app1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/portfolio/app2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/portfolio/app3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/portfolio/card1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/portfolio/card2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/portfolio/card3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/portfolio/web1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/portfolio/web2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/portfolio/web3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/team-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/team-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/team-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/team-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/testimonial-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/testimonial-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/testimonial-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/testimonial-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/testimonial-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,10 +225,11 @@
       <recent name="C:\Users\Rio\projects\code\piliroadmap\resources\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\piliroadmap\public\partners logo" />
+      <recent name="C:\xampp\piliroadmap\resources\views\admin" />
+      <recent name="C:\xampp\piliroadmap\resources\views\about" />
       <recent name="C:\xampp\piliroadmap\public\images" />
       <recent name="C:\xampp\piliroadmap\public\pili-stage" />
-      <recent name="C:\Users\Rio\projects\code\piliroadmap\public\img" />
-      <recent name="C:\Users\Rio\projects\code\piliroadmap\public\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -213,7 +275,8 @@
       <workItem from="1626228645913" duration="4187000" />
       <workItem from="1626246197847" duration="539000" />
       <workItem from="1626251128543" duration="2523000" />
-      <workItem from="1626330707651" duration="7109000" />
+      <workItem from="1626330707651" duration="16338000" />
+      <workItem from="1626393309897" duration="1399000" />
     </task>
     <servers />
   </component>

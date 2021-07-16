@@ -30,8 +30,7 @@
                                     <div class="col-md-3 py-3">
                                         <div class="card-sl">
                                             <div class="card-image">
-                                                <img
-                                                    src="images/pdf.png"/>
+                                                <img src="/storage/pdf_thumbnail/{{$archive->pdf_thumbnail}}"/>
                                             </div>
                                             <a class="card-action" href="#"><i class="far fa-file-pdf"></i></a>
                                             <div class="card-heading ">

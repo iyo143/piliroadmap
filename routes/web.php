@@ -12,6 +12,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GalleryVideoController;
 use App\Http\Controllers\StoresController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\AboutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -99,6 +100,10 @@ Route::prefix('home')->group(function () {
         Route::DELETE('delete/{id}',[BannerController::class, 'destroy'])->name('banner.destroy');
         Route::get('edit/{id}',[BannerController::class, 'edit'])->name('banner.edit');
         Route::PUT('update/{id}',[BannerController::class, 'update'])->name('banner.update');
+    });
+    Route::prefix('about')->group(function(){
+        Route::POST('store', [AboutController::class, 'store'])->name('about.store');
+        Route::DELETE('delete/{id}',[AboutController::class, 'destroy'])->name('about.destroy');
     });
 });
 
