@@ -13,6 +13,7 @@ use App\Http\Controllers\GalleryVideoController;
 use App\Http\Controllers\StoresController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\PartnerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,7 +53,7 @@ Route::prefix('home')->group(function () {
     Route::get('contact', [HomeController::class, 'contact'])->name('home.contact');
     Route::get('stores', [HomeController::class, 'stores'])->name('home.stores');
     Route::get('banner', [HomeController::class, 'banners'])->name('home.banner');
-
+    Route::get('partner', [HomeController::class, 'partner'])->name('home.partners');
     Route::prefix('mapping')->group(function () {
         Route::POST('store-tag',[LocationTagController::class, 'store'])->name('map.store');
         Route::GET('edit/{id}', [LocationTagController::class, 'edit'])->name('map.edit');
@@ -105,6 +106,11 @@ Route::prefix('home')->group(function () {
         Route::POST('store', [AboutController::class, 'store'])->name('about.store');
         Route::DELETE('delete/{id}',[AboutController::class, 'destroy'])->name('about.destroy');
     });
+    Route::prefix('partners')->group(function(){
+        Route::POST('store', [PartnerController::class, 'store'])->name('partners.store');
+        Route::DELETE('delete/{id}',[PartnerController::class, 'destroy'])->name('partners.destroy');
+    });
+
 });
 
 

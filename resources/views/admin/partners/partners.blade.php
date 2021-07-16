@@ -20,38 +20,30 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title">Publish Archive</h3>
                             </div>
-                            <form action="{{route('archives.store')}}" method="post" enctype="multipart/form-data">
+                            <form action="{{route('partners.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="panel-body">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fas fa-user"></i></span>
-                                        <input class="form-control" placeholder="PDF Name" type="text" name="pdf_name" value="{{old('pdf_name')}}">
+                                        <input class="form-control" placeholder="Agency Name" type="text" name="agency_name" value="{{old('agency_name')}}">
                                     </div>
-                                    @error('pdf_name')
+                                    @error('agency_name')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                     <br>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fas fa-user"></i></span>
-                                        <input class="form-control" placeholder="PDF Description" type="text" name="pdf_description" value="{{old('pdf_description')}}">
+                                        <input class="form-control" placeholder="Agency Link" type="text" name="agency_link" value="{{old('agency_link')}}">
                                     </div>
-                                    @error('pdf_description')
-                                    <div class="text-danger">{{ $message }}</div>
-                                    @enderror
-                                    <br>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="far fa-file"></i></span>
-                                        <input class="form-control" placeholder="Excerpt" type="file" name="pdf_file" value="{{ old('pdf_file') }}">
-                                    </div>
-                                    @error('pdf_file')
+                                    @error('agency_link')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                     <br>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="far fa-image"></i></span>
-                                        <input class="form-control" placeholder="PDF Thumbnail" type="file" name="pdf_thumbnail">
+                                        <input class="form-control" placeholder="Agency Logo" type="file" name="agency_logo">
                                     </div>
-                                    @error('pdf_thumbnail')
+                                    @error('agency_logo')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                     <br>
@@ -79,11 +71,12 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($archives as $data)
+                                    @foreach($agencies as $data)
                                         <tr>
                                             <td>{{$data->id}}</td>
-                                            <td>{{$data->pdf_name}}</td>
-                                            <td>{{$data->pdf_description}}</td>
+                                            <td>{{$data->agency_name}}</td>
+                                            <td>{{$data->agency_link}}</td>
+                                            <td><img src="/storage/partner_images/{{$data->agency_logo}}" width="25"></td>
                                             <td>
                                                 <a href="{{route('archives.show', $data->id)}}" class="btn btn-primary"><i class="lnr lnr-eye"></i></a>
                                                 <a href="{{route('archives.download', $data->id)}}" class="btn btn-success"><i class="lnr lnr-download"></i></a>
@@ -110,7 +103,7 @@
                     </div>
 
                 </div>
-                {{ $archives->links()}}
+                {{ $agencies->links()}}
 
             </div>
         </div>
@@ -126,7 +119,7 @@
                 </div>
                 <div class="modal-body">
                     <h4>Are you sure you want to Delete the User?</h4>
-                    <form action="{{route('archives.destroy','id')}}" method="POST">
+                    <form action="{{route('partners.destroy','id')}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <div class="modal-footer">

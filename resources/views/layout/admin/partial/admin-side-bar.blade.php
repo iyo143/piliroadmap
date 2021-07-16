@@ -11,7 +11,8 @@
 						<li><a href="{{route('home.contact')}}" class="{{Request::path()=== 'home/contact' ? 'active' : ''}}"><i class="fas fa-phone"></i><span>Contact Us</span></a></li>
                         <li><a href="{{route('home.stores')}}" class="{{Request::path()=== 'home/stores' ? 'active' : ''}}"><i class="fas fa-shopping-bag"></i><span>Stores</span></a></li>
                         <li><a href="{{route('home.banner')}}" class="{{Request::path()=== 'home/banner' ? 'active' : ''}}"><i class="fas fa-ribbon"></i><span>Banner</span></a></li>
-					</ul>
+                        <li><a href="{{route('home.partners')}}" class="{{Request::path()=== 'home/partner' ? 'active' : ''}}"><i class="fas fa-ribbon"></i><span>Partners</span></a></li>
+                    </ul>
 				</nav>
 			</div>
 		</div>
