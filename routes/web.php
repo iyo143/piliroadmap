@@ -104,6 +104,8 @@ Route::prefix('home')->group(function () {
     });
     Route::prefix('about')->group(function(){
         Route::POST('store', [AboutController::class, 'store'])->name('about.store');
+        Route::GET('edit/{id}', [AboutController::class, 'edit'])->name('about.edit');
+        Route::PUT('update/{id}', [AboutController::class, 'update'])->name('about.update');
         Route::DELETE('delete/{id}',[AboutController::class, 'destroy'])->name('about.destroy');
     });
     Route::prefix('partners')->group(function(){
