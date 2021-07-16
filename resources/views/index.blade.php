@@ -165,10 +165,10 @@
         <div class="container" data-aos="zoom-in">
 
             <header class="section-header">
-                <h3>Our Clients</h3>
+                <h3>Partner Agencies</h3>
             </header>
             <div class="owl-carousel clients-carousel">
-                <img src="/partners_logo/DA.png" alt=""width="200px">
+                <a href="https://www.facebook.com/"><img src="/partners_logo/DA.png" alt=""width="200px"></a>
                 <img src="/partners_logo/denr.png" alt=""width="200px">
                 <img src="/partners_logo/dost.png" alt=""width="200px">
                 <img src="/partners_logo/ssu.png" alt=""width="200px">
