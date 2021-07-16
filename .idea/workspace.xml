@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a8a3357f-271c-4bc1-be77-a300013c91da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PartnerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PartnerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Partner.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Partner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_07_15_134140_create_partners_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_07_15_134140_create_partners_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/partners/partners.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partners/partners.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout/admin/partial/admin-side-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/admin/partial/admin-side-bar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -219,11 +215,22 @@
       <workItem from="1626246197847" duration="539000" />
       <workItem from="1626251128543" duration="2523000" />
       <workItem from="1626330707651" duration="16338000" />
-      <workItem from="1626393309897" duration="2454000" />
+      <workItem from="1626393309897" duration="3167000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/routes/web.php</url>
+          <line>2</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -20,7 +20,7 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title">Publish Archive</h3>
                             </div>
-                            <form action="{{route('archives.store')}}" method="post" enctype="multipart/form-data">
+                            <form action="{{route('partners.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="panel-body">
                                     <div class="input-group">
@@ -43,7 +43,7 @@
                                         <span class="input-group-addon"><i class="far fa-image"></i></span>
                                         <input class="form-control" placeholder="Agency Logo" type="file" name="agency_logo">
                                     </div>
-                                    @error('pdf_thumbnail')
+                                    @error('agency_logo')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                     <br>
@@ -119,7 +119,7 @@
                 </div>
                 <div class="modal-body">
                     <h4>Are you sure you want to Delete the User?</h4>
-                    <form action="{{route('archives.destroy','id')}}" method="POST">
+                    <form action="{{route('partners.destroy','id')}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <div class="modal-footer">
